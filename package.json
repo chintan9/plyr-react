@@ -1,6 +1,6 @@
 {
   "name": "plyr-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple HTML5 media player with custom controls and WebVTT captions.",
   "author": "chintan9",
   "license": "MIT",
