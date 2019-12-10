@@ -1,5 +1,4 @@
 # plyr-react
-<<<<<<< HEAD
 
 > A simple HTML5 media player with custom controls and WebVTT captions.
 
@@ -32,4 +31,3 @@ class Example extends Component {
 MIT © [chintan9](https://github.com/chintan9)
 =======
 plyr-react
->>>>>>> 9d247077b11cf6e611e6627a40e4a9b6b05197be
