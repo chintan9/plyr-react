@@ -1,9 +1,16 @@
 {
   "presets": [
-    ["env", {
-      "modules": false
-    }],
-    "stage-0",
-    "react"
+    "@babel/preset-flow",
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "8.10"
+        },
+        "corejs": "2", // <---
+        "useBuiltIns": "usage"
+      }
+    ]
   ]
 }

@@ -1,39 +1,39 @@
-import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
-import external from 'rollup-plugin-peer-deps-external'
-import postcss from 'rollup-plugin-postcss'
-import resolve from 'rollup-plugin-node-resolve'
-import url from 'rollup-plugin-url'
-import svgr from '@svgr/rollup'
+import babel from 'rollup-plugin-babel';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import { uglify } from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
 
-import pkg from './package.json'
+
 
 export default {
-  input: 'src/index.js',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      sourcemap: true
+    input: './src/index.js',
+    output: {
+        file: './build/bundle.min.js',
+        format: 'iife',
+        name: 'bundle',
+        globals: {
+            'plyr': 'plyr',
+        }
     },
-    {
-      file: pkg.module,
-      format: 'es',
-      sourcemap: true
-    }
-  ],
-  plugins: [
-    external(),
-    postcss({
-      modules: true
-    }),
-    url(),
-    svgr(),
-    babel({
-      exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
-    }),
-    resolve(),
-    commonjs()
-  ]
+     plugins: [
+         babel({
+        exclude: 'node_modules/**',
+        babelrc: false,
+        presets: [
+          [
+            '@babel/env',
+            {
+              modules: false,
+              useBuiltIns: "usage",
+              targets: 'maintained node versions'
+            }
+          ]
+        ]
+      }),
+        resolve(),
+        commonjs(),
+        uglify(),
+        terser()
+    ]
 }
