@@ -1,3 +1,5 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import React from 'react'
 import PropTypes from 'prop-types'
 import plyr from 'plyr'
