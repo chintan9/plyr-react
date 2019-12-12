@@ -1162,9 +1162,9 @@
     "@svgr/babel-plugin-transform-react-native-svg" "^4.2.0"
     "@svgr/babel-plugin-transform-svg-component" "^4.2.0"
 
-"@svgr/core@^4.3.2":
+"@svgr/core@^4.3.3":
   version "4.3.3"
-  resolved "https://registry.npmjs.org/@svgr/core/-/core-4.3.3.tgz#b37b89d5b757dc66e8c74156d00c368338d24293"
+  resolved "https://registry.yarnpkg.com/@svgr/core/-/core-4.3.3.tgz#b37b89d5b757dc66e8c74156d00c368338d24293"
   integrity sha512-qNuGF1QON1626UCaZamWt5yedpgOytvLj5BQZe2j1k1B8DUG4OyugZyfEwBeXozCUwhLEpsrgPrE+eCu4fY17w==
   dependencies:
     "@svgr/plugin-jsx" "^4.3.3"
@@ -1178,7 +1178,7 @@
   dependencies:
     "@babel/types" "^7.4.4"
 
-"@svgr/plugin-jsx@^4.3.2", "@svgr/plugin-jsx@^4.3.3":
+"@svgr/plugin-jsx@^4.3.3":
   version "4.3.3"
   resolved "https://registry.npmjs.org/@svgr/plugin-jsx/-/plugin-jsx-4.3.3.tgz#e2ba913dbdfbe85252a34db101abc7ebd50992fa"
   integrity sha512-cLOCSpNWQnDB1/v+SUENHH7a0XY09bfuMKdq9+gYvtuwzC2rU4I0wKGFEp1i24holdQdwodCtDQdFtJiTCWc+w==
@@ -1197,17 +1197,17 @@
     merge-deep "^3.0.2"
     svgo "^1.2.2"
 
-"@svgr/webpack@4.3.2":
-  version "4.3.2"
-  resolved "https://registry.npmjs.org/@svgr/webpack/-/webpack-4.3.2.tgz#319d4471c8f3d5c3af35059274834d9b5b8fb956"
-  integrity sha512-F3VE5OvyOWBEd2bF7BdtFRyI6E9it3mN7teDw0JQTlVtc4HZEYiiLSl+Uf9Uub6IYHVGc+qIrxxDyeedkQru2w==
+"@svgr/webpack@4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@svgr/webpack/-/webpack-4.3.3.tgz#13cc2423bf3dff2d494f16b17eb7eacb86895017"
+  integrity sha512-bjnWolZ6KVsHhgyCoYRFmbd26p8XVbulCzSG53BDQqAr+JOAderYK7CuYrB3bDjHJuF6LJ7Wrr42+goLRV9qIg==
   dependencies:
     "@babel/core" "^7.4.5"
     "@babel/plugin-transform-react-constant-elements" "^7.0.0"
     "@babel/preset-env" "^7.4.5"
     "@babel/preset-react" "^7.0.0"
-    "@svgr/core" "^4.3.2"
-    "@svgr/plugin-jsx" "^4.3.2"
+    "@svgr/core" "^4.3.3"
+    "@svgr/plugin-jsx" "^4.3.3"
     "@svgr/plugin-svgo" "^4.3.1"
     loader-utils "^1.2.3"
 
