@@ -11,10 +11,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <p>
+        <PlyrComponent/>
+         <p>
           The example of react plyr
         </p>
-        <PlyrComponent/>
       </div>
     );
   }
