@@ -10,7 +10,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className ="plyrwrapper">
         <PlyrComponent/>
          <p>
           The example of react plyr

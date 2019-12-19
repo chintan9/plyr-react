@@ -16,3 +16,8 @@ h1, p {
     transform: translate(-50%,-50%);
 }
 
+.plyrwrapper{
+    height: 90%;
+    width: 90%;
+    margin: auto;
+}
