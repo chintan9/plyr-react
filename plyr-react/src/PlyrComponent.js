@@ -69,12 +69,12 @@
 //     type: 'video',
 //     sources: [
 //       {
-//         src: 'https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1280_10MG.mp4',
+//         src: 'https://rawcdn.githack.com/chintan9/Big-Buck-Bunny/e577fdbb23064bdd8ac4cecf13db86eef5720565/BigBuckBunny720p30s.mp4',
 //         type: 'video/mp4',
 //         size: 720,
 //       },
 //       {
-//         src: 'https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1920_18MG.mp4',
+//         src: 'https://rawcdn.githack.com/chintan9/Big-Buck-Bunny/e577fdbb23064bdd8ac4cecf13db86eef5720565/BigBuckBunny1080p30s.mp4',
 //         type: 'video/mp4',
 //         size: 1080,
 //       },
