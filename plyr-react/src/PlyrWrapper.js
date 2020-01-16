@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import plyr from 'plyr'
 import 'plyr/dist/plyr.css'
 
-class PlyrComponent extends React.Component {
+class PlyrWrapper extends React.Component {
   componentDidMount() {
     this.player = new plyr('.js-plyr', this.props.options)
     this.player.source = this.props.sources
@@ -21,7 +21,7 @@ class PlyrComponent extends React.Component {
   }
 }
 
-PlyrComponent.defaultProps = {
+PlyrWrapper.defaultProps = {
   options: {
     controls: [
       'rewind',
@@ -69,12 +69,12 @@ PlyrComponent.defaultProps = {
     type: 'video',
     sources: [
       {
-        src: 'https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1280_10MG.mp4',
+        src: 'https://rawcdn.githack.com/chintan9/Big-Buck-Bunny/e577fdbb23064bdd8ac4cecf13db86eef5720565/BigBuckBunny720p30s.mp4',
         type: 'video/mp4',
         size: 720,
       },
       {
-        src: 'https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1920_18MG.mp4',
+        src: 'https://rawcdn.githack.com/chintan9/Big-Buck-Bunny/e577fdbb23064bdd8ac4cecf13db86eef5720565/BigBuckBunny1080p30s.mp4',
         type: 'video/mp4',
         size: 1080,
       },
@@ -82,11 +82,11 @@ PlyrComponent.defaultProps = {
   }
 }
 
-PlyrComponent.propTypes = {
+PlyrWrapper.propTypes = {
   options: PropTypes.object,
   sources: PropTypes.object,
   source: PropTypes.func,
   destroy: PropTypes.func
 }
 
-export default PlyrComponent
+export default PlyrWrapper
