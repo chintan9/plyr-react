@@ -1,6 +1,6 @@
 {
   "name": "plyr-react",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -12,9 +12,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "chintan9",
   "license": "ISC",
-  "description": "",
+  "description": "Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers for React.",
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
@@ -37,5 +37,16 @@
   },
   "dependencies": {
     "plyr": "^3.5.6"
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chintan9/plyr-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chintan9/plyr-react/issues"
+  },
+  "homepage": "https://github.com/chintan9/plyr-react#readme"
 }
