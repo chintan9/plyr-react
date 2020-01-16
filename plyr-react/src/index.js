@@ -1,8 +1,9 @@
 import React from 'react';
+import PlyrWrapper from './PlyrWrapper';
 import './style.css';
 
 const PlyrComponent = () => (
-    <h1>Hello from My Component</h1>
+    <PlyrWrapper/>
 );
 
 export default PlyrComponent;
