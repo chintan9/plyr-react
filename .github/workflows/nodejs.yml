@@ -22,6 +22,6 @@ jobs:
         cd plyr-react
         npm i
         npm run build --if-present
-        npm test
+      
       env:
         CI: true
