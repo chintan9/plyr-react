@@ -1,7 +1,3 @@
-h1, p {
-  font-family: Lato;
-}
-
 .js-plyr
 {
     position: fixed;
@@ -14,14 +10,4 @@ h1, p {
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-}
-
-.plyrwrapper{
-    height: 90%;
-    width: 90%;
-    margin: auto;
-}
-
-h1 {
-    color: red;
 }
