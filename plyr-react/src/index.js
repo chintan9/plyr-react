@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
 
-const MyComponent = () => (
+const PlyrComponent = () => (
     <h1>Hello from My Component</h1>
 );
 
-export default MyComponent;
+export default PlyrComponent;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render} from 'react-dom';
-import MyComponent from '../../src';
+import PlyrComponent from '../../src';
 const App = () => (
-    <MyComponent />
+    <PlyrComponent />
 );
 render(<App />, document.getElementById("root"));
