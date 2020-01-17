@@ -11,7 +11,13 @@
     "publish-demo": "npm run build && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["react", "video", "YouTube", "Vimeo", "plyr"],
+  "keywords": [
+    "react",
+    "video",
+    "YouTube",
+    "Vimeo",
+    "plyr"
+  ],
   "author": "chintan9",
   "license": "ISC",
   "description": "Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers for React.",
@@ -22,7 +28,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^3.4.2",
