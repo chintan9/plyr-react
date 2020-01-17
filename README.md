@@ -1,5 +1,5 @@
 # plyr-react
-> plyr-react under work in progess
+> plyr-react under work in progress
 
 # Getting started
 
@@ -8,13 +8,13 @@ There are two methods for getting started with this repo.
 #### Familiar with Git?
 
 ```
-  > git clone git@github.com:KaiHotz/plyr-react.git
+  > git clone git@github.com:chintan9/plyr-react.git
   > cd plyr-react
   > yarn install
 ```
 
 #### Not Familiar with Git?
-Click [here](https://github.com/KaiHotz/plyr-react/archive/master.zip) to download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+Click [here](https://github.com/chintan9/plyr-react.git/archive/master.zip) to download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
   > yarn install

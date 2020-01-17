@@ -9,7 +9,7 @@ module.exports = {
     [pkg.name]: path.resolve(__dirname, 'src/lib'),
   },
   ribbon: {
-    url: 'https://github.com/KaiHotz/plyr-react',
+    url: 'https://github.com/chintan9/plyr-react.git',
     text: 'Fork me on GitHub',
   },
   showSidebar: true,

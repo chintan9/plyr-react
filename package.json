@@ -1,14 +1,14 @@
 {
   "name": "plyr-react",
-  "version": "1.2.0",
+  "version": "0.9.0",
   "description": "Boilerplate for writing React Libraries bundled with Rollup.js to commonJs and ES6 Modules and React Styleguidist",
   "author": "Kai Hotz",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:KaiHotz/plyr-react.git"
+    "url": "git@github.com:chintan9/plyr-react.git"
   },
-  "homepage": "https://github.com/KaiHotz/plyr-react",
+  "homepage": "https://github.com/chintan9/plyr-react.git",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -27,7 +27,7 @@
     "lint": "esw --ext .jsx --ext .js --color",
     "lint:fix": "npm run lint --fix",
     "prepare": "npm run build",
-    "prerelease": "npm run lint:fix && npm run test:coverage && npm run build",
+    "prerelease": "npm run build",
     "release": "npm publish",
     "predeploy": "npm run styleguide:build",
     "deploy": "gh-pages -d styleguide"
