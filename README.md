@@ -10,13 +10,13 @@ There are two methods for getting started with this repo.
 #### Familiar with Git?
 
 ```
-  > git clone git@github.com:KaiHotz/react-rollup-boilerplate.git
-  > cd react-rollup-boilerplate
+  > git clone git@github.com:KaiHotz/plyr-react.git
+  > cd plyr-react
   > yarn install
 ```
 
 #### Not Familiar with Git?
-Click [here](https://github.com/KaiHotz/react-rollup-boilerplate/archive/master.zip) to download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+Click [here](https://github.com/KaiHotz/plyr-react/archive/master.zip) to download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
   > yarn install
@@ -35,7 +35,7 @@ This will build a version of your library, run the watcher and also run the Styl
 To open the Styleguide manualy open your Browser and navigate to [http://localhost:6060](http://localhost:6060).
 Start developing your components in `src/lib/components` folder and update the `src/lib/index.js` file acordingly.
 Always provide an `YourComponent.examples.md` file, so your component will show up in the Styleguide.
-You can refer to example `Button` component, but i think you'll get the idea.
+You can refer to example `PlyrComponent` component, but i think you'll get the idea.
 
 ### Proposals (Babel)
 For smoother development some Babel plugin are included
@@ -51,7 +51,7 @@ For the use of  `CSS Modules` refere to [rollup-plugin-postcss](https://github.c
 ## Testing
 
 Testing is done with [Jest](https://facebook.github.io/jest/), [Enzyme](http://airbnb.io/enzyme/) and [Jasmine Matchers](https://github.com/JamieMason/Jasmine-Matchers)
-You can refer to `Button.test.js` as an example.
+You can refer to `PlyrComponent.test.js` as an example.
 ```
 > yarn test
 ```

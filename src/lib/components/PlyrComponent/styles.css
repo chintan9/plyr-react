@@ -1,4 +1,4 @@
-.button {
+.PlyrComponent {
   position: relative;
   background-color: #4CAF50;
   border: none;
@@ -15,7 +15,7 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.button:after {
+.PlyrComponent:after {
   content: "";
   background: #f1f1f1;
   display: block;
@@ -28,7 +28,7 @@
   transition: all 0.8s
 }
 
-.button:active:after {
+.PlyrComponent:active:after {
   padding: 0;
   margin: 0;
   opacity: 1;
