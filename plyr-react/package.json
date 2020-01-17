@@ -11,11 +11,7 @@
     "publish-demo": "npm run build && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-<<<<<<< HEAD
   "keywords": ["react", "video", "YouTube", "Vimeo", "plyr"],
-=======
-  "keywords": [],
->>>>>>> 668787c917df32028a382d6fb3ae9eb5fbcb13a5
   "author": "chintan9",
   "license": "ISC",
   "description": "Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers for React.",
