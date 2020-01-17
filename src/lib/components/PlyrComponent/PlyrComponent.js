@@ -1,11 +1,13 @@
+/* eslint-disable react/self-closing-comp */
 import React from 'react'
 import PropTypes from 'prop-types'
-import plyr from 'plyr'
+import Plyr from 'plyr'
 import 'plyr/dist/plyr.css'
+import './styles.css'
 
-class PlyrWrapper extends React.Component {
+class PlyrComponent extends React.Component {
   componentDidMount() {
-    this.player = new plyr('.js-plyr', this.props.options)
+    this.player = new Plyr('.js-plyr', this.props.options)
     this.player.source = this.props.sources
   }
 
@@ -15,13 +17,13 @@ class PlyrWrapper extends React.Component {
 
   render() {
     return (
-      <video className='js-plyr plyr'>
+      <video className="js-plyr plyr">
       </video>
     )
   }
 }
 
-PlyrWrapper.defaultProps = {
+PlyrComponent.defaultProps = {
   options: {
     controls: [
       'rewind',
@@ -79,14 +81,14 @@ PlyrWrapper.defaultProps = {
         size: 1080,
       },
     ],
-  }
+  },
 }
 
-PlyrWrapper.propTypes = {
+PlyrComponent.propTypes = {
   options: PropTypes.object,
   sources: PropTypes.object,
   source: PropTypes.func,
-  destroy: PropTypes.func
+  destroy: PropTypes.func,
 }
 
-export default PlyrWrapper
+export default PlyrComponent
