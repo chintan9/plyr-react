@@ -1,6 +1,6 @@
 {
   "name": "plyr-react",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Boilerplate for writing React Libraries bundled with Rollup.js to commonJs and ES6 Modules and React Styleguidist",
   "author": "Kai Hotz",
   "license": "MIT",
