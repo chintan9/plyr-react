@@ -1,5 +1,5 @@
 # plyr-react
-plyr-react
+> plyr-react under work in progess
 
 `plyr-react`  is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers for React
 A simple HTML5 media player with custom controls and WebVTT captions.
