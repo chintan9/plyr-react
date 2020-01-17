@@ -1,7 +1,5 @@
-## Support
-If you like the project and want to support my work, you can buy me a coffee :)
-
-[![paypal](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/kaihotz)
+# plyr-react
+> plyr-react under work in progess
 
 # Getting started
 
@@ -126,3 +124,6 @@ Make sure the repository url in `package.json` file is set to your repoitory url
 
 ### Compiler
 - [Babel 7](https://babeljs.io/)
+
+## Support
+If you like the project and want to support my work, you can buy me a coffee :)
