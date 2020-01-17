@@ -10,7 +10,6 @@
   },
   "homepage": "https://github.com/KaiHotz/react-rollup-boilerplate",
   "main": "dist/index.js",
-  "proxy": "http://localhost:6060",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
