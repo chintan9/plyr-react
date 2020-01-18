@@ -62,7 +62,7 @@ For smoother development some Babel plugin are included
 ##### Styling your components
 
 `SCSS` and `CSS` are supported out of the box just import your styles into your
-component like you normaly would do. For the use of `CSS Modules` refere to
+component like you normally would do. For the use of `CSS Modules` refer to
 [rollup-plugin-postcss](https://github.com/egoist/rollup-plugin-postcss)
 
 ##### Testing
@@ -102,7 +102,7 @@ or (for for automatic fixing if possible)
 
 To release your library to NPM or your private Registry, make sure you have an
 active account at [NPM](https://www.npmjs.com/), your `.npmrc` file is correctly
-setup and the repository url in `package.json` file is set to your repoitory
+setup and the repository url in `package.json` file is set to your repository
 url, then:
 
 ```
@@ -111,12 +111,12 @@ url, then:
 
 ##### Styleguide
 
-For custom layouts, styleing and more information about the Styleguide please
+For custom layouts, styling and more information about the Styleguide please
 refer to [React Styleguidist](https://react-styleguidist.js.org/) documentation.
 
 ##### Deploy the Styleguide to GitHub Pages
 
-Make sure the repository url in `package.json` file is set to your repoitory
+Make sure the repository url in `package.json` file is set to your repository
 url, then:
 
 ```
@@ -125,10 +125,10 @@ url, then:
 
 ##### Scripts
 
-- `npm run dev` : Executes the develop mode, running watcher and the Stylguide,
+- `npm run dev` : Executes the develop mode, running watcher and the Styleguide,
   rebuilding your library on every change.
 - `npm run start` : Only serves the Styleguide.
-- `npm run build` : Builds your library (build can be faound in `dist` folder).
+- `npm run build` : Builds your library (build can be found in `dist` folder).
 - `npm run styleguide:build` : Builds the static Styleguide in case you want to
   deploy it.
 - `npm run test` : Runs the tests.
