@@ -9,13 +9,4 @@ describe('<PlyrComponent />', () => {
 
     expect(wrapper).toBeDefined()
   })
-
-  it('should allow custom className', () => {
-    const props = {
-      className: 'Custom',
-    }
-    const wrapper = shallow(<PlyrComponent {...props} />)
-
-    expect(wrapper.hasClass(props.className)).toBe(true)
-  })
 })
