@@ -45,7 +45,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
-    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "@rollup/plugin-url": "^4.0.0",
     "@svgr/rollup": "^5.0.1",
     "@testing-library/dom": "^6.10.1",
