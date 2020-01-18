@@ -7,7 +7,7 @@ Click
 to see example and you can play with
 [this](https://stackblitz.com/edit/react-uq98gq) example.
 
-## Contribute 
+## Contribute
 
 [![Join the package community on Pika](https://img.shields.io/badge/Pika%20Community-Ask%20questions,%20get%20answers-blue?style=flag-square)](https://www.pika.dev/npm/plyr-react)
 [![BCH compliance](https://bettercodehub.com/edge/badge/chintan9/plyr-react?branch=master)](https://bettercodehub.com/)
