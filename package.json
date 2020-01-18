@@ -2,7 +2,7 @@
   "name": "plyr-react",
   "version": "2.2.0",
   "description": "Boilerplate for writing React Libraries bundled with Rollup.js to commonJs and ES6 Modules and React Styleguidist",
-  "author": "Kai Hotz",
+  "author": "Chintan Prajapati",
   "license": "MIT",
   "repository": {
     "type": "git",
