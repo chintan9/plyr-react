@@ -47,7 +47,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@rollup/plugin-node-resolve": "^6.0.0",
     "@rollup/plugin-url": "^4.0.0",
-    "@svgr/rollup": "^4.3.3",
+    "@svgr/rollup": "^5.0.1",
     "@testing-library/dom": "^6.10.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.3",
