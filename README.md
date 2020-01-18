@@ -4,7 +4,7 @@
 
 Click
 [here](https://stackblitz.com/edit/react-uq98gq?ctl=1&embed=1&file=index.js&hideExplorer=1&hideNavigation=1&view=preview)
-to see example andyou can play with
+to see example and you can play with
 [this](https://stackblitz.com/edit/react-uq98gq) example.
 
 ### Getting started for Development
