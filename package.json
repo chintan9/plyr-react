@@ -1,7 +1,7 @@
 {
   "name": "plyr-react",
   "version": "2.2.0",
-  "description": "Boilerplate for writing React Libraries bundled with Rollup.js to commonJs and ES6 Modules and React Styleguidist",
+  "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
   "author": "Chintan Prajapati",
   "license": "MIT",
   "repository": {
