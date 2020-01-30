@@ -74,7 +74,7 @@
     "eslint-watch": "^6.0.1",
     "gh-pages": "^2.1.1",
     "jasmine-expect": "^4.0.3",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "jest-environment-jsdom-fourteen": "^1.0.1",
     "jest-pnp-resolver": "^1.2.1",
     "jest-resolve": "^24.9.0",
