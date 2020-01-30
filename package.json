@@ -87,7 +87,7 @@
     "react-dom": "^16.12.0",
     "react-styleguidist": "^10.3.2",
     "react-test-renderer": "^16.12.0",
-    "rollup": "^1.27.11",
+    "rollup": "^1.30.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
