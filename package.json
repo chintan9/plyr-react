@@ -58,7 +58,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-named-asset-import": "^0.3.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babel-preset-react-app": "^9.1.0",
+    "babel-preset-react-app": "^9.1.1",
     "cross-env": "^7.0.0",
     "css-loader": "^3.3.0",
     "enzyme": "^3.10.0",
