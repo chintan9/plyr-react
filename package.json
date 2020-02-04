@@ -46,7 +46,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "@rollup/plugin-url": "^4.0.0",
+    "@rollup/plugin-url": "^4.0.2",
     "@svgr/rollup": "^5.0.1",
     "@testing-library/dom": "^6.12.2",
     "@testing-library/jest-dom": "^5.1.1",
