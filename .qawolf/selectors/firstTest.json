@@ -1,0 +1,69 @@
+[
+ {
+  "index": 0,
+  "html": {
+   "ancestors": [],
+   "node": "<html/>"
+  }
+ },
+ {
+  "index": 1,
+  "html": {
+   "ancestors": [
+    "<div class=\"plyr__controls\"></div>",
+    "<div tabindex=\"0\" class=\"plyr plyr--full-ui plyr--video plyr--html5 plyr--paused plyr--stopped plyr--pip-supported plyr--fullscreen-enabled\"></div>"
+   ],
+   "node": "<button class=\"plyr__controls__item plyr__control\" type=\"button\" data-plyr=\"play\" aria-label=\"Play\" innertext=\"Play\"><svg class=\"icon--pressed\" role=\"presentation\" focusable=\"false\"><use xmlns:ns1=\"http://www.w3.org/1999/xlink\" ns1:href=\"#plyr-pause\"/></svg><svg class=\"icon--not-pressed\" role=\"presentation\" focusable=\"false\"><use xmlns:ns2=\"http://www.w3.org/1999/xlink\" ns2:href=\"#plyr-play\"/></svg><span class=\"label--pressed plyr__sr-only\">Pause</span><span class=\"label--not-pressed plyr__sr-only\">Play</span></button>"
+  }
+ },
+ {
+  "index": 2,
+  "html": {
+   "ancestors": [
+    "<div class=\"plyr__controls__item plyr__menu\"></div>",
+    "<div class=\"plyr__controls\"></div>"
+   ],
+   "node": "<button aria-haspopup=\"true\" aria-controls=\"plyr-settings-6945\" aria-expanded=\"false\" type=\"button\" class=\"plyr__control\" data-plyr=\"settings\" innertext=\"Settings\"><svg role=\"presentation\" focusable=\"false\"><use xmlns:ns1=\"http://www.w3.org/1999/xlink\" ns1:href=\"#plyr-settings\"/></svg><span class=\"plyr__sr-only\">Settings</span></button>"
+  }
+ },
+ {
+  "index": 3,
+  "html": {
+   "ancestors": [
+    "<div role=\"menu\"></div>",
+    "<div id=\"plyr-settings-6945-home\"></div>"
+   ],
+   "node": "<button data-plyr=\"settings\" type=\"button\" class=\"plyr__control plyr__control--forward\" role=\"menuitem\" aria-haspopup=\"true\" innertext=\"Speed Normal\"><span>Speed<span class=\"plyr__menu__value\">Normal</span></span></button>"
+  }
+ },
+ {
+  "index": 4,
+  "html": {
+   "ancestors": [
+    "<div class=\"plyr__controls__item plyr__menu\"></div>",
+    "<div class=\"plyr__controls\"></div>"
+   ],
+   "node": "<button aria-haspopup=\"true\" aria-controls=\"plyr-settings-6945\" aria-expanded=\"true\" type=\"button\" class=\"plyr__control\" data-plyr=\"settings\" innertext=\"Settings\"><svg role=\"presentation\" focusable=\"false\"><use xmlns:ns1=\"http://www.w3.org/1999/xlink\" ns1:href=\"#plyr-settings\"/></svg><span class=\"plyr__sr-only\">Settings</span></button>"
+  }
+ },
+ {
+  "index": 5,
+  "html": {
+   "ancestors": [
+    "<div class=\"plyr__controls\"></div>",
+    "<div tabindex=\"0\" class=\"plyr plyr--full-ui plyr--video plyr--html5 plyr--pip-supported plyr--fullscreen-enabled plyr--playing plyr--loading\"></div>"
+   ],
+   "node": "<button class=\"plyr__controls__item plyr__control\" type=\"button\" data-plyr=\"fullscreen\" innertext=\"Enter fullscreen\"><svg class=\"icon--pressed\" role=\"presentation\" focusable=\"false\"><use xmlns:ns1=\"http://www.w3.org/1999/xlink\" ns1:href=\"#plyr-exit-fullscreen\"/></svg><svg class=\"icon--not-pressed\" role=\"presentation\" focusable=\"false\"><use xmlns:ns2=\"http://www.w3.org/1999/xlink\" ns2:href=\"#plyr-enter-fullscreen\"/></svg><span class=\"label--pressed plyr__sr-only\">Exit fullscreen</span><span class=\"label--not-pressed plyr__sr-only\">Enter fullscreen</span></button>"
+  }
+ },
+ {
+  "index": 6,
+  "html": {
+   "ancestors": [
+    "<div class=\"plyr__controls\"></div>",
+    "<div tabindex=\"0\" class=\"plyr plyr--full-ui plyr--video plyr--html5 plyr--pip-supported plyr--fullscreen-enabled plyr--playing plyr--loading\"></div>"
+   ],
+   "node": "<button class=\"plyr__controls__item plyr__control plyr__control--pressed\" type=\"button\" data-plyr=\"fullscreen\" innertext=\"Exit fullscreen\"><svg class=\"icon--pressed\" role=\"presentation\" focusable=\"false\"><use xmlns:ns1=\"http://www.w3.org/1999/xlink\" ns1:href=\"#plyr-exit-fullscreen\"/></svg><svg class=\"icon--not-pressed\" role=\"presentation\" focusable=\"false\"><use xmlns:ns2=\"http://www.w3.org/1999/xlink\" ns2:href=\"#plyr-enter-fullscreen\"/></svg><span class=\"label--pressed plyr__sr-only\">Exit fullscreen</span><span class=\"label--not-pressed plyr__sr-only\">Enter fullscreen</span></button>"
+  }
+ }
+]
