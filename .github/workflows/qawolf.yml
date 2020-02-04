@@ -23,12 +23,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm install
+      - run: npm install && npm run predeploy && cd styleguide
 
       # - name: Start local server
       #   run: npm run start & npx wait-on http://localhost:3000
 
-      - run: npx qawolf test
+      - run: npx serve && npx qawolf test
         env:
           QAW_ARTIFACT_PATH: ${{ github.workspace }}/artifacts
         #   # configure tests with environment variables
