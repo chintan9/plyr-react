@@ -5,7 +5,7 @@ describe('firstTest', () => {
   let browser;
 
   beforeAll(async () => {
-     browser = await launch({ url: "http://localhost:6060/" });
+     browser = await launch({ url: "https://tiresome-position.surge.sh/" });
   });
 
   afterAll(() => browser.close());
