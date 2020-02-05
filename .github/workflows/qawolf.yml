@@ -25,8 +25,11 @@ jobs:
 
       - run: npm install 
 
-      - name: Start local server
-        run: npm run predeploy && cd styleguide && npx wait-on http://localhost:6060
+      - name: publish to surge 
+        run: npm run predeploy && cd styleguide
+
+      - run: npm install -g surge
+      - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
 
       - run: npx qawolf test
         env:
