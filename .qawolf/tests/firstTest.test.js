@@ -5,7 +5,7 @@ describe('firstTest', () => {
   let browser;
 
   beforeAll(async () => {
-     browser = await launch({ url: "https://tiresome-position.surge.sh/" });
+     browser = await launch({ url: "https://hopeful-torvalds-931ac1.netlify.com/" });
   });
 
   afterAll(() => browser.close());
