@@ -5,7 +5,7 @@ describe('firstTest', () => {
   let browser;
 
   beforeAll(async () => {
-    browser = await launch({ url: "https://chintan9.github.io/plyr-react/" });
+     browser = await launch({ url: "http://localhost:6060/" });
   });
 
   afterAll(() => browser.close());
