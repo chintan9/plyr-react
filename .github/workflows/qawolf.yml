@@ -24,7 +24,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm install 
-      - run: npm run predeploy && ls && cd styleguide && ls
+      - run: npm run predeploy && cd styleguide && ls
       - run: npm install -g surge
       - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
 
