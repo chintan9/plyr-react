@@ -12,7 +12,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm install -g surge
       - run: npm install 
-      - run: npm run predeploy && cd styleguide
-      - run: surge ./home/runner/work/plyr-react/plyr-react/styleguide ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+      - run: npm run predeploy && cd styleguide && ls
+      - run: npm install -g surge
+      - run: surge . ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
