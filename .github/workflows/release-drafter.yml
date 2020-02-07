@@ -16,3 +16,6 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: ChangeCast
+        uses: palmerhq/changecast@v1.0.0
