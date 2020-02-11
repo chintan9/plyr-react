@@ -33,7 +33,7 @@
     "deploy": "gh-pages -d styleguide"
   },
   "dependencies": {
-    "plyr": "^3.5.6"
+    "plyr": "^3.5.8"
   },
   "peerDependencies": {
     "react": "^16.12.0",
