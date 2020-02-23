@@ -20,5 +20,3 @@ jobs:
       - name: ChangeCast
         uses: palmerhq/changecast@v1.0.0
         
-      - name: wiki-page-creator-action
-        uses: Decathlon/wiki-page-creator-action@v2.0.0
