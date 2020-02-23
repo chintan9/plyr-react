@@ -17,10 +17,10 @@
     "npm": ">=5"
   },
   "scripts": {
-    "dev": "NODE_ENV=development BABEL_ENV=development run-p build:watch start",
-    "start": "NODE_ENV=development BABEL_ENV=development styleguidist server --open",
-    "styleguide:build": "NODE_ENV=production BABEL_ENV=production styleguidist build",
-    "build": "NODE_ENV=production BABEL_ENV=production rollup -c",
+    "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
+    "start": "cross-env NODE_ENV=development BABEL_ENV=development styleguidist server --open",
+    "styleguide:build": "cross-env NODE_ENV=production BABEL_ENV=production styleguidist build",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c",
     "build:watch": "rollup -c -w",
     "test": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",

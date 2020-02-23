@@ -12,6 +12,13 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          # chromium dependencies
+          sudo apt-get install libgbm1
+          # webkit dependencies
+          sudo apt-get install libwoff1 libopus0 libwebp6 libwebpdemux2 libenchant1c2a libgudev-1.0-0 libsecret-1-0 libhyphen0 libgdk-pixbuf2.0-0 libegl1 libgles2 libevent-2.1-6 libnotify4 libxslt1.1
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v1
@@ -23,13 +30,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm install 
+      - run: npm install
+
+      # - name: Start local server
+      #   run: npm run start & npx wait-on http://localhost:3000
 
       - run: npx qawolf test
         env:
           QAW_ARTIFACT_PATH: ${{ github.workspace }}/artifacts
         #   # configure tests with environment variables
-        #   # https://docs.qawolf.com/docs/configuration
         #   QAW_SLEEP_MS: 0
         #   # you can also use GitHub secrets for environment variables
         #   # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets
