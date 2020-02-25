@@ -1,5 +1,18 @@
 # plyr-react
 
+## Installation
+
+This plugin requires minimum **Node.js with npm or yarn**.
+
+
+```sh
+# with npm
+npm i plyr-react
+
+# with yarn
+yarn add plyr-react
+```
+
 ## Example
 
 Click
