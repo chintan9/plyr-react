@@ -48,7 +48,7 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-url": "^4.0.2",
     "@svgr/rollup": "^5.0.1",
-    "@testing-library/dom": "^6.12.2",
+    "@testing-library/dom": "^7.0.2",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.3.3",
     "@testing-library/user-event": "^10.0.0",
