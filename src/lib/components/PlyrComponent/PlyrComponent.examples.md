@@ -1,6 +1,6 @@
 PlyrComponent examples:
 
-###### PlyrComponent
+###### PlyrComponent Default
 ```js
 import { PlyrComponent } from 'plyr-react';
 
