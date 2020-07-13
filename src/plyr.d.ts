@@ -174,6 +174,14 @@ declare module 'plyr' {
     prototype: Storage
   }
   export interface Options {
+    source: {
+      type: 'video' | 'audio'
+      sources: Array<{
+        src: string
+        type?: string
+        provider?: string
+      }>
+    }
     enabled?: boolean
     html?: string
     controls?: string[]
