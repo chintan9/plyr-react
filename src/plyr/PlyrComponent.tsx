@@ -4,7 +4,7 @@ import React, { useEffect, HTMLAttributes } from 'react'
 import PlyrLib, { Options, SourceInfo } from 'plyr'
 
 export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
-  source: SourceInfo
+  source?: SourceInfo
   options?: Options
 }
 
