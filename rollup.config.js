@@ -6,19 +6,20 @@ import resolve from '@rollup/plugin-node-resolve'
 import url from '@rollup/plugin-url'
 import svgr from '@svgr/rollup'
 import typescript from '@rollup/plugin-typescript'
+import pkg from './package.json'
 
 export default {
   input: 'src/index.ts',
   output: [
     {
-      dir: 'dist',
+      // dir: 'dist',
+      file: pkg.main,
       format: 'cjs',
-      sourcemap: true,
     },
     {
-      dir: 'dist',
+      // dir: 'dist',
+      file: pkg.module,
       format: 'es',
-      sourcemap: true,
     },
   ],
   plugins: [
@@ -33,25 +34,10 @@ export default {
     url(),
     svgr(),
     resolve(),
-    typescript({
-      declaration: true,
-      outDir: 'dist',
-    }),
-    // babel({
-    //   presets: [
-    //     'react-app',
-    //   ],
-    //   plugins: [
-    //     '@babel/plugin-proposal-object-rest-spread',
-    //     '@babel/plugin-proposal-optional-chaining',
-    //     '@babel/plugin-syntax-dynamic-import',
-    //     '@babel/plugin-proposal-class-properties',
-    //     'transform-react-remove-prop-types',
-    //   ],
-    //   exclude: 'node_modules/**',
-    //   runtimeHelpers: true,
-    // }),
-    // commonjs(),
-    // terser(),
+    typescript(),
+  ],
+  external: [
+    ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkg.peerDependencies || {}),
   ],
 }
