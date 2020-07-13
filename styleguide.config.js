@@ -4,7 +4,7 @@ const webpackConfig = require('./config/webpack.js')
 
 module.exports = {
   title: `${pkg.name} v${pkg.version}`,
-  components: 'src/lib/components/**/[A-Z]*.js',
+  components: 'src/**/[A-Z]*.js',
   moduleAliases: {
     [pkg.name]: path.resolve(__dirname, 'src/lib'),
   },
@@ -25,7 +25,8 @@ module.exports = {
   styles: {
     Ribbon: {
       root: {
-        backgroundImage: 'url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")',
+        backgroundImage:
+          'url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")',
         backgroundSize: '50px 50px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'right top',

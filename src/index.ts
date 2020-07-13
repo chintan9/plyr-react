@@ -1,1 +1,1 @@
-export { default } from './plyr/PlyrComponent'
+export { default } from './PlyrComponent'

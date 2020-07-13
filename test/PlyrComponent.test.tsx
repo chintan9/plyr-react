@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import PlyrComponent from './PlyrComponent'
+import PlyrComponent from '../src/PlyrComponent'
 
 describe('<PlyrComponent />', () => {
   it('should render', () => {

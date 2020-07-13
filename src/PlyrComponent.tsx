@@ -1,8 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 import React, { useEffect, HTMLAttributes } from 'react'
-/// <reference path="../plyrlib.d.ts" />
-import PlyrLib, { Options, SourceInfo } from 'plyr'
-
+import PlyrLib, { SourceInfo, Options } from 'plyr'
 export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
   source?: SourceInfo
   options?: Options
@@ -21,7 +19,7 @@ export const Plyr: React.SFC<PlyrProps> = (props) => {
 
   if (typeof window === 'undefined') return null
 
-  return <video className="plyr-react plyr" {...rest}></video>
+  return <video className="plyr-react plyr" {...rest} />
 }
 
 export default Plyr
