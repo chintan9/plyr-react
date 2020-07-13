@@ -175,32 +175,31 @@ declare module 'plyr' {
     prototype: Storage
   }
   export interface Options {
-    source: SourceInfo
-    enabled?: boolean
-    html?: string
-    controls?: string[]
-    il8n?: il8n
-    loadSprite?: boolean
-    iconUrl?: string
-    iconPrefix?: string
-    debug?: boolean
     autoplay?: boolean
-    seekTime?: number
-    volume?: number
-    clickToPlay?: boolean
-    disableContextMenu?: boolean
-    hideControls?: boolean
-    showPosterOnEnd?: boolean
-    keyboardShortcuts?: KeyboardShortcuts
-    tooltips?: Tooltips
-    duration?: number | null
-    displayDuration?: boolean
-    selectors?: Object
-    listeners?: Object
-    classes?: Object
     captions?: Captions
+    classes?: Object
+    clickToPlay?: boolean
+    controls?: string[]
+    debug?: boolean
+    disableContextMenu?: boolean
+    displayDuration?: boolean
+    duration?: number | null
+    enabled?: boolean
     fullscreen?: FullScreenOptions
+    hideControls?: boolean
+    html?: string
+    iconPrefix?: string
+    iconUrl?: string
+    il8n?: il8n
+    keyboardShortcuts?: KeyboardShortcuts
+    listeners?: Object
+    loadSprite?: boolean
+    seekTime?: number
+    selectors?: Object
+    showPosterOnEnd?: boolean
     storage?: Storage
+    tooltips?: Tooltips
+    volume?: number
   }
   var Options: {
     prototype: Options

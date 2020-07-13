@@ -1,24 +1,27 @@
 /* eslint-disable react/self-closing-comp */
 import React, { useEffect, HTMLAttributes } from 'react'
 /// <reference path="../plyrlib.d.ts" />
-import PlyrLib, { Options } from 'plyr'
+import PlyrLib, { Options, SourceInfo } from 'plyr'
 
-export type PlyrProps = HTMLAttributes<HTMLDivElement> & {
+export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
+  source: SourceInfo
   options?: Options
 }
 
 export const Plyr: React.SFC<PlyrProps> = (props) => {
-  const { options = null } = props
+  const { options = null, source, ...rest } = props
   let player: PlyrLib
   useEffect(() => {
     player = new PlyrLib('.plyr-react', (options as any) ?? {})
-    player.source = options?.source as any
+    if (source) {
+      player.source = source
+    }
     return () => player?.destroy()
   })
 
-  if (typeof window === 'undefined') return <></>
+  if (typeof window === 'undefined') return null
 
-  return <video className="plyr-react plyr"></video>
+  return <video className="plyr-react plyr" {...rest}></video>
 }
 
 export default Plyr
