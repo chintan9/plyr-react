@@ -7,20 +7,16 @@ import url from '@rollup/plugin-url'
 import svgr from '@svgr/rollup'
 import typescript from '@rollup/plugin-typescript'
 
-// import { terser } from 'rollup-plugin-terser'
-
-import pkg from './package.json'
-
 export default {
   input: 'src/index.ts',
   output: [
     {
-      file: pkg.main,
+      dir: 'dist',
       format: 'cjs',
       sourcemap: true,
     },
     {
-      file: pkg.module,
+      dir: 'dist',
       format: 'es',
       sourcemap: true,
     },
@@ -37,7 +33,10 @@ export default {
     url(),
     svgr(),
     resolve(),
-    typescript(),
+    typescript({
+      declaration: true,
+      outDir: 'dist',
+    }),
     // babel({
     //   presets: [
     //     'react-app',

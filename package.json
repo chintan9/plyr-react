@@ -8,6 +8,7 @@
     "type": "git",
     "url": "git@github.com:chintan9/plyr-react.git"
   },
+  "types": "dist/src/index.d.ts",
   "homepage": "https://chintan9.github.io/plyr-react/",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
