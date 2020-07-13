@@ -11,7 +11,8 @@ export const Plyr: React.SFC<PlyrProps> = (props) => {
   const { options = null } = props
   let player: PlyrLib
   useEffect(() => {
-    player = new PlyrLib('.plyr-react', options ?? {})
+    player = new PlyrLib('.plyr-react', (options as any) ?? {})
+    player.source = options?.source as any
     return () => player?.destroy()
   })
 

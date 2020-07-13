@@ -118,8 +118,9 @@ declare module 'plyr' {
     support(mimeType: string): boolean
     poster(url: string): void
     destroy(): void
-    source(): string
-    source(source: SourceInfo): void
+    source: SourceInfo
+    // source(): string
+    // source(source: SourceInfo): void
   }
   interface il8n {
     restart?: string
@@ -174,14 +175,7 @@ declare module 'plyr' {
     prototype: Storage
   }
   export interface Options {
-    source: {
-      type: 'video' | 'audio'
-      sources: Array<{
-        src: string
-        type?: string
-        provider?: string
-      }>
-    }
+    source: SourceInfo
     enabled?: boolean
     html?: string
     controls?: string[]
@@ -229,7 +223,7 @@ declare module 'plyr' {
     prototype: Track
   }
   interface SourceInfo {
-    type: string
+    type: 'video' | 'audio' | string
     title?: string
     sources: Source[]
     poster?: string
