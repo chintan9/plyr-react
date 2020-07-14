@@ -2,6 +2,7 @@
 import React, { useEffect, HTMLAttributes } from 'react'
 import PropTypes, { object } from 'prop-types'
 import PlyrLib, { SourceInfo, Options } from 'plyr'
+
 export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
   source?: SourceInfo
   options?: Options
@@ -20,6 +21,7 @@ export const Plyr: React.SFC<PlyrProps> = (props) => {
 
   return <video className="plyr-react plyr" {...rest} />
 }
+
 Plyr.defaultProps = {
   options: {
     controls: [
