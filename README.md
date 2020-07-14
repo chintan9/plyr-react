@@ -4,13 +4,36 @@
 
 This plugin requires minimum **Node.js with npm or yarn**.
 
-
 ```sh
 # with npm
-npm i plyr-react
+npm i plyr-react plyr
 
 # with yarn
-yarn add plyr-react
+yarn add plyr-react plyr
+```
+
+## Usage
+
+```tsx
+import Plyr from 'plyr-react'
+import 'plyr/dist/plyr.css'
+
+export default function App() {
+  return (
+    <Plyr
+      source={
+        {
+          /* ... */
+        }
+      }
+      options={
+        {
+          /* ... */
+        }
+      }
+    />
+  )
+}
 ```
 
 ## Example
@@ -26,7 +49,6 @@ to see example and you can play with
 [![Join the package community on Pika](https://img.shields.io/badge/Pika%20Community-Ask%20questions,%20get%20answers-blue?style=flag-square)](https://www.pika.dev/npm/plyr-react)
 [![BCH compliance](https://bettercodehub.com/edge/badge/chintan9/plyr-react?branch=master)](https://bettercodehub.com/)
 [![Size](https://badgen.net/bundlephobia/minzip/plyr-react)](https://badgen.net/#bundlephobia)
-
 
 ### Getting started for Development
 
