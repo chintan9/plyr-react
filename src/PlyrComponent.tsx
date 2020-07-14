@@ -85,8 +85,7 @@ Plyr.defaultProps = {
 
 Plyr.propTypes = {
   options: PropTypes.object,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  source: PropTypes.oneOfType([object, null as any, undefined]),
+  source: PropTypes.any,
 }
 
 export default Plyr
