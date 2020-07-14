@@ -24,3 +24,5 @@ excluded_words:
   - Plyr
   - npmrc
   - plyr
+  - esw
+  - seektime
