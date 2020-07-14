@@ -16,7 +16,7 @@ export const Plyr: React.SFC<PlyrProps> = (props) => {
       player.source = source
     }
     return () => player?.destroy()
-  })
+  }, [source])
 
   return <video className="plyr-react plyr" {...rest} />
 }
