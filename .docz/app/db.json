@@ -285,22 +285,27 @@
       }
     },
     {
-      "key": "src/plyr/PlyComponent.examples.md",
+      "key": "src/index.mdx",
       "value": {
-        "id": "4e37d1d9c7e2a5277fdbda5dcefd3fe5",
-        "filepath": "src/plyr/PlyComponent.examples.md",
-        "fullpath": "/workspace/plyr-react/src/plyr/PlyComponent.examples.md",
-        "link": "https://github.com/chintan9/plyr-react/edit/master/src/plyr/PlyComponent.examples.md",
+        "name": "Getting Started",
+        "route": "/",
+        "id": "6576455a124f9aaefd860597f03a8fe4",
+        "filepath": "src/index.mdx",
+        "fullpath": "/workspace/plyr-react/src/index.mdx",
+        "link": "https://github.com/chintan9/plyr-react/edit/master/src/index.mdx",
         "hidden": false,
-        "slug": "src-plyr-ply-component-examples",
-        "route": "/src-plyr-ply-component-examples",
-        "name": "Ply component.examples",
+        "slug": "src-index",
         "menu": "",
         "headings": [
           {
-            "slug": "plyrcomponent-default",
-            "depth": 6,
-            "value": "PlyrComponent Default"
+            "slug": "getting-started",
+            "depth": 1,
+            "value": "Getting Started"
+          },
+          {
+            "slug": "full-example",
+            "depth": 2,
+            "value": "Full Example"
           }
         ]
       }
