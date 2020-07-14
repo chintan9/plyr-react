@@ -1,6 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 import React, { useEffect, HTMLAttributes } from 'react'
-import PropTypes, { object } from 'prop-types'
+import PropTypes from 'prop-types'
 import PlyrLib, { SourceInfo, Options } from 'plyr'
 
 export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
