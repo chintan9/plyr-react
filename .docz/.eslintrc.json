@@ -1,0 +1,97 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended"
+  ],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "16.6.3"
+    },
+    "propWrapperFunctions": [
+      "forbidExtraProps"
+    ]
+  },
+  "plugins": [
+    "jest",
+    "react",
+    "flowtype",
+    "react-hooks"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 7,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "jasmine": true,
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "semi": [
+      2,
+      "never"
+    ],
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "radix": 0,
+    "max-len": 0,
+    "no-shadow": 0,
+    "global-require": 0,
+    "no-return-assign": [
+      "error",
+      "always"
+    ],
+    "react/jsx-props-no-spreading": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "newline-before-return": "error",
+    "react/no-danger": 0,
+    "import/extensions": 0,
+    "no-nested-ternary": 0,
+    "import/no-unresolved": 0,
+    "react/forbid-prop-types": 0,
+    "no-template-curly-in-string": 0,
+    "react/jsx-filename-extension": 0,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "consistent-return": 0,
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0,
+    "react/destructuring-assignment": 0,
+    "linebreak-style": 0,
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxBOF": 1
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "to",
+          "hash"
+        ],
+        "aspects": [
+          "noHref"
+        ]
+      }
+    ]
+  }
+}

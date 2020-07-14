@@ -1,0 +1,322 @@
+{
+  "config": {
+    "title": "Plyr React",
+    "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
+    "menu": [],
+    "version": "3.0.0",
+    "repository": "https://github.com/chintan9/plyr-react",
+    "native": false,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "CODE_OF_CONDUCT.md",
+      "value": {
+        "id": "a1ee87dafebc22cbd96979f1b2b7e837",
+        "filepath": "CODE_OF_CONDUCT.md",
+        "fullpath": "/workspace/plyr-react/CODE_OF_CONDUCT.md",
+        "link": "https://github.com/chintan9/plyr-react/edit/master/CODE_OF_CONDUCT.md",
+        "hidden": false,
+        "slug": "code-of-conduct",
+        "route": "/code-of-conduct",
+        "name": "Code of conduct",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "contributor-covenant-code-of-conduct",
+            "depth": 1,
+            "value": "Contributor Covenant Code of Conduct"
+          },
+          {
+            "slug": "our-pledge",
+            "depth": 2,
+            "value": "Our Pledge"
+          },
+          {
+            "slug": "our-standards",
+            "depth": 2,
+            "value": "Our Standards"
+          },
+          {
+            "slug": "our-responsibilities",
+            "depth": 2,
+            "value": "Our Responsibilities"
+          },
+          {
+            "slug": "scope",
+            "depth": 2,
+            "value": "Scope"
+          },
+          {
+            "slug": "enforcement",
+            "depth": 2,
+            "value": "Enforcement"
+          },
+          {
+            "slug": "attribution",
+            "depth": 2,
+            "value": "Attribution"
+          }
+        ]
+      }
+    },
+    {
+      "key": "CONTRIBUTING.md",
+      "value": {
+        "id": "6a3371457528722a734f3c51d9238c13",
+        "filepath": "CONTRIBUTING.md",
+        "fullpath": "/workspace/plyr-react/CONTRIBUTING.md",
+        "link": "https://github.com/chintan9/plyr-react/edit/master/CONTRIBUTING.md",
+        "hidden": false,
+        "slug": "contributing",
+        "route": "/contributing",
+        "name": "Contributing",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "contributing",
+            "depth": 1,
+            "value": "Contributing"
+          },
+          {
+            "slug": "pull-request-process",
+            "depth": 2,
+            "value": "Pull Request Process"
+          },
+          {
+            "slug": "code-of-conduct",
+            "depth": 2,
+            "value": "Code of Conduct"
+          },
+          {
+            "slug": "our-pledge",
+            "depth": 3,
+            "value": "Our Pledge"
+          },
+          {
+            "slug": "our-standards",
+            "depth": 3,
+            "value": "Our Standards"
+          },
+          {
+            "slug": "our-responsibilities",
+            "depth": 3,
+            "value": "Our Responsibilities"
+          },
+          {
+            "slug": "scope",
+            "depth": 3,
+            "value": "Scope"
+          },
+          {
+            "slug": "enforcement",
+            "depth": 3,
+            "value": "Enforcement"
+          },
+          {
+            "slug": "attribution",
+            "depth": 3,
+            "value": "Attribution"
+          }
+        ]
+      }
+    },
+    {
+      "key": "README.md",
+      "value": {
+        "id": "04c6e90faac2675aa89e2176d2eec7d8",
+        "filepath": "README.md",
+        "fullpath": "/workspace/plyr-react/README.md",
+        "link": "https://github.com/chintan9/plyr-react/edit/master/README.md",
+        "hidden": false,
+        "slug": "readme",
+        "route": "/readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "plyr-react",
+            "depth": 1,
+            "value": "plyr-react"
+          },
+          {
+            "slug": "installation",
+            "depth": 2,
+            "value": "Installation"
+          },
+          {
+            "slug": "example",
+            "depth": 2,
+            "value": "Example"
+          },
+          {
+            "slug": "contribute",
+            "depth": 2,
+            "value": "Contribute"
+          },
+          {
+            "slug": "getting-started-for-development",
+            "depth": 3,
+            "value": "Getting started for Development"
+          },
+          {
+            "slug": "familiar-with-git",
+            "depth": 4,
+            "value": "Familiar with Git?"
+          },
+          {
+            "slug": "not-familiar-with-git",
+            "depth": 4,
+            "value": "Not Familiar with Git?"
+          },
+          {
+            "slug": "developing",
+            "depth": 4,
+            "value": "Developing"
+          },
+          {
+            "slug": "proposals-babel",
+            "depth": 5,
+            "value": "Proposals (Babel)"
+          },
+          {
+            "slug": "styling-your-components",
+            "depth": 5,
+            "value": "Styling your components"
+          },
+          {
+            "slug": "testing",
+            "depth": 5,
+            "value": "Testing"
+          },
+          {
+            "slug": "linting",
+            "depth": 5,
+            "value": "Linting"
+          },
+          {
+            "slug": "publishing-your-library-to-npm",
+            "depth": 5,
+            "value": "Publishing your library to NPM"
+          },
+          {
+            "slug": "styleguide",
+            "depth": 5,
+            "value": "Styleguide"
+          },
+          {
+            "slug": "deploy-the-styleguide-to-github-pages",
+            "depth": 5,
+            "value": "Deploy the Styleguide to GitHub Pages"
+          },
+          {
+            "slug": "scripts",
+            "depth": 5,
+            "value": "Scripts"
+          },
+          {
+            "slug": "resources",
+            "depth": 3,
+            "value": "Resources"
+          },
+          {
+            "slug": "bundler",
+            "depth": 4,
+            "value": "Bundler"
+          },
+          {
+            "slug": "styleguide-1",
+            "depth": 4,
+            "value": "Styleguide"
+          },
+          {
+            "slug": "testing-1",
+            "depth": 4,
+            "value": "Testing"
+          },
+          {
+            "slug": "linting-1",
+            "depth": 4,
+            "value": "Linting"
+          },
+          {
+            "slug": "compiler",
+            "depth": 4,
+            "value": "Compiler"
+          },
+          {
+            "slug": "support",
+            "depth": 2,
+            "value": "Support"
+          }
+        ]
+      }
+    },
+    {
+      "key": "SECURITY.md",
+      "value": {
+        "id": "f1a97ccd40c28e5c0945852559d3903c",
+        "filepath": "SECURITY.md",
+        "fullpath": "/workspace/plyr-react/SECURITY.md",
+        "link": "https://github.com/chintan9/plyr-react/edit/master/SECURITY.md",
+        "hidden": false,
+        "slug": "security",
+        "route": "/security",
+        "name": "Security",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "security-policy",
+            "depth": 1,
+            "value": "Security Policy"
+          },
+          {
+            "slug": "supported-versions",
+            "depth": 2,
+            "value": "Supported Versions"
+          },
+          {
+            "slug": "reporting-a-vulnerability",
+            "depth": 2,
+            "value": "Reporting a Vulnerability"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/plyr/PlyComponent.examples.md",
+      "value": {
+        "id": "4e37d1d9c7e2a5277fdbda5dcefd3fe5",
+        "filepath": "src/plyr/PlyComponent.examples.md",
+        "fullpath": "/workspace/plyr-react/src/plyr/PlyComponent.examples.md",
+        "link": "https://github.com/chintan9/plyr-react/edit/master/src/plyr/PlyComponent.examples.md",
+        "hidden": false,
+        "slug": "src-plyr-ply-component-examples",
+        "route": "/src-plyr-ply-component-examples",
+        "name": "Ply component.examples",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "plyrcomponent-default",
+            "depth": 6,
+            "value": "PlyrComponent Default"
+          }
+        ]
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "dist/src/plyr/PlyrComponent.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Plyr",
+          "methods": [],
+          "actualName": "Plyr"
+        }
+      ]
+    }
+  ]
+}
