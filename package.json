@@ -1,6 +1,6 @@
 {
   "name": "plyr-react",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
   "author": "Chintan Prajapati",
   "license": "MIT",
@@ -18,8 +18,7 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
-    "start": "cross-env NODE_ENV=development BABEL_ENV=development styleguidist server --open",
-    "styleguide:build": "cross-env NODE_ENV=production BABEL_ENV=production styleguidist build",
+    "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c",
     "build:watch": "rollup -c -w",
     "test": "jest",
@@ -27,10 +26,14 @@
     "lint": "esw --ext .tsx --ext .ts --color",
     "lint:fix": "npm run lint --fix",
     "prepare": "npm run build",
+    
     "prerelease": "npm run build",
     "release": "npm publish",
-    "predeploy": "npm run styleguide:build",
-    "deploy": "gh-pages -d styleguide"
+    "predeploy": "npm run ",
+    "deploy": "gh-pages -d ",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "docz:serve": "docz build && docz serve"
   },
   "dependencies": {
     "plyr": "^3.6.2"
@@ -72,6 +75,7 @@
     "babel-preset-react-app": "^9.1.2",
     "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
+    "docz": "^2.3.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.4.0",
@@ -102,7 +106,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-docgen-typescript": "^1.18.0",
     "react-dom": "^16.13.1",
-    "react-styleguidist": "^11.0.8",
+    "react-error-overlay": "^6.0.7",
     "react-test-renderer": "^16.13.1",
     "rollup": "^2.21.0",
     "rollup-plugin-babel": "^4.4.0",
