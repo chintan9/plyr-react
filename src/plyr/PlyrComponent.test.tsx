@@ -9,4 +9,8 @@ describe('<PlyrComponent />', () => {
 
     expect(wrapper).toBeDefined()
   })
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> v3-master
