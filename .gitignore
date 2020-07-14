@@ -13,7 +13,6 @@ build
 web_modules/
 .parcel-cache
 out
-.docz/
 # yarn v2
 .yarn/cache
 .yarn/unplugged
