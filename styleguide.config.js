@@ -6,7 +6,7 @@ const webpackConfig = require('./config/webpack.js')
 
 module.exports = {
   title: `${pkg.name} v${pkg.version}`,
-  components: 'src/PlyrComponent.tsx',
+  components: 'src/Plyr.tsx',
   propsParser: require('react-docgen-typescript').withDefaultConfig().parse,
   moduleAliases: {
     [pkg.name]: path.resolve(__dirname, 'src'),

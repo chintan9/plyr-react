@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import PlyrComponent from '../src/PlyrComponent'
+import Plyr from '../src/Plyr'
 
-describe('<PlyrComponent />', () => {
+describe('<Plyr />', () => {
   it('should render', () => {
-    const wrapper = shallow(<PlyrComponent />)
+    const wrapper = shallow(<Plyr />)
 
     expect(wrapper).toBeDefined()
   })

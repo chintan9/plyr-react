@@ -86,7 +86,7 @@ Styleguide. To open the Styleguide manualy open your Browser and navigate to
 in `src/lib/components` folder and update the `src/lib/index.js` file
 accordingly. Always provide an `YourComponent.examples.md` file, so your
 component will show up in the Styleguide. You can refer to example
-`PlyrComponent` component, but i think you'll get the idea.
+`Plyr` component, but i think you'll get the idea.
 
 ##### Proposals (Babel)
 
@@ -107,7 +107,7 @@ component like you normally would do. For the use of `CSS Modules` refer to
 Testing is done with [Jest](https://facebook.github.io/jest/),
 [Enzyme](http://airbnb.io/enzyme/) and
 [Jasmine Matchers](https://github.com/JamieMason/Jasmine-Matchers) You can refer
-to `PlyrComponent.test.js` as an example.
+to `Plyr.test.js` as an example.
 
 ```
 > npm run test
