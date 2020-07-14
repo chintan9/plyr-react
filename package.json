@@ -50,7 +50,7 @@
     "@svgr/rollup": "^5.0.1",
     "@testing-library/dom": "^7.0.4",
     "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^9.3.3",
+    "@testing-library/react": "^10.4.6",
     "@testing-library/user-event": "^10.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
