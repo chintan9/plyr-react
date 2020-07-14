@@ -16,6 +16,7 @@ export const Plyr: React.SFC<PlyrProps> = (props) => {
     if (source) {
       player.source = source
     }
+
     return () => player?.destroy()
   }, [source])
 
