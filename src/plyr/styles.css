@@ -1,22 +1,23 @@
-.PlyrComponent {
+.plyr-react {
   position: relative;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   font-size: 28px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 20px;
   width: 200px;
   text-align: center;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
   transition-duration: 0.4s;
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.PlyrComponent:after {
-  content: "";
+.plyr-react:after {
+  content: '';
   background: #f1f1f1;
   display: block;
   position: absolute;
@@ -25,12 +26,12 @@
   margin-left: -20px !important;
   margin-top: -120%;
   opacity: 0;
-  transition: all 0.8s
+  transition: all 0.8s;
 }
 
-.PlyrComponent:active:after {
+.plyr-react:active:after {
   padding: 0;
   margin: 0;
   opacity: 1;
-  transition: 0s
+  transition: 0s;
 }
