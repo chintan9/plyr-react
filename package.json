@@ -8,11 +8,10 @@
     "type": "git",
     "url": "git@github.com:chintan9/plyr-react.git"
   },
-  "homepage": "https://chintan9.github.io/plyr-react/",
   "types": "dist/src/index.d.ts",
+  "homepage": "https://chintan9.github.io/plyr-react/",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -27,6 +26,7 @@
     "lint": "esw --ext .jsx --ext .js --color",
     "lint:fix": "npm run lint --fix",
     "prepare": "npm run build",
+    
     "prerelease": "npm run build",
     "release": "npm publish",
     "predeploy": "npm run ",
@@ -49,7 +49,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.10.4",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@rollup/plugin-node-resolve": "^8.4.0",
-    "@rollup/plugin-typescript": "^5.0.2",
+    "@rollup/plugin-typescript": "5.0.2",
     "@rollup/plugin-url": "^5.0.1",
     "@svgr/rollup": "^5.4.0",
     "@testing-library/dom": "^7.20.1",
