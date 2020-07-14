@@ -1,12 +1,15 @@
 const path = require('path')
+const glob = require('glob')
+const fs = require('fs')
 const pkg = require('./package.json')
 const webpackConfig = require('./config/webpack.js')
 
 module.exports = {
   title: `${pkg.name} v${pkg.version}`,
-  components: 'src/**/[A-Z]*.js',
+  components: 'src/PlyrComponent.tsx',
+  propsParser: require('react-docgen-typescript').withDefaultConfig().parse,
   moduleAliases: {
-    [pkg.name]: path.resolve(__dirname, 'src/lib'),
+    [pkg.name]: path.resolve(__dirname, 'src'),
   },
   ribbon: {
     url: 'https://github.com/chintan9/plyr-react.git',
@@ -54,11 +57,12 @@ module.exports = {
   },
   webpackConfig,
   getExampleFilename(componentPath) {
-    return componentPath.replace(/\.js?$/, '.examples.md')
+    console.log(componentPath)
+    return componentPath.replace(/\.(ts|js)x?$/, '.example.md')
   },
   getComponentPathLine(componentPath) {
-    const name = path.basename(componentPath, '.js')
-
+    const name = path.basename(componentPath, '.tsx')
+    console.log(name)
     return `import { ${name} } from '${pkg.name}';`
   },
 }
