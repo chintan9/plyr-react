@@ -14,8 +14,8 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
-    "node": ">=12",
-    "npm": ">=6"
+    "node": ">=8",
+    "npm": ">=5"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
