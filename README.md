@@ -4,13 +4,36 @@
 
 This plugin requires minimum **Node.js with npm or yarn**.
 
-
 ```sh
 # with npm
-npm i plyr-react
+npm i plyr-react plyr
 
 # with yarn
-yarn add plyr-react
+yarn add plyr-react plyr
+```
+
+## Usage
+
+```tsx
+import Plyr from 'plyr-react'
+import 'plyr/dist/plyr.css'
+
+export default function App() {
+  return (
+    <Plyr
+      source={
+        {
+          /* ... */
+        }
+      }
+      options={
+        {
+          /* ... */
+        }
+      }
+    />
+  )
+}
 ```
 
 ## Example
@@ -26,7 +49,6 @@ to see example and you can play with
 [![Join the package community on Pika](https://img.shields.io/badge/Pika%20Community-Ask%20questions,%20get%20answers-blue?style=flag-square)](https://www.pika.dev/npm/plyr-react)
 [![BCH compliance](https://bettercodehub.com/edge/badge/chintan9/plyr-react?branch=master)](https://bettercodehub.com/)
 [![Size](https://badgen.net/bundlephobia/minzip/plyr-react)](https://badgen.net/#bundlephobia)
-
 
 ### Getting started for Development
 
@@ -64,7 +86,7 @@ Styleguide. To open the Styleguide manualy open your Browser and navigate to
 in `src/lib/components` folder and update the `src/lib/index.js` file
 accordingly. Always provide an `YourComponent.examples.md` file, so your
 component will show up in the Styleguide. You can refer to example
-`PlyrComponent` component, but i think you'll get the idea.
+`Plyr` component, but i think you'll get the idea.
 
 ##### Proposals (Babel)
 
@@ -85,7 +107,7 @@ component like you normally would do. For the use of `CSS Modules` refer to
 Testing is done with [Jest](https://facebook.github.io/jest/),
 [Enzyme](http://airbnb.io/enzyme/) and
 [Jasmine Matchers](https://github.com/JamieMason/Jasmine-Matchers) You can refer
-to `PlyrComponent.test.js` as an example.
+to `Plyr.test.js` as an example.
 
 ```
 > npm run test
