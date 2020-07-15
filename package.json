@@ -10,8 +10,8 @@
   },
   "types": "dist/src/index.d.ts",
   "homepage": "https://chintan9.github.io/plyr-react/",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.es.js",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -23,7 +23,7 @@
     "build:watch": "rollup -c -w",
     "test": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",
-    "lint": "esw --ext .jsx --ext .js --color",
+    "lint": "esw --ext .tsx --ext .ts --color",
     "lint:fix": "npm run lint --fix",
     "prepare": "npm run build",
     
@@ -48,6 +48,8 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
     "@babel/plugin-proposal-optional-chaining": "^7.10.4",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@rollup/plugin-node-resolve": "^8.4.0",
     "@rollup/plugin-typescript": "5.0.2",
     "@rollup/plugin-url": "^5.0.1",
@@ -57,8 +59,13 @@
     "@testing-library/react": "^10.4.5",
     "@testing-library/user-event": "^12.0.11",
     "@types/enzyme": "^3.10.5",
+    "@types/jest": "^26.0.4",
+    "@types/mocha": "^8.0.0",
+    "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
@@ -73,14 +80,17 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.4.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.7",
     "eslint-watch": "^7.0.0",
     "gh-pages": "^3.1.0",
+    "glob": "^7.1.6",
     "jasmine-expect": "^4.0.3",
     "jest": "^26.1.0",
     "jest-environment-jsdom-fourteen": "^1.0.1",
@@ -89,10 +99,12 @@
     "jest-watch-typeahead": "^0.6.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
     "qawolf": "^1.0.1",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
+    "react-docgen-typescript": "^1.18.0",
     "react-dom": "^16.13.1",
     "react-error-overlay": "^6.0.7",
     "react-test-renderer": "^16.13.1",
@@ -112,7 +124,8 @@
   ],
   "jest": {
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>/src",
+      "<rootDir>/test"
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
@@ -128,8 +141,8 @@
       "<rootDir>/config/setupTests.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+      "<rootDir>/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jest-environment-jsdom-fourteen",
     "testURL": "http://localhost",
@@ -169,7 +182,9 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      "react-app",
+      "@babel/preset-react",
+      "@babel/preset-typescript"
     ],
     "plugins": [
       "@babel/plugin-proposal-object-rest-spread",

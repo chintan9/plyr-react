@@ -1,5 +1,3 @@
-// import babel from 'rollup-plugin-babel'
-// import commonjs from 'rollup-plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import resolve from '@rollup/plugin-node-resolve'
@@ -12,12 +10,10 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      // dir: 'dist',
       file: pkg.main,
       format: 'cjs',
     },
     {
-      // dir: 'dist',
       file: pkg.module,
       format: 'es',
     },
