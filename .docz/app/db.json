@@ -146,6 +146,11 @@
             "value": "Installation"
           },
           {
+            "slug": "usage",
+            "depth": 2,
+            "value": "Usage"
+          },
+          {
             "slug": "example",
             "depth": 2,
             "value": "Example"
@@ -282,6 +287,21 @@
             "value": "Reporting a Vulnerability"
           }
         ]
+      }
+    },
+    {
+      "key": "src/Plyr.example.md",
+      "value": {
+        "id": "f666452689b4f7a743e046a47f010db6",
+        "filepath": "src/Plyr.example.md",
+        "fullpath": "/workspace/plyr-react/src/Plyr.example.md",
+        "link": "https://github.com/chintan9/plyr-react/edit/master/src/Plyr.example.md",
+        "hidden": false,
+        "slug": "src-plyr-example",
+        "route": "/src-plyr-example",
+        "name": "Plyr.example",
+        "menu": "",
+        "headings": []
       }
     },
     {
