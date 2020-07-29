@@ -35,6 +35,7 @@
     "docz:serve": "docz build && docz serve"
   },
   "dependencies": {
+    "lodash": "^4.17.19",
     "plyr": "^3.6.2"
   },
   "peerDependencies": {
