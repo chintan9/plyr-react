@@ -1,27 +1,31 @@
 /* eslint-disable react/self-closing-comp */
-import React, { useEffect, HTMLAttributes } from 'react'
+import React, { useEffect, memo, HTMLAttributes } from 'react'
 import PropTypes from 'prop-types'
 import PlyrLib, { SourceInfo, Options } from 'plyr'
+import { isEqual } from 'lodash'
 
 export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
   source?: SourceInfo
   options?: Options
 }
 
-export const Plyr: React.SFC<PlyrProps> = (props) => {
-  const { options = null, source, ...rest } = props
-  let player: PlyrLib
-  useEffect(() => {
-    player = new PlyrLib('.plyr-react', options ?? {})
-    if (source) {
-      player.source = source
-    }
+export const Plyr: React.SFC<PlyrProps> = memo(
+  function Plyr(props) {
+    const { options = null, source, ...rest } = props
+    let player: PlyrLib
+    useEffect(() => {
+      player = new PlyrLib('.plyr-react', options ?? {})
+      if (source) {
+        player.source = source
+      }
 
-    return () => player?.destroy()
-  }, [source])
+      return () => player?.destroy()
+    }, [source])
 
-  return <video className="plyr-react plyr" {...rest} />
-}
+    return <video className="plyr-react plyr" {...rest} />
+  },
+  (prev, next) => isEqual(prev.source, next.source)
+)
 
 Plyr.defaultProps = {
   options: {
