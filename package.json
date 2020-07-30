@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git@github.com:chintan9/plyr-react.git"
   },
-  "types": "dist/src/index.d.ts",
+  "types": "dist/src/plyr-react.d.ts",
   "homepage": "https://chintan9.github.io/plyr-react/",
   "main": "dist/src/index.js",
   "module": "dist/src/index.es.js",
@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
     "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c && cp src/plyr-react.d.ts dist/src/plyr-react.d.ts",
     "build:watch": "rollup -c -w",
     "test": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",
