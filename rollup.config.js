@@ -1,10 +1,9 @@
-import external from 'rollup-plugin-peer-deps-external'
-import postcss from 'rollup-plugin-postcss'
 import resolve from '@rollup/plugin-node-resolve'
-import url from '@rollup/plugin-url'
-import svgr from '@svgr/rollup'
-import typescript from '@rollup/plugin-typescript'
+import common from '@rollup/plugin-commonjs'
+import babel from '@rollup/plugin-babel'
+
 import pkg from './package.json'
+const extensions = ['.ts', '.tsx', '.js', '.jsx']
 
 export default {
   input: 'src/index.ts',
@@ -18,20 +17,7 @@ export default {
       format: 'es',
     },
   ],
-  plugins: [
-    postcss({
-      plugins: [],
-      minimize: true,
-      sourceMap: 'inline',
-    }),
-    external({
-      includeDependencies: true,
-    }),
-    url(),
-    svgr(),
-    resolve(),
-    typescript(),
-  ],
+  plugins: [resolve({ extensions }), common(), babel({ extensions })],
   external: [
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
