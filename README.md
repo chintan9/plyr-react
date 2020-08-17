@@ -36,6 +36,8 @@ export default function App() {
 }
 ```
 
+> Note: You will need mark `source` as a type of `any` until a new release of Plyr is available.
+
 ## Example
 
 Click
