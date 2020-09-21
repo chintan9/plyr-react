@@ -75,7 +75,6 @@
     "babel-preset-react-app": "^9.1.2",
     "cross-env": "^7.0.2",
     "css-loader": "^4.1.0",
-    "docz": "^2.3.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.5.0",
