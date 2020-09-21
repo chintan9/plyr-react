@@ -28,11 +28,8 @@
     "prepare": "npm run build",
     "prerelease": "npm run build",
     "release": "npm publish",
-    "predeploy": "npm run prepare && docz build",
-    "deploy": "gh-pages -d ",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build",
-    "docz:serve": "docz build && docz serve"
+    "predeploy": "npm run prepare",
+    "deploy": "gh-pages -d "
   },
   "dependencies": {
     "lodash": "^4.17.19",
