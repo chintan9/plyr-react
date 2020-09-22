@@ -1,29 +1,33 @@
 /* eslint-disable react/self-closing-comp */
-import React from 'react'
+import React, { useEffect, memo, HTMLAttributes } from 'react'
 import PropTypes from 'prop-types'
-import Plyr from 'plyr'
-import 'plyr/dist/plyr.css'
-import './styles.css'
+import PlyrLib, { SourceInfo, Options } from 'plyr'
+import { isEqual } from 'lodash'
 
-class PlyrComponent extends React.Component {
-  componentDidMount() {
-    this.player = new Plyr('.js-plyr', this.props.options)
-    this.player.source = this.props.sources
-  }
-
-  componentWillUnmount() {
-    this.player.destroy()
-  }
-
-  render() {
-    return (
-      <video className="js-plyr plyr">
-      </video>
-    )
-  }
+export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
+  source?: SourceInfo
+  options?: Options
 }
 
-PlyrComponent.defaultProps = {
+export const Plyr: React.SFC<PlyrProps> = memo(
+  function Plyr(props) {
+    const { options = null, source, ...rest } = props
+    let player: PlyrLib
+    useEffect(() => {
+      player = new PlyrLib('.plyr-react', options ?? {})
+      if (source) {
+        player.source = source
+      }
+
+      return () => player?.destroy()
+    }, [source])
+
+    return <video className="plyr-react plyr" {...rest} />
+  },
+  (prev, next) => isEqual(prev.source, next.source)
+)
+
+Plyr.defaultProps = {
   options: {
     controls: [
       'rewind',
@@ -67,16 +71,18 @@ PlyrComponent.defaultProps = {
       loop: 'Loop',
     },
   },
-  sources: {
+  source: {
     type: 'video',
     sources: [
       {
-        src: 'https://rawcdn.githack.com/chintan9/Big-Buck-Bunny/e577fdbb23064bdd8ac4cecf13db86eef5720565/BigBuckBunny720p30s.mp4',
+        src:
+          'https://rawcdn.githack.com/chintan9/Big-Buck-Bunny/e577fdbb23064bdd8ac4cecf13db86eef5720565/BigBuckBunny720p30s.mp4',
         type: 'video/mp4',
         size: 720,
       },
       {
-        src: 'https://rawcdn.githack.com/chintan9/Big-Buck-Bunny/e577fdbb23064bdd8ac4cecf13db86eef5720565/BigBuckBunny1080p30s.mp4',
+        src:
+          'https://rawcdn.githack.com/chintan9/Big-Buck-Bunny/e577fdbb23064bdd8ac4cecf13db86eef5720565/BigBuckBunny1080p30s.mp4',
         type: 'video/mp4',
         size: 1080,
       },
@@ -84,11 +90,9 @@ PlyrComponent.defaultProps = {
   },
 }
 
-PlyrComponent.propTypes = {
+Plyr.propTypes = {
   options: PropTypes.object,
-  sources: PropTypes.object,
-  source: PropTypes.func,
-  destroy: PropTypes.func,
+  source: PropTypes.any,
 }
 
-export default PlyrComponent
+export default Plyr
