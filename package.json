@@ -1,6 +1,6 @@
 {
   "name": "plyr-react",
-  "version": "3.0.0",
+  "version": "2.2.0",
   "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
   "author": "Chintan Prajapati",
   "license": "MIT",
@@ -188,6 +188,5 @@
       "@babel/plugin-proposal-class-properties",
       "transform-react-remove-prop-types"
     ]
-  },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/@chintan9" }
+  }
 }
