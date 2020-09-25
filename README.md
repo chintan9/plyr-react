@@ -205,4 +205,8 @@ url, then:
 
 ## Support
 
-If you like the project and want to support my work, you can buy me a coffee :)
+If you like the project and want to support my work, give star or fork it.
+
+## Thanks 
+
+- @iwatakeshi For provide help for convert to typescript. 
