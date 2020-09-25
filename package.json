@@ -188,5 +188,6 @@
       "@babel/plugin-proposal-class-properties",
       "transform-react-remove-prop-types"
     ]
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
