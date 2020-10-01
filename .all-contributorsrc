@@ -9,6 +9,19 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "jonrrivera",
+      "name": "jonrrivera",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/18686388?v=4",
+      "profile": "http://reestudio.co",
+      "contributions": [
+        "userTesting",
+        "example",
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
