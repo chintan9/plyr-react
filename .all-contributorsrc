@@ -21,6 +21,15 @@
         "translation",
         "userTesting",
         "example",
+},
+{
+      "login": "iamshouvikmitra",
+      "name": "Shouvik Mitra",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/24479402?v=4",
+      "profile": "https://iamshouvikmitra.github.io",
+      "contributions": [
+        "test",
+        "userTesting",
         "bug"
       ]
     }
