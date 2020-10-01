@@ -1,10 +1,6 @@
 # plyr-react
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<<<<<<< HEAD
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-=======
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
->>>>>>> 7ccd19de6107e91b34b51d5b1499a09cb6c8975a
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Installation
