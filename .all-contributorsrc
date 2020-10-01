@@ -9,6 +9,17 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "moh3ni",
+      "name": "Zia",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/12123530?v=4",
+      "profile": "https://github.com/moh3ni",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
