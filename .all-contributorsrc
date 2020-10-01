@@ -9,6 +9,22 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "iwatakeshi",
+      "name": "Takeshi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1505448?v=4",
+      "profile": "http://www.iwatakeshi.com",
+      "contributions": [
+        "ideas",
+        "question",
+        "translation",
+        "userTesting",
+        "example",
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
