@@ -1,6 +1,6 @@
 # plyr-react
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Installation
@@ -221,7 +221,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<!-- markdownlint-restore -->
+<table>
+  <tr>
+    <td align="center"><a href="http://www.iwatakeshi.com"><img src="https://avatars3.githubusercontent.com/u/1505448?v=4" width="100px;" alt=""/><br /><sub><b>Takeshi</b></sub></a><br /><a href="#ideas-iwatakeshi" title="Ideas, Planning, & Feedback">🤔</a> <a href="#question-iwatakeshi" title="Answering Questions">💬</a> <a href="#translation-iwatakeshi" title="Translation">🌍</a> <a href="#userTesting-iwatakeshi" title="User Testing">📓</a> <a href="#example-iwatakeshi" title="Examples">💡</a> <a href="https://github.com/chintan9/plyr-react/issues?q=author%3Aiwatakeshi" title="Bug reports">🐛</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
