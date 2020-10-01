@@ -9,6 +9,18 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "quan17",
+      "name": "quan17",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10971020?v=4",
+      "profile": "https://github.com/quan17",
+      "contributions": [
+        "userTesting",
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
