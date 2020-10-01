@@ -1,6 +1,6 @@
 # plyr-react
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Installation
@@ -221,7 +221,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<!-- markdownlint-restore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://iamshouvikmitra.github.io"><img src="https://avatars2.githubusercontent.com/u/24479402?v=4" width="100px;" alt=""/><br /><sub><b>Shouvik Mitra</b></sub></a><br /><a href="https://github.com/chintan9/plyr-react/commits?author=iamshouvikmitra" title="Tests">⚠️</a> <a href="#userTesting-iamshouvikmitra" title="User Testing">📓</a> <a href="https://github.com/chintan9/plyr-react/issues?q=author%3Aiamshouvikmitra" title="Bug reports">🐛</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
