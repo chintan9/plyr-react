@@ -9,6 +9,18 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "NicholasKuchiniski",
+      "name": "Nicholas Kuchiniski",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/31595157?v=4",
+      "profile": "https://nicholaskuchiniski.dev/",
+      "contributions": [
+        "userTesting",
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
