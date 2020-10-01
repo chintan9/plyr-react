@@ -9,6 +9,17 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "calebdeji",
+      "name": "P. Caleb Ogunwale",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/33372799?v=4",
+      "profile": "https://github.com/calebdeji",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
