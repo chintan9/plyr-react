@@ -223,7 +223,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="http://www.iwatakeshi.com"><img src="https://avatars3.githubusercontent.com/u/1505448?v=4" width="100px;" alt=""/><br /><sub><b>Takeshi</b></sub></a><br /><a href="#ideas-iwatakeshi" title="Ideas, Planning, & Feedback">🤔</a> <a href="#question-iwatakeshi" title="Answering Questions">💬</a> <a href="#translation-iwatakeshi" title="Translation">🌍</a> <a href="#userTesting-iwatakeshi" title="User Testing">📓</a> <a href="#example-iwatakeshi" title="Examples">💡</a> <a href="https://github.com/chintan9/plyr-react/issues?q=author%3Aiwatakeshi" title="Bug reports">🐛</a></td>
+
     <td align="center"><a href="https://iamshouvikmitra.github.io"><img src="https://avatars2.githubusercontent.com/u/24479402?v=4" width="100px;" alt=""/><br /><sub><b>Shouvik Mitra</b></sub></a><br /><a href="https://github.com/chintan9/plyr-react/commits?author=iamshouvikmitra" title="Tests">⚠️</a> <a href="#userTesting-iamshouvikmitra" title="User Testing">📓</a> <a href="https://github.com/chintan9/plyr-react/issues?q=author%3Aiamshouvikmitra" title="Bug reports">🐛</a></td>
+
   </tr>
 </table>
 
