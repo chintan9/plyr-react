@@ -24,7 +24,7 @@ yarn add plyr-react
 
 ```tsx
 import Plyr from 'plyr-react'
-import 'plyr-react/plyr.css'
+import 'plyr-react/dist/plyr.css'
 
 export default function App() {
   return (
