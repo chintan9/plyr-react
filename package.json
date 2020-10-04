@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
     "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c && cp src/plyr-react.d.ts dist/src/plyr-react.d.ts",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c && cpy src/plyr-react.d.ts dist/src/plyr-react.d.ts",
     "build:watch": "rollup -c -w",
     "test": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",
@@ -74,6 +74,7 @@
     "babel-plugin-named-asset-import": "^0.3.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react-app": "^9.1.2",
+    "cpy-cli": "^3.1.1",
     "cross-env": "^7.0.2",
     "css-loader": "^4.1.0",
     "enzyme": "^3.11.0",
