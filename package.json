@@ -31,7 +31,7 @@
     "predeploy": "npm run prepare",
     "deploy": "gh-pages -d ",
     "copy:types": "cpy src/plyr-react.d.ts dist/src/plyr-react.d.ts",
-    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/plyr.css"
+    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/"
   },
   "dependencies": {
     "lodash": "^4.17.19",
