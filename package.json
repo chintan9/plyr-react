@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
     "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c && cp src/plyr-react.d.ts dist/src/plyr-react.d.ts",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c && npm run copy:types && npm run copy:css",
     "build:watch": "rollup -c -w",
     "test": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",
@@ -29,7 +29,9 @@
     "prerelease": "npm run build",
     "release": "npm publish",
     "predeploy": "npm run prepare",
-    "deploy": "gh-pages -d "
+    "deploy": "gh-pages -d ",
+    "copy:types": "cpy src/plyr-react.d.ts dist/src/plyr-react.d.ts",
+    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/"
   },
   "dependencies": {
     "lodash": "^4.17.19",
@@ -74,6 +76,7 @@
     "babel-plugin-named-asset-import": "^0.3.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react-app": "^9.1.2",
+    "cpy-cli": "^3.1.1",
     "cross-env": "^7.0.2",
     "css-loader": "^4.1.0",
     "enzyme": "^3.11.0",

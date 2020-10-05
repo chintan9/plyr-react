@@ -1,5 +1,5 @@
-import { shallow } from 'enzyme'
-import React from 'react'
+import { mount, shallow } from 'enzyme'
+import React, { createRef } from 'react'
 
 import Plyr from '../src/Plyr'
 
@@ -8,5 +8,13 @@ describe('<Plyr />', () => {
     const wrapper = shallow(<Plyr />)
 
     expect(wrapper).toBeDefined()
+  })
+
+  it('should render using a forward ref', () => {
+    const setRef = jest.fn()
+    const wrapper = mount(<Plyr ref={setRef} />)
+
+    expect(wrapper).toBeDefined()
+    expect(setRef).toHaveBeenCalled()
   })
 })
