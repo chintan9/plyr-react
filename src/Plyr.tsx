@@ -1,19 +1,24 @@
 /* eslint-disable react/self-closing-comp */
-import React, { HTMLAttributes, useEffect } from 'react'
+import React, { HTMLAttributes, MutableRefObject, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import PlyrLib, { Options, SourceInfo } from 'plyr'
+import PlyrJS, { Options, SourceInfo, PlyrEvent as PlryJSEvent } from 'plyr'
+
+export type PlyrInstance = PlyrJS
+export type PlyrEvent = PlryJSEvent
+export type PlyrCallback = (this: PlyrJS, event: PlyrEvent) => void
 
 export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
   source?: SourceInfo
   options?: Options
 }
+export type HTMLPlyrVideoElement = HTMLVideoElement & { plyr?: PlyrInstance }
 
-export const Plyr = React.forwardRef<HTMLVideoElement, PlyrProps>(
+export const Plyr = React.forwardRef<HTMLPlyrVideoElement, PlyrProps>(
   (props, ref) => {
     const { options = null, source, ...rest } = props
-    let player: PlyrLib
+    let player: PlyrJS
     useEffect(() => {
-      player = new PlyrLib('.plyr-react', options ?? {})
+      player = new PlyrJS('.plyr-react', options ?? {})
       if (source) {
         player.source = source
       }
