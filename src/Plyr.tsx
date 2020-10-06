@@ -1,5 +1,5 @@
 /* eslint-disable react/self-closing-comp */
-import React, { HTMLAttributes, MutableRefObject, useEffect } from 'react'
+import React, { HTMLAttributes, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import PlyrJS, { Options, SourceInfo, PlyrEvent as PlryJSEvent } from 'plyr'
 
