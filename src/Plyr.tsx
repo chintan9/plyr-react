@@ -1,10 +1,10 @@
 /* eslint-disable react/self-closing-comp */
 import React, { HTMLAttributes, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import PlyrJS, { Options, SourceInfo, PlyrEvent as PlryJSEvent } from 'plyr'
+import PlyrJS, { Options, SourceInfo, PlyrEvent as PlyrJSEvent } from 'plyr'
 
 export type PlyrInstance = PlyrJS
-export type PlyrEvent = PlryJSEvent
+export type PlyrEvent = PlyrJSEvent
 export type PlyrCallback = (this: PlyrJS, event: PlyrEvent) => void
 
 export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
