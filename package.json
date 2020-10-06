@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
     "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c && npm run copy:types && npm run copy:css",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c && npm run copy",
     "build:watch": "rollup -c -w",
     "test": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",
@@ -30,8 +30,10 @@
     "release": "npm publish",
     "predeploy": "npm run prepare",
     "deploy": "gh-pages -d ",
+    "copy": "npm run copy:types && npm run copy:css && npm run copy:dist",
     "copy:types": "cpy src/plyr-react.d.ts dist/src/plyr-react.d.ts",
-    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/"
+    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/",
+    "copy:dist": "cpy dist examples/app/dist"
   },
   "dependencies": {
     "lodash": "^4.17.19",
