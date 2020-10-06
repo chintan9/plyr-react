@@ -32,8 +32,7 @@
     "deploy": "gh-pages -d ",
     "copy": "npm run copy:types && npm run copy:css && npm run copy:dist",
     "copy:types": "cpy src/plyr-react.d.ts dist/src/plyr-react.d.ts",
-    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/",
-    "copy:dist": "cpy dist examples/app/dist"
+    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/"
   },
   "dependencies": {
     "lodash": "^4.17.19",
