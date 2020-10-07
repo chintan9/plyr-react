@@ -10,7 +10,7 @@ describe('<Plyr />', () => {
     expect(wrapper).toBeDefined()
   })
 
-  it('should render using a forward ref', () => {
+  it('should render and set a forward ref', () => {
     const setRef = jest.fn()
     const wrapper = mount(<Plyr ref={setRef} />)
 
@@ -18,7 +18,7 @@ describe('<Plyr />', () => {
     expect(setRef).toHaveBeenCalled()
   })
 
-  it('should have a defined current property on ref', () => {
+  it('should render and have a plyr instance in ref.current', () => {
     const ref = createRef<any>()
     const wrapper = mount(<Plyr ref={ref} />)
 
