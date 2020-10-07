@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
     "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc && rollup -c && npm run copy",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c && npm run copy && tsc --emitDeclarationOnly",
     "build:watch": "rollup -c -w",
     "test": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",
