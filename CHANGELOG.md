@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/chintan9/plyr-react/tree/HEAD)
+## [v3.0.5](https://github.com/chintan9/plyr-react/tree/v3.0.5) (2020-10-07)
 
-[Full Changelog](https://github.com/chintan9/plyr-react/compare/v3.0.4...HEAD)
+[Full Changelog](https://github.com/chintan9/plyr-react/compare/v3.0.4...v3.0.5)
 
 **Closed issues:**
 
@@ -10,9 +10,12 @@
 
 **Merged pull requests:**
 
+- Update release-drafter.yml [\#374](https://github.com/chintan9/plyr-react/pull/374) ([chintan9](https://github.com/chintan9))
+- Add changelog [\#373](https://github.com/chintan9/plyr-react/pull/373) ([chintan9](https://github.com/chintan9))
 - Update release-drafter.yml [\#372](https://github.com/chintan9/plyr-react/pull/372) ([chintan9](https://github.com/chintan9))
 - Create Build.yml [\#371](https://github.com/chintan9/plyr-react/pull/371) ([chintan9](https://github.com/chintan9))
 - Fix forward ref again [\#370](https://github.com/chintan9/plyr-react/pull/370) ([iwatakeshi](https://github.com/iwatakeshi))
+- Replace memo with forwardRef [\#355](https://github.com/chintan9/plyr-react/pull/355) ([iwatakeshi](https://github.com/iwatakeshi))
 
 ## [v3.0.4](https://github.com/chintan9/plyr-react/tree/v3.0.4) (2020-10-05)
 
@@ -21,7 +24,6 @@
 **Merged pull requests:**
 
 - Bump jest from 26.1.0 to 26.4.2 [\#365](https://github.com/chintan9/plyr-react/pull/365) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Replace memo with forwardRef [\#355](https://github.com/chintan9/plyr-react/pull/355) ([iwatakeshi](https://github.com/iwatakeshi))
 
 ## [v3.0.3](https://github.com/chintan9/plyr-react/tree/v3.0.3) (2020-10-02)
 
