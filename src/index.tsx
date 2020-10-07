@@ -1,27 +1,54 @@
 /* eslint-disable react/self-closing-comp */
-import React, { HTMLAttributes, useEffect } from 'react'
+import React, {
+  HTMLAttributes,
+  MutableRefObject,
+  useEffect,
+  useRef,
+} from 'react'
 import PropTypes from 'prop-types'
-import PlyrLib, { Options, SourceInfo } from 'plyr'
+import PlyrJS, { Options, SourceInfo, PlyrEvent as PlyrJSEvent } from 'plyr'
+
+export type PlyrInstance = PlyrJS
+export type PlyrEvent = PlyrJSEvent
+export type PlyrCallback = (this: PlyrJS, event: PlyrEvent) => void
 
 export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
   source?: SourceInfo
   options?: Options
 }
+export type HTMLPlyrVideoElement = HTMLVideoElement & { plyr?: PlyrInstance }
 
-export const Plyr = React.forwardRef<HTMLVideoElement, PlyrProps>(
+export const Plyr = React.forwardRef<HTMLPlyrVideoElement, PlyrProps>(
   (props, ref) => {
     const { options = null, source, ...rest } = props
-    let player: PlyrLib
+    const innerRef = useRef<HTMLPlyrVideoElement>()
     useEffect(() => {
-      player = new PlyrLib('.plyr-react', options ?? {})
-      if (source) {
-        player.source = source
+      if (!innerRef.current) return
+
+      if (!innerRef.current?.plyr) {
+        innerRef.current.plyr = new PlyrJS('.plyr-react', options ?? {})
       }
 
-      return () => player?.destroy()
-    }, [source])
+      if (typeof ref === 'function') {
+        if (innerRef.current) ref(innerRef.current)
+      } else {
+        if (ref && innerRef.current) ref.current = innerRef.current
+      }
 
-    return <video ref={ref} className="plyr-react plyr" {...rest} />
+      if (innerRef.current && source) {
+        innerRef.current.plyr.source = source
+      }
+
+      return () => innerRef?.current?.plyr?.destroy()
+    }, [ref, source])
+
+    return (
+      <video
+        ref={(innerRef as unknown) as MutableRefObject<HTMLVideoElement>}
+        className="plyr-react plyr"
+        {...rest}
+      />
+    )
   }
 )
 
