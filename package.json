@@ -8,10 +8,13 @@
     "type": "git",
     "url": "git@github.com:chintan9/plyr-react.git"
   },
-  "types": "dist/src/plyr-react.d.ts",
+  "types": "dist/src/index.d.ts",
   "homepage": "https://chintan9.github.io/plyr-react/",
   "main": "dist/src/index.js",
   "module": "dist/src/index.es.js",
+  "files": [
+    "dist/**/*"
+  ],
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -19,7 +22,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
     "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc --outDir dist --declarationDir dist --declaration true && rollup -c && npm run copy",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production tsc && rollup -c && npm run copy",
     "build:watch": "rollup -c -w",
     "test": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",
@@ -30,8 +33,7 @@
     "release": "npm publish",
     "predeploy": "npm run prepare",
     "deploy": "gh-pages -d ",
-    "copy": "npm run copy:types && npm run copy:css",
-    "copy:types": "cpy src/plyr-react.d.ts dist/src/plyr-react.d.ts",
+    "copy": "npm run copy:css",
     "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/"
   },
   "dependencies": {
