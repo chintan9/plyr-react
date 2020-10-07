@@ -46,6 +46,43 @@ export default function App() {
 
 > Note: You will need mark `source` as a type of `any` until a new release of Plyr is available.
 
+### Using `ref`
+
+```tsx
+// Component class
+class MyComponent extends Component {
+  constructor(props) {
+    super(props)
+    this.player = createRef()
+  }
+
+  componentDidMount() {
+    // Access the internal plyr instance
+    console.log(this.player.current.plyr)
+  }
+
+  render() {
+    return (
+      <>
+        <Plyr ref={(player) => (this.player = player)} />
+      </>
+    )
+  }
+}
+
+// Functional component
+
+const MyComponent = () => {
+  const ref = useRef()
+  useEffect(() => console.log(ref.current.plyr))
+  return (
+    <>
+      <Plyr ref={ref} />
+    </>
+  )
+}
+```
+
 ## Example
 
 Click
