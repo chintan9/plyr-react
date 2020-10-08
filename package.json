@@ -15,9 +15,10 @@
   "files": [
     "dist/**/*"
   ],
+  "keywords": ["react","plyr","video","vimeo","youtube","accessibility","javascript","player","media"]
   "engines": {
-    "node": ">=8",
-    "npm": ">=5"
+    "node": ">=10",
+    "npm": ">=6"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
