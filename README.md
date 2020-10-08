@@ -6,7 +6,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![plyr-react](https://socialify.git.ci/chintan9/plyr-react/png?description=1&forks=1&issues=1&pulls=1&theme=Dark)
+![plyr-react](https://socialify.git.ci/chintan9/plyr-react/png?description=1&forks=1&issues=1&pulls=1)
 
 ## Installation
 
