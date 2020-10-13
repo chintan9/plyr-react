@@ -1,0 +1,22 @@
+version = 1
+
+test_patterns = ["*/test/**"]
+
+exclude_patterns = [".*/**"]
+
+[[analyzers]]
+name = "javascript"
+enabled = true
+
+  [analyzers.meta]
+  environment = [
+    "nodejs",
+    "jest"
+  ]
+  plugins = ["react"]
+  style_guide = "airbnb"
+  dialect = "typescript"
+
+[[transformers]]
+name = "prettier"
+enabled = true
