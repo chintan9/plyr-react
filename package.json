@@ -15,7 +15,17 @@
   "files": [
     "dist/**/*"
   ],
-  "keywords": ["react","plyr","video","vimeo","youtube","accessibility","javascript","player","media"],
+  "keywords": [
+    "react",
+    "plyr",
+    "video",
+    "vimeo",
+    "youtube",
+    "accessibility",
+    "javascript",
+    "player",
+    "media"
+  ],
   "engines": {
     "node": ">=10",
     "npm": ">=6"
