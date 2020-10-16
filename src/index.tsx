@@ -38,7 +38,7 @@ export const Plyr = React.forwardRef<HTMLPlyrVideoElement, PlyrProps>(
       if (innerRef.current && source) {
         innerRef.current.plyr.source = source
       }
-    }, [ref, source])
+    }, [ref, options, source])
 
     return (
       <video
