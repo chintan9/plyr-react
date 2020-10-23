@@ -1,7 +1,7 @@
 import { mount, shallow } from 'enzyme'
 import React, { createRef } from 'react'
 
-import Plyr from '../src/index'
+import Plyr, { PlyrInstance } from '../src/index'
 
 describe('<Plyr />', () => {
   it('should render', () => {
@@ -25,5 +25,20 @@ describe('<Plyr />', () => {
     expect(wrapper).toBeDefined()
     expect(ref.current).toBeDefined()
     expect(ref.current.plyr).toBeDefined()
+  })
+
+  it('should render and keep a plyr instance after a rerender', () => {
+    const ref = createRef<any>()
+    const wrapper = mount(<Plyr ref={ref} />)
+
+    expect(wrapper).toBeDefined()
+    expect(ref.current).toBeDefined()
+    expect(ref.current.plyr).toBeDefined()
+
+    wrapper.update()
+    expect(wrapper).toBeDefined()
+    expect(ref.current).toBeDefined()
+    expect(ref.current.plyr).toBeDefined()
+    expect((ref.current.plyr as PlyrInstance).playing).toBeFalsy()
   })
 })
