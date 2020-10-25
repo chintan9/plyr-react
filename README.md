@@ -66,7 +66,7 @@ class MyComponent extends Component {
   render() {
     return (
       <>
-        <Plyr ref={(player) => (this.player = player)} />
+        <Plyr ref={(player) => (this.player.current = player)} />
       </>
     )
   }
