@@ -107,23 +107,3 @@ If you like the project and want to support my work, give star or fork it.
 
 - [@iwatakeshi](https://github.com/iwatakeshi) For provide help for convert to typescript.
 
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/mnervik"><img src="https://avatars1.githubusercontent.com/u/15329600?v=4" width="100px;" alt=""/><br /><sub><b>mnervik</b></sub></a><br /><a href="https://github.com/chintan9/plyr-react/issues?q=author%3Amnervik" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="http://www.iwatakeshi.com"><img src="https://avatars3.githubusercontent.com/u/1505448?v=4" width="100px;" alt=""/><br /><sub><b>Takeshi</b></sub></a><br /><a href="#ideas-iwatakeshi" title="Ideas, Planning, & Feedback">🤔</a> <a href="#question-iwatakeshi" title="Answering Questions">💬</a> <a href="#translation-iwatakeshi" title="Translation">🌍</a> <a href="#userTesting-iwatakeshi" title="User Testing">📓</a> <a href="#example-iwatakeshi" title="Examples">💡</a> <a href="https://github.com/chintan9/plyr-react/issues?q=author%3Aiwatakeshi" title="Bug reports">🐛</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
