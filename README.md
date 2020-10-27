@@ -106,4 +106,3 @@ If you like the project and want to support my work, give star or fork it.
 ## Thanks
 
 - [@iwatakeshi](https://github.com/iwatakeshi) For provide help for convert to typescript.
-
