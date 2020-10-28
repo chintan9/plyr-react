@@ -95,7 +95,7 @@ to see example and you can play with
 ## Contribute
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/chintan9/plyr-react)
-[![Join the package community on Pika](https://img.shields.io/badge/Pika%20Community-Ask%20questions,%20get%20answers-blue?style=flag-square)](https://www.pika.dev/npm/plyr-react)
+![npm](https://img.shields.io/npm/dt/plyr-react?style=for-the-badge)
 [![BCH compliance](https://bettercodehub.com/edge/badge/chintan9/plyr-react?branch=master)](https://bettercodehub.com/)
 [![Size](https://badgen.net/bundlephobia/minzip/plyr-react)](https://badgen.net/#bundlephobia)
 
