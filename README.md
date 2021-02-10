@@ -44,7 +44,6 @@ export default function App() {
 }
 ```
 
-
 ### Using `ref`
 
 ```tsx
