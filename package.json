@@ -1,6 +1,6 @@
 {
   "name": "plyr-react",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
   "author": "Chintan Prajapati",
   "license": "MIT",
@@ -48,7 +48,7 @@
     "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/"
   },
   "dependencies": {
-    "plyr": "^3.6.4"
+    "plyr": "^3.6.8"
   },
   "peerDependencies": {
     "react": "^16.13.1",
@@ -72,7 +72,7 @@
     "@testing-library/dom": "^7.29.4",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.6.3",
+    "@testing-library/user-event": "^13.2.1",
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.20",
     "@types/mocha": "^8.2.0",
@@ -91,7 +91,7 @@
     "babel-preset-react-app": "^10.0.0",
     "cpy-cli": "^3.1.1",
     "cross-env": "^7.0.3",
-    "css-loader": "^5.0.2",
+    "css-loader": "^6.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.19.0",
@@ -113,7 +113,7 @@
     "jest-pnp-resolver": "^1.2.2",
     "jest-resolve": "^26.6.2",
     "jest-watch-typeahead": "^0.6.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
