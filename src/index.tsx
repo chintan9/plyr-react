@@ -1,6 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 import React, {
-  HTMLAttributes,
+  HTMLProps,
   MutableRefObject,
   useEffect,
   useRef,
@@ -12,7 +12,7 @@ export type PlyrInstance = PlyrJS
 export type PlyrEvent = PlyrJSEvent
 export type PlyrCallback = (this: PlyrJS, event: PlyrEvent) => void
 
-export type PlyrProps = HTMLAttributes<HTMLVideoElement> & {
+export type PlyrProps = HTMLProps<HTMLVideoElement> & {
   source?: SourceInfo
   options?: Options
 }
