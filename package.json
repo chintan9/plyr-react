@@ -1,6 +1,6 @@
 {
   "name": "plyr-react",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
   "author": "Chintan Prajapati",
   "license": "MIT",
