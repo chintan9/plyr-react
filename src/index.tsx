@@ -1,5 +1,5 @@
 /* eslint-disable react/self-closing-comp */
-import React, { HTMLProps, MutableRefObject, useEffect, useRef } from 'react'
+import React, { HTMLProps, MutableRefObject } from 'react'
 import PlyrJS, { Options, SourceInfo, PlyrEvent as PlyrJSEvent } from 'plyr'
 import PropTypes from 'prop-types'
 import useAptor from 'react-aptor'
@@ -15,19 +15,13 @@ export type PlyrProps = Omit<HTMLProps<HTMLVideoElement>, 'ref'> & {
 export type HTMLPlyrVideoElement = HTMLVideoElement & { plyr?: PlyrInstance }
 
 export type APITypes = ReturnType<ReturnType<typeof getAPI>>
-type ConnectorProps = HTMLProps<HTMLVideoElement> & { options?: Options }
-
-// utils
-const forkRef = (ref, node) => {
-  if (typeof ref === 'function') {
-    ref(node)
-  } else if (ref) {
-    ref.current = node
-  }
-}
 
 /* REACT-APTOR */
-const instantiate = (node, options) => new PlyrJS(node, options || {})
+const instantiate = (node, { options, source }) => {
+  const plyr = new PlyrJS(node, options || {})
+  plyr.source = source
+  return plyr
+}
 
 const destroy = (plyr: PlyrJS | null) => {
   if (plyr) plyr.destroy()
@@ -43,7 +37,9 @@ const getAPI = (plyr: PlyrJS | null) => {
         { plyr: { source: null } },
         {
           get: (target, prop) => {
-            if (prop === 'plyr') return target[prop]
+            if (prop === 'plyr') {
+              return target[prop]
+            }
             return noop
           },
         }
@@ -57,50 +53,24 @@ const getAPI = (plyr: PlyrJS | null) => {
   })
 }
 
-const Connector = React.forwardRef<APITypes, ConnectorProps>((props, ref) => {
-  const { options = null, ...rest } = props
+const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
+  const { source, options = null, ...rest } = props
+
   const raptorRef = useAptor(
     ref,
     {
       instantiate,
       getAPI,
       destroy,
-      params: options,
+      params: { options, source },
     },
-    [options]
-  ) as MutableRefObject<HTMLVideoElement>
-
-  return <video ref={raptorRef} className="plyr-react plyr" {...rest} />
-})
-
-if (process.env.NODE_ENV === 'development') {
-  Connector.propTypes = {
-    options: PropTypes.object,
-  }
-  Connector.displayName = 'Raptor(Plyr)'
-}
-
-export const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
-  const { source, options, ...rest } = props
-  const plyrRef = useRef<APITypes>()
-
-  useEffect(() => {
-    const { current: plyrAPI } = plyrRef
-    if (!plyrAPI) return
-    if (source) {
-      plyrAPI.plyr.source = source
-    }
-  }, [source])
+    [options, source]
+  )
 
   return (
-    <Connector
-      ref={(reference) => {
-        forkRef(plyrRef, reference)
-        // forward pass apis to outer ref, inspired by react-fork-ref package
-        forkRef(ref, reference)
-      }}
+    <video
+      ref={raptorRef as MutableRefObject<HTMLVideoElement>}
       className="plyr-react plyr"
-      options={options}
       {...rest}
     />
   )
