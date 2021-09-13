@@ -71,7 +71,7 @@
     "@svgr/rollup": "^5.5.0",
     "@testing-library/dom": "^7.29.4",
     "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.20",
