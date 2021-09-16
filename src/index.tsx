@@ -1,54 +1,80 @@
 /* eslint-disable react/self-closing-comp */
-import React, {
-  HTMLProps,
-  MutableRefObject,
-  useEffect,
-  useRef,
-} from 'react'
-import PropTypes from 'prop-types'
+import React, { HTMLProps, MutableRefObject } from 'react'
 import PlyrJS, { Options, SourceInfo, PlyrEvent as PlyrJSEvent } from 'plyr'
+import PropTypes from 'prop-types'
+import useAptor from 'react-aptor'
 
 export type PlyrInstance = PlyrJS
 export type PlyrEvent = PlyrJSEvent
 export type PlyrCallback = (this: PlyrJS, event: PlyrEvent) => void
 
-export type PlyrProps = HTMLProps<HTMLVideoElement> & {
+export type PlyrProps = Omit<HTMLProps<HTMLVideoElement>, 'ref'> & {
   source?: SourceInfo
   options?: Options
 }
 export type HTMLPlyrVideoElement = HTMLVideoElement & { plyr?: PlyrInstance }
 
-export const Plyr = React.forwardRef<HTMLPlyrVideoElement, PlyrProps>(
-  (props, ref) => {
-    const { options = null, source, ...rest } = props
-    const innerRef = useRef<HTMLPlyrVideoElement>()
-    useEffect(() => {
-      if (!innerRef.current) return
+export type APITypes = ReturnType<ReturnType<typeof getAPI>>
 
-      if (!innerRef.current?.plyr) {
-        innerRef.current.plyr = new PlyrJS('.plyr-react', options ?? {})
-      }
+/* REACT-APTOR */
+const instantiate = (node, { options, source }) => {
+  const plyr = new PlyrJS(node, options || {})
+  plyr.source = source
+  return plyr
+}
 
-      if (typeof ref === 'function') {
-        if (innerRef.current) ref(innerRef.current)
-      } else {
-        if (ref && innerRef.current) ref.current = innerRef.current
-      }
+const destroy = (plyr: PlyrJS | null) => {
+  if (plyr) plyr.destroy()
+}
 
-      if (innerRef.current && source) {
-        innerRef.current.plyr.source = source
-      }
-    }, [ref, options, source])
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = () => {}
 
-    return (
-      <video
-        ref={(innerRef as unknown) as MutableRefObject<HTMLVideoElement>}
-        className="plyr-react plyr"
-        {...rest}
-      />
-    )
-  }
-)
+const getAPI = (plyr: PlyrJS | null) => {
+  if (!plyr)
+    return () =>
+      new Proxy(
+        { plyr: { source: null } },
+        {
+          get: (target, prop) => {
+            if (prop === 'plyr') {
+              return target[prop]
+            }
+            return noop
+          },
+        }
+      )
+
+  return () => ({
+    /**
+     * Plyr instance with all of its functionality
+     */
+    plyr,
+  })
+}
+
+const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
+  const { source, options = null, ...rest } = props
+
+  const raptorRef = useAptor(
+    ref,
+    {
+      instantiate,
+      getAPI,
+      destroy,
+      params: { options, source },
+    },
+    [options, source]
+  )
+
+  return (
+    <video
+      ref={raptorRef as MutableRefObject<HTMLVideoElement>}
+      className="plyr-react plyr"
+      {...rest}
+    />
+  )
+})
 
 Plyr.displayName = 'Plyr'
 
@@ -100,14 +126,12 @@ Plyr.defaultProps = {
     type: 'video',
     sources: [
       {
-        src:
-          'https://cdn.plyr.io/static/blank.mp4',
+        src: 'https://cdn.plyr.io/static/blank.mp4',
         type: 'video/mp4',
         size: 720,
       },
       {
-        src:
-          'https://cdn.plyr.io/static/blank.mp4',
+        src: 'https://cdn.plyr.io/static/blank.mp4',
         type: 'video/mp4',
         size: 1080,
       },

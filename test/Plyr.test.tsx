@@ -1,7 +1,12 @@
-import { mount, shallow } from 'enzyme'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import React, { createRef } from 'react'
+import { mount, shallow } from 'enzyme'
 
 import Plyr, { PlyrInstance } from '../src/index'
+
+// https://github.com/jsdom/jsdom/issues/2541#issuecomment-788761237
+jest.mock('plyr')
 
 describe('<Plyr />', () => {
   it('should render', () => {
