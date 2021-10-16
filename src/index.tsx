@@ -17,8 +17,9 @@ export type HTMLPlyrVideoElement = HTMLVideoElement & { plyr?: PlyrInstance }
 export type APITypes = ReturnType<ReturnType<typeof getAPI>>
 
 /* REACT-APTOR */
-const instantiate = (node, { options, source }) => {
-  const plyr = new PlyrJS(node, options || {})
+const instantiate = (_, { options, source }) => {
+  // The node update of ref in react life cycle seems to have issue, used class selector instead
+  const plyr = new PlyrJS('.plyr-react', options || {})
   plyr.source = source
   return plyr
 }
