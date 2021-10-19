@@ -120,7 +120,7 @@
     "react": "^16.13.0",
     "react-app-polyfill": "^2.0.0",
     "react-aptor": ">=1.2.0",
-    "react-docgen-typescript": "^1.21.0",
+    "react-docgen-typescript": "^2.1.1",
     "react-dom": "^16.13.0",
     "react-error-overlay": "^6.0.9",
     "react-test-renderer": "^16.13.1",
