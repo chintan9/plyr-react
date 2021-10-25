@@ -20,16 +20,33 @@
         "question",
         "translation",
         "userTesting",
-        "example",
-},
-{
+        "example"
+      ]
+    },
+    {
       "login": "mnervik",
       "name": "mnervik",
       "avatar_url": "https://avatars1.githubusercontent.com/u/15329600?v=4",
       "profile": "https://github.com/mnervik",
       "contributions": [
         "test",
-        "userTesting",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "amirHossein-Ebrahimi",
+      "name": "Amir.H Ebrahimi",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/23579958?v=4&s=100",
+      "profile": "https://ahimico.github.io/",
+      "contributions": [
+        "infra",
+        "doc",
+        "tool",
+        "maintenance",
+        "review",
+        "question",
+        "code",
+        "test"
       ]
     }
   ],
