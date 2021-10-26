@@ -9,43 +9,14 @@
     "url": "git@github.com:chintan9/plyr-react.git"
   },
   "types": "dist/src/index.d.ts",
-  "homepage": "https://chintan9.github.io/plyr-react/",
   "main": "dist/src/index.js",
   "module": "dist/src/index.es.js",
   "files": [
     "dist/**/*"
   ],
-  "keywords": [
-    "react",
-    "plyr",
-    "video",
-    "vimeo",
-    "youtube",
-    "accessibility",
-    "javascript",
-    "player",
-    "media"
-  ],
   "engines": {
     "node": ">=10",
     "npm": ">=6"
-  },
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
-    "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c && npm run copy && tsc --emitDeclarationOnly",
-    "build:watch": "rollup -c -w",
-    "test": "jest",
-    "test:coverage": "jest --coverage --forceExit --colors",
-    "lint": "esw --ext .tsx --ext .ts --color",
-    "lint:fix": "npm run lint --fix",
-    "prepare": "npm run build",
-    "prerelease": "npm run build",
-    "release": "npm publish",
-    "predeploy": "npm run prepare",
-    "deploy": "gh-pages -d ",
-    "copy": "npm run copy:css",
-    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/"
   },
   "dependencies": {
     "plyr": "^3.6.8"
@@ -53,155 +24,5 @@
   "peerDependencies": {
     "react": "^16.13.0  || ^17.0.0",
     "react-dom": "^16.13.0  || ^17.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/plugin-proposal-class-properties": "^7.12.13",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.13",
-    "@babel/plugin-proposal-object-rest-spread": "^7.12.13",
-    "@babel/plugin-proposal-optional-chaining": "^7.12.13",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.12.13",
-    "@rollup/plugin-babel": "^5.2.3",
-    "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-node-resolve": "^11.1.1",
-    "@rollup/plugin-typescript": "^8.1.1",
-    "@rollup/plugin-url": "^6.0.0",
-    "@svgr/rollup": "^5.5.0",
-    "@testing-library/dom": "^7.29.4",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/enzyme": "^3.10.8",
-    "@types/jest": "^26.0.20",
-    "@types/mocha": "^8.2.0",
-    "@types/prop-types": "^15.7.3",
-    "@types/react": "^16.13.1",
-    "@types/react-dom": "^16.9.10",
-    "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
-    "all-contributors-cli": "^6.19.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^27.1.1",
-    "babel-loader": "^8.2.2",
-    "babel-plugin-named-asset-import": "^0.3.7",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babel-preset-react-app": "^10.0.0",
-    "cpy-cli": "^3.1.1",
-    "cross-env": "^7.0.3",
-    "css-loader": "^6.2.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "eslint": "^7.19.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-flowtype": "^5.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.4.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-watch": "^7.0.0",
-    "gh-pages": "^3.1.0",
-    "glob": "^7.1.6",
-    "jasmine-expect": "^5.0.0",
-    "jest": "^27.2.0",
-    "jest-environment-jsdom": "^27.2.0",
-    "jest-pnp-resolver": "^1.2.2",
-    "jest-resolve": "^27.2.0",
-    "jest-watch-typeahead": "^0.6.4",
-    "node-sass": "^6.0.1",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.0",
-    "react-app-polyfill": "^2.0.0",
-    "react-aptor": ">=1.2.0",
-    "react-docgen-typescript": "^1.21.0",
-    "react-dom": "^16.13.0",
-    "react-error-overlay": "^6.0.9",
-    "react-test-renderer": "^16.13.1",
-    "rollup": "^2.38.5",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0",
-    "typescript": "^4.1.5",
-    "webpack": "^5.21.2"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src",
-      "<rootDir>/test"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts",
-      "!src/**/index.js"
-    ],
-    "resolver": "jest-pnp-resolver",
-    "setupFiles": [
-      "react-app-polyfill/jsdom",
-      "<rootDir>/config/enzymeConfig.js"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/config/setupTests.js"
-    ],
-    "testMatch": [
-      "<rootDir>/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}"
-    ],
-    "testEnvironment": "jest-environment-jsdom",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/cssTransform.js",
-      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "web.ts",
-      "ts",
-      "web.tsx",
-      "tsx",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ],
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-typescript",
-      "@babel/preset-react"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-object-rest-spread",
-      "@babel/plugin-proposal-optional-chaining",
-      "@babel/plugin-proposal-nullish-coalescing-operator",
-      "@babel/plugin-syntax-dynamic-import",
-      "@babel/plugin-proposal-class-properties",
-      "transform-react-remove-prop-types"
-    ]
   }
 }
