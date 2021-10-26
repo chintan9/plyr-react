@@ -42,7 +42,7 @@ const getAPI = (plyr: PlyrJS | null) => {
               return target[prop]
             }
             return noop
-          },
+          }
         }
       )
 
@@ -50,7 +50,7 @@ const getAPI = (plyr: PlyrJS | null) => {
     /**
      * Plyr instance with all of its functionality
      */
-    plyr,
+    plyr
   })
 }
 
@@ -63,7 +63,7 @@ const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
       instantiate,
       getAPI,
       destroy,
-      params: { options, source },
+      params: { options, source }
     },
     [options, source]
   )
@@ -91,7 +91,7 @@ Plyr.defaultProps = {
       'mute',
       'volume',
       'settings',
-      'fullscreen',
+      'fullscreen'
     ],
     i18n: {
       restart: 'Restart',
@@ -120,8 +120,8 @@ Plyr.defaultProps = {
       speed: 'Speed',
       normal: 'Normal',
       quality: 'Quality',
-      loop: 'Loop',
-    },
+      loop: 'Loop'
+    }
   },
   source: {
     type: 'video',
@@ -129,20 +129,20 @@ Plyr.defaultProps = {
       {
         src: 'https://cdn.plyr.io/static/blank.mp4',
         type: 'video/mp4',
-        size: 720,
+        size: 720
       },
       {
         src: 'https://cdn.plyr.io/static/blank.mp4',
         type: 'video/mp4',
-        size: 1080,
-      },
-    ],
-  },
+        size: 1080
+      }
+    ]
+  }
 }
 
 Plyr.propTypes = {
   options: PropTypes.object,
-  source: PropTypes.any,
+  source: PropTypes.any
 }
 
 export default Plyr
