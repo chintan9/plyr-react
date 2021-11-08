@@ -78,7 +78,7 @@
     "@types/mocha": "^8.2.0",
     "@types/prop-types": "^15.7.3",
     "@types/react": "^16.13.1",
-    "@types/react-dom": "^16.9.10",
+    "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "@typescript-eslint/parser": "^4.15.0",
     "all-contributors-cli": "^6.19.0",
