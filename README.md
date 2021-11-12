@@ -18,6 +18,9 @@ npm i plyr-react
 
 # with yarn
 yarn add plyr-react
+
+# or the latest-nightly version
+yarn add git://github.com/chintan9/plyr-react.git#package
 ```
 
 ## Usage
@@ -101,5 +104,5 @@ If you like the project and want to support my work, give star or fork it.
 
 ## Thanks
 
-- [@amirHossein-Ebrahimi](https://github.com/amirHossein-Ebrahimi) For provide help for integrate to aptor.
+- [@amirHossein-Ebrahimi](https://github.com/amirHossein-Ebrahimi) For provide help for integrate to react-aptor.
 - [@iwatakeshi](https://github.com/iwatakeshi) For provide help for convert to typescript.
