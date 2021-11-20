@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -18,9 +18,6 @@ npm i plyr-react
 
 # with yarn
 yarn add plyr-react
-
-# or the latest-nightly version
-yarn add git://github.com/chintan9/plyr-react.git#package
 ```
 
 ## Usage
@@ -32,16 +29,9 @@ import 'plyr-react/dist/plyr.css'
 export default function App() {
   return (
     <Plyr
-      source={
-        {
-          /* ... */
-        }
-      }
-      options={
-        {
-          /* ... */
-        }
-      }
+      source={{/* https://github.com/sampotts/plyr#the-source-setter */}}
+      options={{/* https://github.com/sampotts/plyr#options */}}
+      {...({/* Direct props for inner video tag (mdn.io/video) */})}
     />
   )
 }
@@ -50,6 +40,18 @@ export default function App() {
 ### Using `ref`
 
 ```tsx
+// Functional component
+const MyComponent = () => {
+  const ref = useRef()
+  
+  useEffect(() => {
+    // Access the internal plyr instance
+    console.log(ref.current.plyr)
+  })
+  
+  return <Plyr ref={ref} />
+}
+
 // Component class
 class MyComponent extends Component {
   constructor(props) {
@@ -71,23 +73,14 @@ class MyComponent extends Component {
   }
 }
 
-// Functional component
-
-const MyComponent = () => {
-  const ref = useRef()
-  useEffect(() => console.log(ref.current.plyr))
-  return (
-    <>
-      <Plyr ref={ref} />
-    </>
-  )
-}
 ```
 
 ## Example
 
-You can fork this example
-https://stackblitz.com/edit/react-fpmwns?file=src/App.js
+> You can fork these examples
+- [stackblitz example (js)](https://stackblitz.com/edit/react-fpmwns?file=src/App.js)
+- [codesandbox example (ts)](https://codesandbox.io/s/plyr-react-new-api-forked-cg08k?file=/src/App.tsx)
+
 Demo
 https://react-fpmwns.stackblitz.io
 
