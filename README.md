@@ -29,9 +29,21 @@ import 'plyr-react/dist/plyr.css'
 export default function App() {
   return (
     <Plyr
-      source={{/* https://github.com/sampotts/plyr#the-source-setter */}}
-      options={{/* https://github.com/sampotts/plyr#options */}}
-      {...({/* Direct props for inner video tag (mdn.io/video) */})}
+      source={
+        {
+          /* https://github.com/sampotts/plyr#the-source-setter */
+        }
+      }
+      options={
+        {
+          /* https://github.com/sampotts/plyr#options */
+        }
+      }
+      {
+        ...{
+          /* Direct props for inner video tag (mdn.io/video) */
+        }
+      }
     />
   )
 }
@@ -43,12 +55,12 @@ export default function App() {
 // Functional component
 const MyComponent = () => {
   const ref = useRef()
-  
+
   useEffect(() => {
     // Access the internal plyr instance
     console.log(ref.current.plyr)
   })
-  
+
   return <Plyr ref={ref} />
 }
 
@@ -72,12 +84,12 @@ class MyComponent extends Component {
     )
   }
 }
-
 ```
 
 ## Example
 
 > You can fork these examples
+
 - [stackblitz example (js)](https://stackblitz.com/edit/react-fpmwns?file=src/App.js)
 - [codesandbox example (ts)](https://codesandbox.io/s/plyr-react-new-api-forked-cg08k?file=/src/App.tsx)
 
