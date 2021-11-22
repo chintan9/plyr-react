@@ -90,11 +90,16 @@ class MyComponent extends Component {
 
 > You can fork these examples
 
-- [stackblitz example (js)](https://stackblitz.com/edit/react-fpmwns?file=src/App.js)
-- [codesandbox example (ts)](https://codesandbox.io/s/plyr-react-new-api-forked-cg08k?file=/src/App.tsx)
+**Javascript example:** <a href="https://stackblitz.com/edit/react-fpmwns?file=src/App.js" title="stackblitz example (js)">
+<img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="stackblitz example (js)" width="185">
+</a>
 
-Demo
-https://react-fpmwns.stackblitz.io
+**Typescript example:** <a href="https://codesandbox.io/s/plyr-react-new-api-forked-cg08k?file=/src/App.tsx" title="codesandbox example (ts)">
+<img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="codesandbox example (ts)" width="185">
+</a>
+
+
+**Demo:** https://react-fpmwns.stackblitz.io
 
 ## Contribute
 
