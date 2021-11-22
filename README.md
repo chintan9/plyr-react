@@ -98,7 +98,6 @@ class MyComponent extends Component {
 <img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="codesandbox example (ts)" width="185">
 </a>
 
-
 **Demo:** https://react-fpmwns.stackblitz.io
 
 ## Contribute
