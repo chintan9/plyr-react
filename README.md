@@ -1,22 +1,39 @@
-# plyr-react
+<h1 align="center">Plyr React</h1>
+<p align="center"><img src="https://user-images.githubusercontent.com/23579958/143738613-d374adcf-24b8-4f44-8e75-673d5681c1a5.png" title="plyr-react" alt="plyr-react logo" width="450"></p>
+<p align="center">
+A responsive media player that is simple, easy to use, and customizable for video, audio, YouTube, and Vimeo.
+  <br>
+  <img src="https://img.shields.io/badge/Tree%20Shakeable-d4e157" alt="tree-shakeable" />
+  <img src="https://img.shields.io/badge/Side%20Effect%20Free-ffeb3b" alt="side-effect free" />
+</p>	
+<p align="center">
+  <a href="https://github.com/chintan9/plyr-react/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license" />
+  </a>
+  <a href="https://npmjs.org/package/plyr-react">
+    <img src="https://img.shields.io/npm/dt/plyr-react.svg" alt="downloads" />
+  </a>
+  <a href="https://bundlephobia.com/result?p=plyr-react">
+    <img src="https://img.shields.io/bundlephobia/minzip/plyr-react.svg" alt="bundle size" />
+</a>
+  <a href="https://lgtm.com/projects/g/chintan9/plyr-react/context:javascript">
+    <img src="https://img.shields.io/lgtm/grade/javascript/g/chintan9/plyr-react.svg?logo=lgtm&logoWidth=18" alt="Language grade: JavaScript" />
+  </a>
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+  <a href="#contributors">
+    <img src="https://img.shields.io/badge/all_contributors-3-orange.svg" alt="contributors badge" />
+  </a>
+</p>
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-![plyr-react](https://socialify.git.ci/chintan9/plyr-react/png?description=1&forks=1&issues=1&pulls=1)
 
 ## Installation
 
-This plugin requires minimum **Node.js with npm or yarn**.
-
 ```sh
-# with npm
-npm i plyr-react
+# NPM
+npm install plyr-react
 
-# with yarn
+# Yarn
 yarn add plyr-react
 ```
 
@@ -85,6 +102,22 @@ class MyComponent extends Component {
   }
 }
 ```
+
+## API:
+Currently the exported APIs contains a latest instance of plyr.  
+In other words, the passing ref will have access to the player in the structure shown below.
+
+```jsx
+<Plyr ref={ref} />
+
+// ref can get access to latest plyr instance with `ref.current.plyr`
+ref = {current: { plyr }} 
+
+// so you can make your player fullscreen 🎉
+ref.current.plyr.fullscreen.enter()
+```
+
+
 
 ## Example
 
