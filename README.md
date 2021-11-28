@@ -25,7 +25,6 @@ A responsive media player that is simple, easy to use, and customizable for vide
   </a>
 </p>
 
-
 ## Installation
 
 ```sh
@@ -103,14 +102,15 @@ class MyComponent extends Component {
 ```
 
 ## API
+
 Currently the exported APIs contains a latest instance of plyr.  
 In other words, the passing ref will have access to the player in the structure shown below.
 
 ```jsx
-<Plyr ref={ref} />
+return <Plyr ref={ref} />
 
 // ref can get access to latest plyr instance with `ref.current.plyr`
-ref = {current: { plyr }} 
+ref = { current: { plyr } }
 
 // so you can make your player fullscreen 🎉
 ref.current.plyr.fullscreen.enter()
@@ -135,7 +135,8 @@ Codesandbox
 **Demo:** https://react-fpmwns.stackblitz.io
 
 ## Contribute
-We are open to all new contribution, feel free to read [CONTRIBUTING](https://github.com/chintan9/plyr-react/blob/master/CONTRIBUTING.md) and [CODE OF CONDUCT](https://github.com/chintan9/plyr-react/blob/master/CODE_OF_CONDUCT.md) section, make new issue to discuss about the problem, and improve/fix/enhance the source code with your PRs. 
+
+We are open to all new contribution, feel free to read [CONTRIBUTING](https://github.com/chintan9/plyr-react/blob/master/CONTRIBUTING.md) and [CODE OF CONDUCT](https://github.com/chintan9/plyr-react/blob/master/CODE_OF_CONDUCT.md) section, make new issue to discuss about the problem, and improve/fix/enhance the source code with your PRs.
 There is a ready to code Gitpod, you can jump into it from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="Gitpod plyr-react"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"><a/>
 
 ## Support
