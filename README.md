@@ -101,7 +101,7 @@ class MyComponent extends Component {
 }
 ```
 
-## API
+## API:
 
 Currently the exported APIs contains a latest instance of plyr.  
 In other words, the passing ref will have access to the player in the structure shown below.
