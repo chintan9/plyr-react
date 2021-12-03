@@ -107,7 +107,7 @@ Currently the exported APIs contains a latest instance of plyr.
 In other words, the passing ref will have access to the player in the structure shown below.
 
 ```jsx
-;<Plyr ref={ref} />
+<Plyr ref={ref} />
 
 // ref can get access to latest plyr instance with `ref.current.plyr`
 ref = { current: { plyr } }
