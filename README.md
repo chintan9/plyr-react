@@ -103,11 +103,12 @@ class MyComponent extends Component {
 
 ## API:
 
+
 Currently the exported APIs contains a latest instance of plyr.  
 In other words, the passing ref will have access to the player in the structure shown below.
 
 ```jsx
-;<Plyr ref={ref} />
+return <Plyr ref={ref} />
 
 // ref can get access to latest plyr instance with `ref.current.plyr`
 ref = { current: { plyr } }
@@ -128,14 +129,16 @@ ref.current.plyr.fullscreen.enter()
 <img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="codesandbox example (ts)" width="185">
 </a>
 
+**Basic HLS integration** <a href="https://codesandbox.io/s/hidden-frost-mpdjj?file=/src/HLS.tsx" title="codesandbox example (ts)">
+Codesandbox
+</a>
+
 **Demo:** https://react-fpmwns.stackblitz.io
 
 ## Contribute
 
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/chintan9/plyr-react)
-![npm](https://img.shields.io/npm/dt/plyr-react)
-[![BCH compliance](https://bettercodehub.com/edge/badge/chintan9/plyr-react?branch=master)](https://bettercodehub.com/)
-[![Size](https://badgen.net/bundlephobia/minzip/plyr-react)](https://badgen.net/#bundlephobia)
+We are open to all new contribution, feel free to read [CONTRIBUTING](https://github.com/chintan9/plyr-react/blob/master/CONTRIBUTING.md) and [CODE OF CONDUCT](https://github.com/chintan9/plyr-react/blob/master/CODE_OF_CONDUCT.md) section, make new issue to discuss about the problem, and improve/fix/enhance the source code with your PRs.
+There is a ready to code Gitpod, you can jump into it from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="Gitpod plyr-react"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"><a/>
 
 ## Support
 
