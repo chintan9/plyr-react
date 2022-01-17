@@ -1,0 +1,14 @@
+html, body {
+  height: 100%
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  width: 500px;
+}
