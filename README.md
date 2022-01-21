@@ -1,7 +1,6 @@
 <h1 align="center">Plyr React</h1>
 <p align="center"><img src="https://user-images.githubusercontent.com/23579958/143738613-d374adcf-24b8-4f44-8e75-673d5681c1a5.png" title="plyr-react" alt="plyr-react logo" width="450"></p>
 
-
 <p align="center">
 A responsive media player that is simple, easy to use, and customizable for video, audio, YouTube, and Vimeo.
   <br>
@@ -136,12 +135,11 @@ Codesandbox
 
 **Demo:** https://react-fpmwns.stackblitz.io
 
-
 ## Nightly version of plyr-react:
+
 <a href="https://github.com/chintan9/plyr-react/tree/dev/example" title="early access for alpha version">
  <img src="https://user-images.githubusercontent.com/23579958/150494317-912b4ce3-8d22-4c05-aec5-a28934d2f2e7.png">
 </a>
-
 
 ## Contribute
 
