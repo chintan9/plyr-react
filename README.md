@@ -16,7 +16,7 @@ A responsive media player that is simple, easy to use, and customizable for vide
   </a>
   <a href="https://bundlephobia.com/result?p=plyr-react">
     <img src="https://img.shields.io/bundlephobia/minzip/plyr-react.svg" alt="bundle size" />
-</a>
+  </a>
   <a href="https://lgtm.com/projects/g/chintan9/plyr-react/context:javascript">
     <img src="https://img.shields.io/lgtm/grade/javascript/g/chintan9/plyr-react.svg?logo=lgtm&logoWidth=18" alt="Language grade: JavaScript" />
   </a>
@@ -145,6 +145,8 @@ Codesandbox
 
 We are open to all new contribution, feel free to read [CONTRIBUTING](https://github.com/chintan9/plyr-react/blob/master/CONTRIBUTING.md) and [CODE OF CONDUCT](https://github.com/chintan9/plyr-react/blob/master/CODE_OF_CONDUCT.md) section, make new issue to discuss about the problem, and improve/fix/enhance the source code with your PRs.
 There is a ready to code Gitpod, you can jump into it from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="Gitpod plyr-react"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"><a/>
+
+[![Featured on Openbase](https://badges.openbase.com/js/featured/plyr-react.svg?token=taplQ9iU8GI6oqsRiTD6H6Dl4A4o787VVK0gS6m3RKo=)](https://openbase.com/js/plyr-react?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 
 ## Support
 
