@@ -21,6 +21,7 @@ export default {
   plugins: [
     replace({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      preventAssignment: true,
     }),
     resolve({ extensions }),
     common(),
