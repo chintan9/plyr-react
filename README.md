@@ -29,76 +29,26 @@ A responsive media player that is simple, easy to use, and customizable for vide
 
 ```sh
 # NPM
-npm install plyr-react
+npm install git://github.com/chintan9/plyr-react.git#release
 
 # Yarn
-yarn add plyr-react
+yarn add git://github.com/chintan9/plyr-react.git#release
 ```
 
 ## Usage
 
 ```tsx
-import Plyr from 'plyr-react'
+import { usePlyr } from 'plyr-react'
 import 'plyr-react/dist/plyr.css'
 
-export default function App() {
-  return (
-    <Plyr
-      source={
-        {
-          /* https://github.com/sampotts/plyr#the-source-setter */
-        }
-      }
-      options={
-        {
-          /* https://github.com/sampotts/plyr#options */
-        }
-      }
-      {
-        ...{
-          /* Direct props for inner video tag (mdn.io/video) */
-        }
-      }
-    />
-  )
-}
-```
-
-### Using `ref`
-
-```tsx
-// Functional component
-const MyComponent = () => {
-  const ref = useRef()
-
-  useEffect(() => {
-    // Access the internal plyr instance
-    console.log(ref.current.plyr)
-  })
-
-  return <Plyr ref={ref} />
-}
-
-// Component class
-class MyComponent extends Component {
-  constructor(props) {
-    super(props)
-    this.player = createRef()
-  }
-
-  componentDidMount() {
-    // Access the internal plyr instance
-    console.log(this.player.current.plyr)
-  }
-
-  render() {
-    return (
-      <>
-        <Plyr ref={(player) => (this.player.current = player)} />
-      </>
-    )
-  }
-}
+const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
+  const { source, options = null, ...rest } = props
+  const raptorRef = usePlyr(ref, {
+    source,
+    options,
+  }) as MutableRefObject<HTMLVideoElement>
+  return <video ref={raptorRef} className="plyr-react plyr" {...rest} />
+})
 ```
 
 ## API:
@@ -107,6 +57,8 @@ Currently the exported APIs contains a latest instance of plyr.
 In other words, the passing ref will have access to the player in the structure shown below.
 
 ```jsx
+import Plyr from 'plyr-react'
+
 return <Plyr ref={ref} />
 
 // ref can get access to latest plyr instance with `ref.current.plyr`
