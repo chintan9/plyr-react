@@ -4,11 +4,13 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 var PlyrJS = require('plyr');
+var useAptor = require('react-aptor');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var PlyrJS__default = /*#__PURE__*/_interopDefaultLegacy(PlyrJS);
+var useAptor__default = /*#__PURE__*/_interopDefaultLegacy(useAptor);
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -64,50 +66,14 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
-/**
- * react aptor(api-connector) a hook which connect api to react itself
- * @param ref - react forwarded ref
- * @param {Object} configuration - configuration object for setup
- * @param {Array} [deps=[]] - react dependencies array
- * @return domRef - can be bound to dom element
- */
-
-function useAptor(ref, configuration, deps) {
-  if (deps === void 0) {
-    deps = [];
-  }
-
-  var _a = React.useState(null),
-      instance = _a[0],
-      setInstance = _a[1];
-
-  var domRef = React.useRef(null);
-  var instantiate = configuration.instantiate,
-      destroy = configuration.destroy,
-      getAPI = configuration.getAPI,
-      params = configuration.params;
-  React.useEffect(function () {
-    var instanceReference = instantiate(domRef.current, params);
-    setInstance(instanceReference);
-    return function () {
-      if (destroy) destroy(instanceReference, params);
-    }; // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps); // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  var api = React.useMemo(function () {
-    return getAPI(instance, params);
-  }, [instance]); // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  React.useImperativeHandle(ref, api, [api]);
-  return domRef;
-}
+var _excluded = ["source", "options"];
 
 /* REACT-APTOR */
 var instantiate = function instantiate(_, _ref) {
   var options = _ref.options,
       source = _ref.source;
   // The node update of ref in react life cycle seems to have issue, used class selector instead
-  var plyr = new PlyrJS__default['default']('.plyr-react', options || {});
+  var plyr = new PlyrJS__default["default"]('.plyr-react', options || {});
   plyr.source = source;
   return plyr;
 };
@@ -148,7 +114,9 @@ var getAPI = function getAPI(plyr) {
 function usePlyr(ref, _ref2) {
   var source = _ref2.source,
       options = _ref2.options;
-  return useAptor(ref, {
+  var deps = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  return useAptor__default["default"]( // FIXE: Mismatch type for extended type with APITypes
+  ref, {
     instantiate: instantiate,
     getAPI: getAPI,
     destroy: destroy,
@@ -156,75 +124,23 @@ function usePlyr(ref, _ref2) {
       options: options,
       source: source
     }
-  }, [options, source]);
+  }, deps || [options, source]);
 }
-var Plyr = /*#__PURE__*/React__default['default'].forwardRef(function (props, ref) {
+var Plyr = /*#__PURE__*/React__default["default"].forwardRef(function (props, ref) {
   var source = props.source,
       _props$options = props.options,
       options = _props$options === void 0 ? null : _props$options,
-      rest = _objectWithoutProperties(props, ["source", "options"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
-  var raptorRef = useAptor(ref, {
-    instantiate: instantiate,
-    getAPI: getAPI,
-    destroy: destroy,
-    params: {
-      options: options,
-      source: source
-    }
-  }, [options, source]);
-  return /*#__PURE__*/React__default['default'].createElement("video", _extends({
+  var raptorRef = usePlyr(ref, {
+    source: source,
+    options: options
+  });
+  return /*#__PURE__*/React__default["default"].createElement("video", _extends({
     ref: raptorRef,
     className: "plyr-react plyr"
   }, rest));
 });
-Plyr.displayName = 'Plyr';
-Plyr.defaultProps = {
-  options: {
-    controls: ['rewind', 'play', 'fast-forward', 'progress', 'current-time', 'duration', 'mute', 'volume', 'settings', 'fullscreen'],
-    i18n: {
-      restart: 'Restart',
-      rewind: 'Rewind {seektime}s',
-      play: 'Play',
-      pause: 'Pause',
-      fastForward: 'Forward {seektime}s',
-      seek: 'Seek',
-      seekLabel: '{currentTime} of {duration}',
-      played: 'Played',
-      buffered: 'Buffered',
-      currentTime: 'Current time',
-      duration: 'Duration',
-      volume: 'Volume',
-      mute: 'Mute',
-      unmute: 'Unmute',
-      enableCaptions: 'Enable captions',
-      disableCaptions: 'Disable captions',
-      download: 'Download',
-      enterFullscreen: 'Enter fullscreen',
-      exitFullscreen: 'Exit fullscreen',
-      frameTitle: 'Player for {title}',
-      captions: 'Captions',
-      settings: 'Settings',
-      menuBack: 'Go back to previous menu',
-      speed: 'Speed',
-      normal: 'Normal',
-      quality: 'Quality',
-      loop: 'Loop'
-    }
-  },
-  source: {
-    type: 'video',
-    sources: [{
-      src: 'https://cdn.plyr.io/static/blank.mp4',
-      type: 'video/mp4',
-      size: 720
-    }, {
-      src: 'https://cdn.plyr.io/static/blank.mp4',
-      type: 'video/mp4',
-      size: 1080
-    }]
-  }
-};
 
-exports.default = Plyr;
+exports["default"] = Plyr;
 exports.usePlyr = usePlyr;

@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect, useMemo, useImperativeHandle } from 'react';
+import React from 'react';
 import PlyrJS from 'plyr';
+import useAptor from 'react-aptor';
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -55,43 +56,7 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
-/**
- * react aptor(api-connector) a hook which connect api to react itself
- * @param ref - react forwarded ref
- * @param {Object} configuration - configuration object for setup
- * @param {Array} [deps=[]] - react dependencies array
- * @return domRef - can be bound to dom element
- */
-
-function useAptor(ref, configuration, deps) {
-  if (deps === void 0) {
-    deps = [];
-  }
-
-  var _a = useState(null),
-      instance = _a[0],
-      setInstance = _a[1];
-
-  var domRef = useRef(null);
-  var instantiate = configuration.instantiate,
-      destroy = configuration.destroy,
-      getAPI = configuration.getAPI,
-      params = configuration.params;
-  useEffect(function () {
-    var instanceReference = instantiate(domRef.current, params);
-    setInstance(instanceReference);
-    return function () {
-      if (destroy) destroy(instanceReference, params);
-    }; // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps); // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  var api = useMemo(function () {
-    return getAPI(instance, params);
-  }, [instance]); // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  useImperativeHandle(ref, api, [api]);
-  return domRef;
-}
+var _excluded = ["source", "options"];
 
 /* REACT-APTOR */
 var instantiate = function instantiate(_, _ref) {
@@ -139,7 +104,9 @@ var getAPI = function getAPI(plyr) {
 function usePlyr(ref, _ref2) {
   var source = _ref2.source,
       options = _ref2.options;
-  return useAptor(ref, {
+  var deps = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  return useAptor( // FIXE: Mismatch type for extended type with APITypes
+  ref, {
     instantiate: instantiate,
     getAPI: getAPI,
     destroy: destroy,
@@ -147,75 +114,22 @@ function usePlyr(ref, _ref2) {
       options: options,
       source: source
     }
-  }, [options, source]);
+  }, deps || [options, source]);
 }
 var Plyr = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var source = props.source,
       _props$options = props.options,
       options = _props$options === void 0 ? null : _props$options,
-      rest = _objectWithoutProperties(props, ["source", "options"]);
+      rest = _objectWithoutProperties(props, _excluded);
 
-  var raptorRef = useAptor(ref, {
-    instantiate: instantiate,
-    getAPI: getAPI,
-    destroy: destroy,
-    params: {
-      options: options,
-      source: source
-    }
-  }, [options, source]);
+  var raptorRef = usePlyr(ref, {
+    source: source,
+    options: options
+  });
   return /*#__PURE__*/React.createElement("video", _extends({
     ref: raptorRef,
     className: "plyr-react plyr"
   }, rest));
 });
-Plyr.displayName = 'Plyr';
-Plyr.defaultProps = {
-  options: {
-    controls: ['rewind', 'play', 'fast-forward', 'progress', 'current-time', 'duration', 'mute', 'volume', 'settings', 'fullscreen'],
-    i18n: {
-      restart: 'Restart',
-      rewind: 'Rewind {seektime}s',
-      play: 'Play',
-      pause: 'Pause',
-      fastForward: 'Forward {seektime}s',
-      seek: 'Seek',
-      seekLabel: '{currentTime} of {duration}',
-      played: 'Played',
-      buffered: 'Buffered',
-      currentTime: 'Current time',
-      duration: 'Duration',
-      volume: 'Volume',
-      mute: 'Mute',
-      unmute: 'Unmute',
-      enableCaptions: 'Enable captions',
-      disableCaptions: 'Disable captions',
-      download: 'Download',
-      enterFullscreen: 'Enter fullscreen',
-      exitFullscreen: 'Exit fullscreen',
-      frameTitle: 'Player for {title}',
-      captions: 'Captions',
-      settings: 'Settings',
-      menuBack: 'Go back to previous menu',
-      speed: 'Speed',
-      normal: 'Normal',
-      quality: 'Quality',
-      loop: 'Loop'
-    }
-  },
-  source: {
-    type: 'video',
-    sources: [{
-      src: 'https://cdn.plyr.io/static/blank.mp4',
-      type: 'video/mp4',
-      size: 720
-    }, {
-      src: 'https://cdn.plyr.io/static/blank.mp4',
-      type: 'video/mp4',
-      size: 1080
-    }]
-  }
-};
 
-export default Plyr;
-export { usePlyr };
+export { Plyr as default, usePlyr };
