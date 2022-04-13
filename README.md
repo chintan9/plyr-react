@@ -153,5 +153,5 @@ If you like the project and want to support my work, give star ⭐ or fork it.
 
 ## Thanks
 
-- [@amirHossein-Ebrahimi](https://github.com/amirHossein-Ebrahimi) For provide help for integrate to react-aptor.
+- [@realamirhe](https://github.com/realamirhe) For provide help for integrate to react-aptor.
 - [@iwatakeshi](https://github.com/iwatakeshi) For provide help for convert to typescript.
