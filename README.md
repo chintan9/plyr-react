@@ -1,5 +1,6 @@
 <h1 align="center">Plyr React</h1>
 <p align="center"><img src="https://user-images.githubusercontent.com/23579958/143738613-d374adcf-24b8-4f44-8e75-673d5681c1a5.png" title="plyr-react" alt="plyr-react logo" width="450"></p>
+
 <p align="center">
 A responsive media player that is simple, easy to use, and customizable for video, audio, YouTube, and Vimeo.
   <br>
@@ -15,7 +16,7 @@ A responsive media player that is simple, easy to use, and customizable for vide
   </a>
   <a href="https://bundlephobia.com/result?p=plyr-react">
     <img src="https://img.shields.io/bundlephobia/minzip/plyr-react.svg" alt="bundle size" />
-</a>
+  </a>
   <a href="https://lgtm.com/projects/g/chintan9/plyr-react/context:javascript">
     <img src="https://img.shields.io/lgtm/grade/javascript/g/chintan9/plyr-react.svg?logo=lgtm&logoWidth=18" alt="Language grade: JavaScript" />
   </a>
@@ -134,6 +135,12 @@ Codesandbox
 
 **Demo:** https://react-fpmwns.stackblitz.io
 
+## Nightly version of plyr-react:
+
+<a href="https://github.com/chintan9/plyr-react/tree/dev/example" title="early access for alpha version">
+ <img src="https://user-images.githubusercontent.com/23579958/150494317-912b4ce3-8d22-4c05-aec5-a28934d2f2e7.png">
+</a>
+
 ## Contribute
 
 We are open to all new contribution, feel free to read [CONTRIBUTING](https://github.com/chintan9/plyr-react/blob/master/CONTRIBUTING.md) and [CODE OF CONDUCT](https://github.com/chintan9/plyr-react/blob/master/CODE_OF_CONDUCT.md) section, make new issue to discuss about the problem, and improve/fix/enhance the source code with your PRs.
@@ -141,9 +148,10 @@ There is a ready to code Gitpod, you can jump into it from <a href="https://gitp
 
 ## Support
 
-If you like the project and want to support my work, give star or fork it.
+If you like the project and want to support my work, give star ⭐ or fork it.
+[![Featured on Openbase](https://badges.openbase.com/js/featured/plyr-react.svg?token=taplQ9iU8GI6oqsRiTD6H6Dl4A4o787VVK0gS6m3RKo=)](https://openbase.com/js/plyr-react?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 
 ## Thanks
 
-- [@amirHossein-Ebrahimi](https://github.com/amirHossein-Ebrahimi) For provide help for integrate to react-aptor.
+- [@realamirhe](https://github.com/realamirhe) For provide help for integrate to react-aptor.
 - [@iwatakeshi](https://github.com/iwatakeshi) For provide help for convert to typescript.
