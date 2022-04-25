@@ -8,14 +8,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Plyr-react',
   tagline: 'Plyr-react docs',
-  url: 'https://chintan9.github.io/plyr-react/',
-  baseUrl: '/',
+  url: 'https://chintan9.github.io',
+  baseUrl: '/plyr-react/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'chintan9', // Usually your GitHub org/user name.
   projectName: 'plyr-react', // Usually your repo name.
-
+  trailingSlash: true,
   presets: [
     [
       'classic',
