@@ -8,10 +8,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Plyr-react',
   tagline: 'Plyr-react-docs',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://chintan9.github.io/',
+  baseUrl: '/plyr-react/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  trailingSlash: true,
   favicon: 'img/favicon.ico',
   organizationName: 'chintan9', // Usually your GitHub org/user name.
   projectName: 'plyr-react', // Usually your repo name.
@@ -24,7 +25,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/chintan9/plyr-react/tree/docs',
         },
 
         theme: {
