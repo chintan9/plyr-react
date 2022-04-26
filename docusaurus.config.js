@@ -9,7 +9,7 @@ const config = {
   title: 'Plyr-react',
   tagline: 'Plyr-react-docs',
   url: 'https://chintan9.github.io/',
-  baseUrl: '/plyr-react/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: true,
