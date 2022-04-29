@@ -70,7 +70,9 @@
 
     /* Advanced Options */
     "skipLibCheck": true /* Skip type checking of declaration files. */,
-    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+    "forceConsistentCasingInFileNames": true,
+    /* Disallow inconsistently-cased references to the same file. */
+    "lib": ["dom", "es5", "scripthost", "es2015.proxy"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "./src/*.test.tsx"]

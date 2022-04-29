@@ -1,20 +1,29 @@
-/* eslint-disable react/self-closing-comp */
-import React, { HTMLProps, MutableRefObject } from 'react'
-import PlyrJS, { Options, SourceInfo, PlyrEvent as PlyrJSEvent } from 'plyr'
+import React, {
+  DetailedHTMLProps,
+  MutableRefObject,
+  VideoHTMLAttributes,
+} from 'react'
+import PlyrJS, { Options, SourceInfo } from 'plyr'
 import PropTypes from 'prop-types'
-import useAptor from 'react-aptor'
+import useAptor, { APIObject } from 'react-aptor'
 
 export type PlyrInstance = PlyrJS
-export type PlyrEvent = PlyrJSEvent
-export type PlyrCallback = (this: PlyrJS, event: PlyrEvent) => void
-
-export type PlyrProps = Omit<HTMLProps<HTMLVideoElement>, 'ref'> & {
-  source?: SourceInfo
-  options?: Options
+export type PlyrOptions = Options
+export type PlyrSource = SourceInfo
+type PlyrConfigurationProps = {
+  source?: PlyrSource | null
+  options?: PlyrOptions | null
 }
-export type HTMLPlyrVideoElement = HTMLVideoElement & { plyr?: PlyrInstance }
 
-export type APITypes = ReturnType<ReturnType<typeof getAPI>>
+type ReactVideoProps = DetailedHTMLProps<
+  VideoHTMLAttributes<HTMLVideoElement>,
+  HTMLVideoElement
+>
+export type PlyrProps = Omit<ReactVideoProps, 'ref'> & PlyrConfigurationProps
+
+export interface APITypes {
+  plyr: PlyrInstance
+}
 
 /* REACT-APTOR */
 const instantiate = (_, { options, source }) => {
@@ -34,115 +43,117 @@ const noop = () => {}
 const getAPI = (plyr: PlyrJS | null) => {
   if (!plyr)
     return () =>
-      new Proxy(
-        { plyr: { source: null } },
-        {
-          get: (target, prop) => {
-            if (prop === 'plyr') {
-              return target[prop]
-            }
-            return noop
+      new Proxy({ plyr: { source: null } } as unknown as APITypes, {
+        get: (target, prop) => {
+          if (prop === 'plyr') {
+            return target[prop]
           }
-        }
-      )
+          return noop
+        },
+      })
 
   return () => ({
     /**
      * Plyr instance with all of its functionality
      */
-    plyr
+    plyr,
   })
 }
 
-const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
-  const { source, options = null, ...rest } = props
-
-  const raptorRef = useAptor(
-    ref,
+export function usePlyr(
+  ref: React.Ref<APITypes> | undefined,
+  { source, options }: PlyrConfigurationProps,
+  deps: any = null
+) {
+  return useAptor<PlyrInstance, PlyrConfigurationProps>(
+    // FIXE: Mismatch type for extended type with APITypes
+    ref as React.Ref<APIObject>,
     {
       instantiate,
       getAPI,
       destroy,
-      params: { options, source }
+      params: { options, source },
     },
-    [options, source]
+    deps || [options, source]
   )
-
-  return (
-    <video
-      ref={raptorRef as MutableRefObject<HTMLVideoElement>}
-      className="plyr-react plyr"
-      {...rest}
-    />
-  )
+}
+const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
+  const { source, options = null, ...rest } = props
+  const raptorRef = usePlyr(ref, {
+    source,
+    options,
+  }) as MutableRefObject<HTMLVideoElement>
+  return <video ref={raptorRef} className="plyr-react plyr" {...rest} />
 })
 
-Plyr.displayName = 'Plyr'
+if (process.env.NODE_ENV !== 'production') {
+  Plyr.displayName = 'Plyr'
 
-Plyr.defaultProps = {
-  options: {
-    controls: [
-      'rewind',
-      'play',
-      'fast-forward',
-      'progress',
-      'current-time',
-      'duration',
-      'mute',
-      'volume',
-      'settings',
-      'fullscreen'
-    ],
-    i18n: {
-      restart: 'Restart',
-      rewind: 'Rewind {seektime}s',
-      play: 'Play',
-      pause: 'Pause',
-      fastForward: 'Forward {seektime}s',
-      seek: 'Seek',
-      seekLabel: '{currentTime} of {duration}',
-      played: 'Played',
-      buffered: 'Buffered',
-      currentTime: 'Current time',
-      duration: 'Duration',
-      volume: 'Volume',
-      mute: 'Mute',
-      unmute: 'Unmute',
-      enableCaptions: 'Enable captions',
-      disableCaptions: 'Disable captions',
-      download: 'Download',
-      enterFullscreen: 'Enter fullscreen',
-      exitFullscreen: 'Exit fullscreen',
-      frameTitle: 'Player for {title}',
-      captions: 'Captions',
-      settings: 'Settings',
-      menuBack: 'Go back to previous menu',
-      speed: 'Speed',
-      normal: 'Normal',
-      quality: 'Quality',
-      loop: 'Loop'
-    }
-  },
-  source: {
-    type: 'video',
-    sources: [
-      {
-        src: 'https://cdn.plyr.io/static/blank.mp4',
-        type: 'video/mp4',
-        size: 720
+  Plyr.defaultProps = {
+    options: {
+      controls: [
+        'rewind',
+        'play',
+        'fast-forward',
+        'progress',
+        'current-time',
+        'duration',
+        'mute',
+        'volume',
+        'settings',
+        'fullscreen',
+      ],
+      i18n: {
+        restart: 'Restart',
+        rewind: 'Rewind {seektime}s',
+        play: 'Play',
+        pause: 'Pause',
+        fastForward: 'Forward {seektime}s',
+        seek: 'Seek',
+        seekLabel: '{currentTime} of {duration}',
+        played: 'Played',
+        buffered: 'Buffered',
+        currentTime: 'Current time',
+        duration: 'Duration',
+        volume: 'Volume',
+        mute: 'Mute',
+        unmute: 'Unmute',
+        enableCaptions: 'Enable captions',
+        disableCaptions: 'Disable captions',
+        download: 'Download',
+        enterFullscreen: 'Enter fullscreen',
+        exitFullscreen: 'Exit fullscreen',
+        frameTitle: 'Player for {title}',
+        captions: 'Captions',
+        settings: 'Settings',
+        menuBack: 'Go back to previous menu',
+        speed: 'Speed',
+        normal: 'Normal',
+        quality: 'Quality',
+        loop: 'Loop',
       },
-      {
-        src: 'https://cdn.plyr.io/static/blank.mp4',
-        type: 'video/mp4',
-        size: 1080
-      }
-    ]
+    },
+    source: {
+      type: 'video',
+      sources: [
+        {
+          src: 'https://cdn.plyr.io/static/blank.mp4',
+          type: 'video/mp4',
+          size: 720,
+        },
+        {
+          src: 'https://cdn.plyr.io/static/blank.mp4',
+          type: 'video/mp4',
+          size: 1080,
+        },
+      ],
+    },
   }
-}
 
-Plyr.propTypes = {
-  options: PropTypes.object,
-  source: PropTypes.any
+  Plyr.propTypes = {
+    options: PropTypes.object,
+    source: PropTypes.any,
+  }
 }
 
 export default Plyr

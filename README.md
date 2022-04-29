@@ -30,10 +30,10 @@ A responsive media player that is simple, easy to use, and customizable for vide
 
 ```sh
 # NPM
-npm install plyr-react@next
+npm install plyr-react@4.0.0-alpha.1
 
 # Yarn
-yarn add plyr-react@next
+yarn add plyr-react@4.0.0-alpha.1
 ```
 
 ## Usage
