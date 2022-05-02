@@ -7,33 +7,35 @@ A responsive media player that is simple, easy to use, and customizable for vide
   <img src="https://img.shields.io/badge/Tree%20Shakeable-d4e157" alt="tree-shakeable" />
   <img src="https://img.shields.io/badge/Side%20Effect%20Free-ffeb3b" alt="side-effect free" />
 </p>	
+
 <p align="center">
   <a href="https://github.com/chintan9/plyr-react/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license" />
-  </a>
-  <a href="https://npmjs.org/package/plyr-react">
-    <img src="https://img.shields.io/npm/dt/plyr-react.svg" alt="downloads" />
-  </a>
-  <a href="https://bundlephobia.com/result?p=plyr-react">
-    <img src="https://img.shields.io/bundlephobia/minzip/plyr-react.svg" alt="bundle size" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat&colorA=000000&colorB=000000" alt="License">
   </a>
   <a href="https://lgtm.com/projects/g/chintan9/plyr-react/context:javascript">
-    <img src="https://img.shields.io/lgtm/grade/javascript/g/chintan9/plyr-react.svg?logo=lgtm&logoWidth=18" alt="Language grade: JavaScript" />
+  <img src="https://img.shields.io/lgtm/grade/javascript/g/chintan9/plyr-react.svg?logo=lgtm&style=flat&colorA=000000&colorB=000000" alt="Code quality">
   </a>
+  <a href="https://bundlephobia.com/result?p=plyr-react">
+  <img src="https://img.shields.io/bundlephobia/minzip/plyr-react?label=bundle%20size&style=flat&colorA=000000&colorB=000000" alt="Build Size">
+  </a>
+  <a href="https://www.npmjs.com/package/plyr-react">
+  <img src="https://img.shields.io/npm/v/plyr-react?style=flat&colorA=000000&colorB=000000" alt="Version">
+  </a>
+  <a href="https://www.npmjs.com/package/plyr-react">
+  <img src="https://img.shields.io/npm/dt/plyr-react.svg?style=flat&colorA=000000&colorB=000000" alt="Downloads">
+  </a>
+</p> 
 
-  <a href="#contributors">
-    <img src="https://img.shields.io/badge/all_contributors-3-orange.svg" alt="contributors badge" />
-  </a>
-</p>
+
 
 ## Installation
 
 ```sh
 # NPM
-npm install plyr-react@4.0.0-alpha.1
+npm install plyr-react
 
 # Yarn
-yarn add plyr-react@4.0.0-alpha.1
+yarn add plyr-react
 ```
 
 ## Usage
@@ -137,7 +139,7 @@ Codesandbox
 
 ## Nightly version of plyr-react:
 
-<a href="https://github.com/chintan9/plyr-react/tree/dev/example" title="early access for alpha version">
+<a href="https://github.com/chintan9/plyr-react/tree/dev/example" title="Early access for nightly version">
  <img src="https://user-images.githubusercontent.com/23579958/150494317-912b4ce3-8d22-4c05-aec5-a28934d2f2e7.png">
 </a>
 
