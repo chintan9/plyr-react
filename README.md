@@ -6,7 +6,7 @@ A responsive media player that is simple, easy to use, and customizable for vide
   <br>
   <img src="https://img.shields.io/badge/Tree%20Shakeable-d4e157" alt="tree-shakeable" />
   <img src="https://img.shields.io/badge/Side%20Effect%20Free-ffeb3b" alt="side-effect free" />
-</p>	
+</p>
 
 <p align="center">
   <a href="https://github.com/chintan9/plyr-react/blob/master/LICENSE">
@@ -24,9 +24,7 @@ A responsive media player that is simple, easy to use, and customizable for vide
   <a href="https://www.npmjs.com/package/plyr-react">
   <img src="https://img.shields.io/npm/dt/plyr-react.svg?style=flat&colorA=000000&colorB=000000" alt="Downloads">
   </a>
-</p> 
-
-
+</p>
 
 ## Installation
 
