@@ -100,7 +100,7 @@
     "glob": "^8.0.1",
     "jasmine-expect": "^5.0.0",
     "jest": "^27.5.1",
-    "jest-environment-jsdom": "^27.5.1",
+    "jest-environment-jsdom": "^28.0.2",
     "jest-pnp-resolver": "^1.2.2",
     "jest-resolve": "^28.0.3",
     "jest-watch-typeahead": "^1.0.0",
