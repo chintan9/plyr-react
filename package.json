@@ -156,8 +156,9 @@
     ],
     "testEnvironment": "jest-environment-jsdom",
     "testEnvironmentOptions": {
-        "url": "http://localhost"
-      },    "transform": {
+      url: 'http://localhost',
+    },   
+    "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/cssTransform.js",
       "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/fileTransform.js"
