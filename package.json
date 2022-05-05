@@ -156,7 +156,7 @@
     ],
     "testEnvironment": "jest-environment-jsdom",
     "testEnvironmentOptions": {
-      "url": 'http://localhost',
+      "url": "http://localhost",
     },   
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
