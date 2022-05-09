@@ -1,6 +1,6 @@
 {
   "name": "plyr-react",
-  "version": "4.0.0-alpha.5",
+  "version": "4.0.0",
   "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
   "author": "Chintan Prajapati",
   "license": "MIT",
@@ -97,7 +97,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-watch": "^8.0.0",
     "gh-pages": "^3.2.3",
-    "glob": "^7.2.0",
+    "glob": "^8.0.1",
     "jasmine-expect": "^5.0.0",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
