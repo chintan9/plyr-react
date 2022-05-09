@@ -3,16 +3,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.?<id>(js|ts)x?$/,
+      test: /\.(?<scripts>js|ts)x?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
       {
-        test: /\.?<id>(s?)css$/,
+test: /\.(?<styles>css|scss)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.?<id>(png|jpg|jpeg|svg|webp|gif)$/,
+       test: /\.(?<formats>png|jpg|jpeg|svg|webp|gif)$/,
         use: ['file-loader'],
       },
     ],
