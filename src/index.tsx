@@ -1,24 +1,18 @@
-import React, {
-  DetailedHTMLProps,
-  MutableRefObject,
-  VideoHTMLAttributes,
-} from 'react'
-import PlyrJS, { Options, SourceInfo } from 'plyr'
+import PlyrJS, {Options, SourceInfo} from 'plyr'
 import PropTypes from 'prop-types'
-import useAptor, { APIObject } from 'react-aptor'
+import React, {DetailedHTMLProps, MutableRefObject, VideoHTMLAttributes} from 'react'
+import useAptor from 'react-aptor'
 
 export type PlyrInstance = PlyrJS
 export type PlyrOptions = Options
 export type PlyrSource = SourceInfo
 type PlyrConfigurationProps = {
-  source?: PlyrSource | null
+  source: PlyrSource
   options?: PlyrOptions | null
 }
 
-type ReactVideoProps = DetailedHTMLProps<
-  VideoHTMLAttributes<HTMLVideoElement>,
-  HTMLVideoElement
->
+type ReactVideoProps = DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>,
+  HTMLVideoElement>
 export type PlyrProps = Omit<ReactVideoProps, 'ref'> & PlyrConfigurationProps
 
 export interface APITypes {
@@ -26,10 +20,10 @@ export interface APITypes {
 }
 
 /* REACT-APTOR */
-const instantiate = (_, { options, source }) => {
+const instantiate = (_, params: PlyrConfigurationProps) => {
   // The node update of ref in react life cycle seems to have issue, used class selector instead
-  const plyr = new PlyrJS('.plyr-react', options || {})
-  plyr.source = source
+  const plyr = new PlyrJS('.plyr-react', params.options || {})
+  plyr.source = params.source
   return plyr
 }
 
@@ -38,12 +32,13 @@ const destroy = (plyr: PlyrJS | null) => {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-const noop = () => {}
+const noop = () => {
+}
 
 const getAPI = (plyr: PlyrJS | null) => {
   if (!plyr)
     return () =>
-      new Proxy({ plyr: { source: null } } as unknown as APITypes, {
+      new Proxy({plyr: {source: null}} as unknown as APITypes, {
         get: (target, prop) => {
           if (prop === 'plyr') {
             return target[prop]
@@ -61,24 +56,24 @@ const getAPI = (plyr: PlyrJS | null) => {
 }
 
 export function usePlyr(
-  ref: React.Ref<APITypes> | undefined,
-  { source, options }: PlyrConfigurationProps,
+  ref: React.Ref<APITypes>,
+  params: PlyrConfigurationProps,
   deps: any = null
 ) {
-  return useAptor<PlyrInstance, PlyrConfigurationProps>(
-    // FIXE: Mismatch type for extended type with APITypes
-    ref as React.Ref<APIObject>,
+  return useAptor<PlyrInstance, HTMLVideoElement, PlyrConfigurationProps>(
+    ref,
     {
       instantiate,
       getAPI,
       destroy,
-      params: { options, source },
+      params,
     },
-    deps || [options, source]
+    deps || [params.options, params.source]
   )
 }
+
 const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
-  const { source, options = null, ...rest } = props
+  const {source, options = null, ...rest} = props
   const raptorRef = usePlyr(ref, {
     source,
     options,
