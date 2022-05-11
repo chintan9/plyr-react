@@ -1,56 +1,56 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import React, { createRef } from 'react'
-import { mount, shallow } from 'enzyme'
-
-import Plyr, { PlyrInstance } from '../src/index'
+import * as React from 'react'
+import {render, fireEvent, screen} from '@testing-library/react'
+import Plyr, {PlyrInstance} from '../src/index'
+import PlyrJS from 'plyr'
 
 // https://github.com/jsdom/jsdom/issues/2541#issuecomment-788761237
 jest.mock('plyr')
+jest.mock('plyr', () => {
+  return jest.fn().mockImplementation(() => ({destroy: jest.fn()}));
+});
 
 describe('<Plyr />', () => {
   it('should render', () => {
-    const wrapper = shallow(<Plyr />)
-
-    expect(wrapper).toBeDefined()
+    const {container} = render(<Plyr/>)
+    expect(container.querySelector('video')).toBeInTheDocument()
   })
 
   it('should render and set a forward ref', () => {
     const setRef = jest.fn()
-    const wrapper = mount(<Plyr ref={setRef} />)
+    const {container} = render(<Plyr ref={setRef}/>)
 
-    expect(wrapper).toBeDefined()
+    expect(container.querySelector('video')).toBeDefined()
     expect(setRef).toHaveBeenCalled()
   })
 
   it('should render and have a plyr instance in ref.current', () => {
-    const ref = createRef<any>()
-    const wrapper = mount(<Plyr ref={ref} />)
+    const ref = React.createRef<any>()
+    const {container} = render(<Plyr ref={ref}/>)
 
-    expect(wrapper).toBeDefined()
+    expect(container.querySelector('video')).toBeDefined()
     expect(ref.current).toBeDefined()
     expect(ref.current.plyr).toBeDefined()
   })
 
   it('should render and have a plyr instance in ref.current when using a ref callback', () => {
-    const ref = createRef<any>() as any
-    const wrapper = mount(<Plyr ref={(player) => (ref.current = player)} />)
+    const ref = React.createRef<any>() as any
+    const {container} = render(<Plyr ref={(player) => (ref.current = player)}/>)
 
-    expect(wrapper).toBeDefined()
+    expect(container.querySelector('video')).toBeDefined()
     expect(ref.current).toBeDefined()
     expect(ref.current.plyr).toBeDefined()
   })
 
   it('should render and keep a plyr instance after a rerender', () => {
-    const ref = createRef<any>()
-    const wrapper = mount(<Plyr ref={ref} />)
+    const ref = React.createRef<any>()
+    const {container, rerender} = render(<Plyr ref={ref}/>)
 
-    expect(wrapper).toBeDefined()
+    expect(container.querySelector('video')).toBeDefined()
     expect(ref.current).toBeDefined()
     expect(ref.current.plyr).toBeDefined()
 
-    wrapper.update()
-    expect(wrapper).toBeDefined()
+    rerender(<Plyr ref={ref}/>)
+    expect(container.querySelector('video')).toBeDefined()
     expect(ref.current).toBeDefined()
     expect(ref.current.plyr).toBeDefined()
     expect((ref.current.plyr as PlyrInstance).playing).toBeFalsy()

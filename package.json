@@ -29,6 +29,7 @@
     "build": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c && npm run copy && tsc --emitDeclarationOnly",
     "build:watch": "rollup -c -w",
     "test": "jest",
+    "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --forceExit --colors",
     "lint": "esw --ext .tsx --ext .ts --color",
     "lint:fix": "npm run lint --fix",
@@ -119,8 +120,8 @@
     "webpack": "^5.72.1"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "plyr": "^3.7.2"
+    "plyr": "^3.7.2",
+    "react": ">=16.8"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -146,8 +147,7 @@
     ],
     "resolver": "jest-pnp-resolver",
     "setupFiles": [
-      "react-app-polyfill/jsdom",
-      "<rootDir>/config/enzymeConfig.js"
+      "react-app-polyfill/jsdom"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/config/setupTests.js"
