@@ -14,4 +14,7 @@ export default {
   collectCoverage: true,
   coverageReporters: ["json", "html", "text", "text-summary"],
   collectCoverageFrom: ["src/**/*.{ts,tsx}", "tests/**/*.{ts,tsx}"],
+  globals: {
+    __DEV__: true,
+  },
 };
