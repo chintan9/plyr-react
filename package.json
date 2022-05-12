@@ -103,6 +103,7 @@
     "concurrently": "^7.1.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "esbuild": "^0.14.39",
     "eslint": "^8.15.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
