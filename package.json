@@ -52,14 +52,14 @@
     "postbuild": "npm run copy",
     "precopy": "shx cp -r dist/src/* dist/esm && shx cp -r dist/src/* dist && shx rm -rf dist/src && shx rm -rf dist/{src,tests}",
     "copy": "concurrently -m 8 'npm:copy:*'",
+    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/ --flat",
     "copy:package-json": "shx cp package.json dist && json -I -f dist/package.json -e 'this.private=false; this.devDependencies=undefined; this.scripts=undefined; this.publishConfig=undefined'",
     "copy:static-content": "shx cp README.md LICENSE dist",
     "prepare": "npm run build && husky install",
     "prerelease": "npm run build",
     "release": "npm publish",
     "predeploy": "npm run prepare",
-    "deploy": "gh-pages -d ",
-    "copy:css": "shx cp node_modules/plyr/dist/plyr.css dist"
+    "deploy": "gh-pages -d"
   },
   "dependencies": {
     "react-aptor": "^2.0.0-alpha.1"
@@ -101,6 +101,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react-app": "^10.0.1",
     "concurrently": "^7.1.0",
+    "cpy-cli": "^4.1.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "esbuild": "^0.14.39",
