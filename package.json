@@ -21,6 +21,7 @@
   },
   "license": "MIT",
   "author": "Chintan Prajapati",
+  "sideEffects": false,
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -33,25 +34,32 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "files": [
-    "dist/**/*"
+    "**"
   ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
-    "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c && npm run copy && tsc --emitDeclarationOnly",
-    "build:watch": "rollup -c -w",
+    "pretest": "tsc --noEmit",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:ci": "jest",
     "test:coverage": "jest --coverage --forceExit --colors",
+    "test:coverage:watch": "jest --watch",
+    "test:dev": "jest --watch --no-coverage",
     "lint": "esw --ext .tsx --ext .ts --color",
     "lint:fix": "npm run lint --fix",
+    "eslint": "eslint --fix '*.{js,json}' '{src,tests}/**/*.{ts,tsx}'",
+    "eslint:ci": "eslint '*.{js,json}' '{src,tests}/**/*.{ts,tsx}'",
+    "prebuild": "shx rm -rf dist",
+    "build": "rollup -c",
+    "postbuild": "yarn copy",
+    "precopy": "shx cp -r dist/src/* dist/esm && shx cp -r dist/src/* dist && shx rm -rf dist/src && shx rm -rf dist/{src,tests}",
+    "copy": "concurrently -m 8 'npm:copy:*'",
+    "copy:package-json": "shx cp package.json dist && json -I -f dist/package.json -e 'this.private=false; this.devDependencies=undefined; this.scripts=undefined; this.publishConfig=undefined'",
+    "copy:static-content": "shx cp README.md LICENSE dist",
     "prepare": "npm run build && husky install",
     "prerelease": "npm run build",
     "release": "npm publish",
     "predeploy": "npm run prepare",
     "deploy": "gh-pages -d ",
-    "copy": "npm run copy:css",
-    "copy:css": "cpy node_modules/plyr/dist/plyr.css dist/ --flat"
+    "copy:css": "shx cp node_modules/plyr/dist/plyr.css dist"
   },
   "dependencies": {
     "react-aptor": "^2.0.0-alpha.1"
@@ -92,7 +100,7 @@
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react-app": "^10.0.1",
-    "cpy-cli": "^4.1.0",
+    "concurrently": "^7.1.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "eslint": "^8.15.0",
@@ -115,6 +123,7 @@
     "jest-pnp-resolver": "^1.2.2",
     "jest-resolve": "^28.1.0",
     "jest-watch-typeahead": "^1.1.0",
+    "json": "^11.0.0",
     "lint-staged": "^12.4.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
@@ -131,6 +140,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.51.0",
     "sass-loader": "^12.6.0",
+    "shx": "^0.3.4",
     "sort-package-json": "^1.57.0",
     "style-loader": "^3.3.1",
     "ts-node": "^10.7.0",
@@ -149,5 +159,8 @@
   "engines": {
     "node": ">=12",
     "npm": ">=6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

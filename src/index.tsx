@@ -1,4 +1,5 @@
 import {
+  DependencyList,
   DetailedHTMLProps,
   MutableRefObject,
   Ref,
@@ -65,7 +66,7 @@ const getAPI = (plyr: PlyrJS | null) => {
 export function usePlyr(
   ref: Ref<APITypes>,
   params: PlyrConfigurationProps,
-  deps: any = null
+  deps: DependencyList | null = null
 ) {
   return useAptor<PlyrInstance, HTMLVideoElement, PlyrConfigurationProps>(
     ref,
