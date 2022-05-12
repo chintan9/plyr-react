@@ -6,7 +6,7 @@ on:
     branches:
       - master
     tags:
-      - '*'
+      - "*"
 
 jobs:
   update_release_draft:
@@ -18,10 +18,10 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: ChangeCast
         uses: palmerhq/changecast@v1.0.0
-        
+
       - name: Changelog Generator
         uses: heinrichreimer/github-changelog-generator-action@v2.1.1
         with:

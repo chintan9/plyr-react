@@ -1,5 +1,21 @@
 {
-  "semi": false,
-  "singleQuote": true,
-  "tabWidth": 2
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "README.md",
+      "options": {
+        "semi": false
+      }
+    }
+  ]
 }

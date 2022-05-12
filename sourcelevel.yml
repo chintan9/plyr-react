@@ -17,8 +17,6 @@ engines:
   remark-lint:
     enabled: true
 exclude_paths:
-- config
-- test
-- dist
-
-
+  - config
+  - test
+  - dist

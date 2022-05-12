@@ -5,22 +5,22 @@ module.exports = {
       {
         test: /\.(?<scripts>js|ts)x?$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ["babel-loader"],
       },
       {
         test: /\.(?<styles>css|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(?<formats>png|jpg|jpeg|svg|webp|gif)$/,
-        use: ['file-loader'],
+        use: ["file-loader"],
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', 'tsx'],
+    extensions: [".js", ".jsx", ".ts", "tsx"],
   },
   devServer: {
-    allowedHosts: ['.gitpod.io'],
+    allowedHosts: [".gitpod.io"],
   },
-}
+};

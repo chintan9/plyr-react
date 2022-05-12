@@ -7,12 +7,6 @@
       "jsx": true
     }
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-      // Tells eslint-plugin-react to automatically detect the version of React to use
-    }
-  },
   "env": {
     "browser": true,
     "shared-node-browser": true,
@@ -45,7 +39,7 @@
     "curly": ["warn", "multi-line", "consistent"],
     "no-console": "off",
     "import/no-unresolved": [
-      "error",
+      "warn",
       {
         "commonjs": true,
         "amd": true
@@ -116,5 +110,25 @@
     "import/parsers": {
       "@typescript-eslint/parser": [".js", ".jsx", ".ts", ".tsx"]
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src"],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    },
+    {
+      "files": ["tests/**/*.tsx"],
+      "env": {
+        "jest/globals": true
+      }
+    },
+    {
+      "files": ["./*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
