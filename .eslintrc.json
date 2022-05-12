@@ -111,6 +111,9 @@
       "@typescript-eslint/parser": [".js", ".jsx", ".ts", ".tsx"]
     }
   },
+  "globals": {
+    "__DEV__": true
+  },
   "overrides": [
     {
       "files": ["src"],

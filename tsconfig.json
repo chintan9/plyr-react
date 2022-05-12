@@ -1,24 +1,30 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "allowJs": true,
-    "jsx": "react",
+    "baseUrl": ".",
     "declaration": true,
+    "esModuleInterop": true,
+    "exactOptionalPropertyTypes": true,
+    "importHelpers": true,
+    "jsx": "react-jsx",
+    "lib": ["es2018", "dom", "scripthost", "es2015.proxy"],
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "esnext",
+    "allowJs": true,
     "outDir": "dist",
     "rootDir": ".",
     "isolatedModules": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "typeRoots": [
-      "./node_modules/plyr/src/js/plyr.d.ts",
-      "./node_modules/@types"
-    ],
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "es5", "scripthost", "es2015.proxy"]
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src", "tests"],
   "exclude": ["node_modules"]

@@ -8,15 +8,16 @@ jest.mock("plyr", () => {
   return jest.fn().mockImplementation(() => ({ destroy: jest.fn() }));
 });
 
+const SOURCE = null;
 describe("<Plyr />", () => {
   it("should render", () => {
-    const { container } = render(<Plyr />);
+    const { container } = render(<Plyr source={SOURCE} />);
     expect(container.querySelector("video")).toBeDefined();
   });
 
   it("should render and set a forward ref", () => {
     const setRef = jest.fn();
-    const { container } = render(<Plyr ref={setRef} />);
+    const { container } = render(<Plyr ref={setRef} source={SOURCE} />);
 
     expect(container.querySelector("video")).toBeDefined();
     expect(setRef).toHaveBeenCalled();
@@ -24,7 +25,7 @@ describe("<Plyr />", () => {
 
   it("should render and have a plyr instance in ref.current", () => {
     const ref = React.createRef<any>();
-    const { container } = render(<Plyr ref={ref} />);
+    const { container } = render(<Plyr ref={ref} source={SOURCE} />);
 
     expect(container.querySelector("video")).toBeDefined();
     expect(ref.current).toBeDefined();
@@ -34,7 +35,7 @@ describe("<Plyr />", () => {
   it("should render and have a plyr instance in ref.current when using a ref callback", () => {
     const ref = React.createRef<any>() as any;
     const { container } = render(
-      <Plyr ref={(player) => (ref.current = player)} />
+      <Plyr ref={(player) => (ref.current = player)} source={SOURCE} />
     );
 
     expect(container.querySelector("video")).toBeDefined();
@@ -44,13 +45,13 @@ describe("<Plyr />", () => {
 
   it("should render and keep a plyr instance after a rerender", () => {
     const ref = React.createRef<any>();
-    const { container, rerender } = render(<Plyr ref={ref} />);
+    const { container, rerender } = render(<Plyr ref={ref} source={SOURCE} />);
 
     expect(container.querySelector("video")).toBeDefined();
     expect(ref.current).toBeDefined();
     expect(ref.current.plyr).toBeDefined();
 
-    rerender(<Plyr ref={ref} />);
+    rerender(<Plyr ref={ref} source={SOURCE} />);
     expect(container.querySelector("video")).toBeDefined();
     expect(ref.current).toBeDefined();
     expect(ref.current.plyr).toBeDefined();

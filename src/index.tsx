@@ -1,17 +1,18 @@
-import React, {
+import {
   DetailedHTMLProps,
   MutableRefObject,
+  Ref,
   VideoHTMLAttributes,
+  forwardRef,
 } from "react";
 import PlyrJS, { Options, SourceInfo } from "plyr";
-import PropTypes from "prop-types";
 import useAptor from "react-aptor";
 
 export type PlyrInstance = PlyrJS;
 export type PlyrOptions = Options;
 export type PlyrSource = SourceInfo;
 type PlyrConfigurationProps = {
-  source: PlyrSource;
+  source: PlyrSource | null;
   options?: PlyrOptions | null;
 };
 
@@ -29,7 +30,7 @@ export interface APITypes {
 const instantiate = (_, params: PlyrConfigurationProps) => {
   // The node update of ref in react life cycle seems to have issue, used class selector instead
   const plyr = new PlyrJS(".plyr-react", params.options || {});
-  plyr.source = params.source;
+  if (params.source) plyr.source = params.source;
   return plyr;
 };
 
@@ -62,7 +63,7 @@ const getAPI = (plyr: PlyrJS | null) => {
 };
 
 export function usePlyr(
-  ref: React.Ref<APITypes>,
+  ref: Ref<APITypes>,
   params: PlyrConfigurationProps,
   deps: any = null
 ) {
@@ -78,7 +79,7 @@ export function usePlyr(
   );
 }
 
-const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
+const Plyr = forwardRef<APITypes, PlyrProps>((props, ref) => {
   const { source, options = null, ...rest } = props;
   const raptorRef = usePlyr(ref, {
     source,
@@ -86,8 +87,9 @@ const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
   }) as MutableRefObject<HTMLVideoElement>;
   return <video ref={raptorRef} className="plyr-react plyr" {...rest} />;
 });
-
-if (process.env.NODE_ENV !== "production") {
+if (__DEV__) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const PropTypes = require("prop-types");
   Plyr.displayName = "Plyr";
 
   Plyr.defaultProps = {
