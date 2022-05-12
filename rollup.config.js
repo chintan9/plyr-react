@@ -5,7 +5,6 @@ import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
 import esbuild from "rollup-plugin-esbuild";
 import { terser } from "rollup-plugin-terser";
-
 const createBabelConfig = require("./babel.config");
 
 const extensions = [".ts", ".tsx"];

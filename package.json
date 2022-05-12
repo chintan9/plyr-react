@@ -49,7 +49,7 @@
     "eslint:ci": "eslint '*.{js,json}' '{src,tests}/**/*.{ts,tsx}'",
     "prebuild": "shx rm -rf dist",
     "build": "rollup -c",
-    "postbuild": "yarn copy",
+    "postbuild": "npm run copy",
     "precopy": "shx cp -r dist/src/* dist/esm && shx cp -r dist/src/* dist && shx rm -rf dist/src && shx rm -rf dist/{src,tests}",
     "copy": "concurrently -m 8 'npm:copy:*'",
     "copy:package-json": "shx cp package.json dist && json -I -f dist/package.json -e 'this.private=false; this.devDependencies=undefined; this.scripts=undefined; this.publishConfig=undefined'",
