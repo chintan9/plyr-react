@@ -2,16 +2,6 @@
   "name": "plyr-react",
   "version": "4.0.0",
   "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
-  "author": "Chintan Prajapati",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:chintan9/plyr-react.git"
-  },
-  "types": "dist/src/index.d.ts",
-  "homepage": "https://chintan9.github.io/plyr-react/",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.es.js",
   "keywords": [
     "react",
     "plyr",
@@ -23,6 +13,19 @@
     "player",
     "media"
   ],
+  "homepage": "https://chintan9.github.io/plyr-react/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chintan9/plyr-react.git"
+  },
+  "license": "MIT",
+  "author": "Chintan Prajapati",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.es.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development BABEL_ENV=development run-p build:watch start",
     "start": "cross-env NODE_ENV=development BABEL_ENV=development ",
@@ -33,7 +36,7 @@
     "test:coverage": "jest --coverage --forceExit --colors",
     "lint": "esw --ext .tsx --ext .ts --color",
     "lint:fix": "npm run lint --fix",
-    "prepare": "npm run build",
+    "prepare": "npm run build && husky install",
     "prerelease": "npm run build",
     "release": "npm publish",
     "predeploy": "npm run prepare",
@@ -96,12 +99,14 @@
     "eslint-watch": "^8.0.0",
     "gh-pages": "^3.2.3",
     "glob": "^8.0.1",
+    "husky": "^8.0.0",
     "jasmine-expect": "^5.0.0",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
     "jest-pnp-resolver": "^1.2.2",
     "jest-resolve": "^28.1.0",
     "jest-watch-typeahead": "^1.1.0",
+    "lint-staged": "^12.4.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
     "prop-types": "^15.8.1",
@@ -115,7 +120,9 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "sass": "^1.51.0",
     "sass-loader": "^12.6.0",
+    "sort-package-json": "^1.57.0",
     "style-loader": "^3.3.1",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.4",
     "webpack": "^5.72.1"
   },
@@ -131,65 +138,5 @@
   "engines": {
     "node": ">=12",
     "npm": ">=6"
-  },
-  "files": [
-    "dist/**/*"
-  ],
-  "jest": {
-    "roots": [
-      "<rootDir>/src",
-      "<rootDir>/test"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts",
-      "!src/**/index.js"
-    ],
-    "resolver": "jest-pnp-resolver",
-    "setupFiles": [
-      "react-app-polyfill/jsdom"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/config/setupTests.js"
-    ],
-    "testMatch": [
-      "<rootDir>/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}"
-    ],
-    "testEnvironment": "jest-environment-jsdom",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/cssTransform.js",
-      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "web.ts",
-      "ts",
-      "web.tsx",
-      "tsx",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ],
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ]
   }
 }
