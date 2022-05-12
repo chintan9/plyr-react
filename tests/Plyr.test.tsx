@@ -11,7 +11,7 @@ jest.mock("plyr", () => {
 describe("<Plyr />", () => {
   it("should render", () => {
     const { container } = render(<Plyr />);
-    expect(container.querySelector("video")).toBeInTheDocument();
+    expect(container.querySelector("video")).toBeDefined();
   });
 
   it("should render and set a forward ref", () => {
