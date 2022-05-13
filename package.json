@@ -154,6 +154,9 @@
     "react": ">=16.8"
   },
   "peerDependenciesMeta": {
+    "plyr": {
+      "optional": false
+    },
     "react": {
       "optional": true
     }

@@ -7,7 +7,7 @@ import {
   forwardRef,
 } from "react";
 import PlyrJS, { Options, SourceInfo } from "plyr";
-import useAptor from "react-aptor";
+import useAptor, { Destroy, GetAPI, Instantiate } from "react-aptor";
 
 export type PlyrInstance = PlyrJS;
 export type PlyrOptions = Options;
@@ -28,21 +28,29 @@ export interface APITypes {
 }
 
 /* REACT-APTOR */
-const instantiate = (_, params: PlyrConfigurationProps) => {
+const instantiate: Instantiate<
+  PlyrJS,
+  HTMLVideoElement,
+  PlyrConfigurationProps
+> = (_, params) => {
   // The node update of ref in react life cycle seems to have issue, used class selector instead
-  const plyr = new PlyrJS(".plyr-react", params.options || {});
-  if (params.source) plyr.source = params.source;
+  const plyr = new PlyrJS(".plyr-react", params!.options || {});
+  if (params!.source) plyr.source = params!.source;
   return plyr;
 };
 
-const destroy = (plyr: PlyrJS | null) => {
+const destroy: Destroy<PlyrJS, PlyrConfigurationProps> = (
+  plyr: PlyrJS | null
+) => {
   if (plyr) plyr.destroy();
 };
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = () => {};
 
-const getAPI = (plyr: PlyrJS | null) => {
+const getAPI: GetAPI<PlyrJS, PlyrConfigurationProps> = (
+  plyr: PlyrJS | null
+) => {
   if (!plyr) {
     return () =>
       new Proxy({ plyr: { source: null } } as unknown as APITypes, {
@@ -88,6 +96,7 @@ const Plyr = forwardRef<APITypes, PlyrProps>((props, ref) => {
   }) as MutableRefObject<HTMLVideoElement>;
   return <video ref={raptorRef} className="plyr-react plyr" {...rest} />;
 });
+
 if (__DEV__) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const PropTypes = require("prop-types");
