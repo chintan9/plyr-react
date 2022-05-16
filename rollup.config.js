@@ -3,6 +3,7 @@ import babelPlugin from "@rollup/plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
+import copy from "rollup-plugin-copy";
 import esbuild from "rollup-plugin-esbuild";
 import { terser } from "rollup-plugin-terser";
 import copy from "rollup-plugin-copy";
