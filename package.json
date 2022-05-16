@@ -118,7 +118,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-watch": "^8.0.0",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^4.0.0",
     "glob": "^8.0.1",
     "husky": "^8.0.0",
     "jasmine-expect": "^5.0.0",
