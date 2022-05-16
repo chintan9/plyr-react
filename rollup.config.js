@@ -5,6 +5,7 @@ import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
 import esbuild from "rollup-plugin-esbuild";
 import { terser } from "rollup-plugin-terser";
+import copy from "rollup-plugin-copy";
 const createBabelConfig = require("./babel.config");
 
 const extensions = [".ts", ".tsx"];
@@ -32,6 +33,11 @@ const createDeclarationConfig = (input, outDir) => ({
   external,
   plugins: [
     typescript({ declaration: true, emitDeclarationOnly: true, outDir }),
+    copy({
+      flatten: true,
+      copyOnce: true,
+      targets: [{ src: "node_modules/plyr/dist/plyr.css", dest: "dist" }],
+    }),
   ],
 });
 

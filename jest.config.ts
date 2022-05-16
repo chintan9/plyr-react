@@ -7,7 +7,7 @@
 export default {
   rootDir: ".",
   testEnvironment: "jsdom",
-  transform: { "^.+\\.(t|j)sx?$": "babel-jest" },
+  transform: { "^.+\\.(t|j)sx?$": ["@swc/jest"] },
   modulePathIgnorePatterns: ["dist"],
   testRegex: "test.(ts|tsx)$",
   coverageDirectory: "./coverage/",
