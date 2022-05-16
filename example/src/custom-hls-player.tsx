@@ -1,5 +1,5 @@
 import * as React from "react";
-import { usePlyr, APITypes, PlyrProps } from "plyr-react";
+import { APITypes, PlyrProps, usePlyr } from "plyr-react";
 import "plyr-react/dist/plyr.css";
 import Hls from "hls.js";
 import { Options } from "plyr";

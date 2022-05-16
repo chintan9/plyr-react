@@ -1,5 +1,5 @@
 import * as React from "react";
-import { usePlyr, APITypes, PlyrProps, PlyrInstance } from "plyr-react";
+import { APITypes, PlyrInstance, PlyrProps, usePlyr } from "plyr-react";
 import "plyr-react/dist/plyr.css";
 
 const videoOptions = undefined;
