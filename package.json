@@ -81,7 +81,7 @@
     "@rollup/plugin-typescript": "^8.3.2",
     "@rollup/plugin-url": "^7.0.0",
     "@svgr/rollup": "^6.2.1",
-    "@swc/core": "^1.2.185",
+    "@swc/core": "^1.2.189",
     "@swc/jest": "^0.2.21",
     "@testing-library/dom": "^8.13.0",
     "@testing-library/jest-dom": "^5.16.4",
