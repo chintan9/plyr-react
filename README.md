@@ -26,9 +26,13 @@ A responsive media player that is simple, easy to use, and customizable for vide
   </a>
 </p>
 
+You can see a live demo [here](https://githubbox.com/chintan9/plyr-react/tree/master/example).
+
+> Make sure to select the version for the plyr-react in the dependencies.
+
 ## Installation
 
-```sh
+```bash
 # NPM
 npm install plyr-react
 
@@ -38,49 +42,70 @@ yarn add plyr-react
 
 ## Usage
 
+### Ready to use `<Plyr />` component
+
+The simplest form of react integration with the plyr is to use the `<Plyr />` component, it is best for the static
+videos.
+
 ```tsx
 import Plyr from "plyr-react"
-import "plyr-react/dist/plyr.css"
+import "plyr-react/plyr.css"
 
-export default function App() {
-  return (
-    <Plyr
-      source={
-        {
-          /* https://github.com/sampotts/plyr#the-source-setter */
-        }
-      }
-      options={
-        {
-          /* https://github.com/sampotts/plyr#options */
-        }
-      }
-      {
-        ...{
-          /* Direct props for inner video tag (mdn.io/video) */
-        }
-      }
-    />
-  )
+const plyrProps = {
+  source: undefined, // https://github.com/sampotts/plyr#the-source-setter
+  options: undefined, // https://github.com/sampotts/plyr#options
+  // Direct props for inner video tag (mdn.io/video)
+}
+
+function MyPlyrVideo() {
+  return <Plyr {...plyrProps} />
 }
 ```
 
-### Using `ref`
+<details>
+<summary>Old version 4 plyr-react</summary>
+- The path for an import of css styles has been changed in version 5, if you are using the version 4, apply following change in the above code
+
+```diff
+- import "plyr-react/plyr.css"
++ import "plyr-react/dist/plyr.css"
+```
+
+</details>
+
+### Ready to use `usePlyr` hook
+
+If you need the full control over all if possible integration one can imagine, usePlyr is your hook. Here is a simple
+and exact Plyr component made with the `usePlyr` hook. Are curios about how it works follow
+this [thread](https://github.com/chintan9/plyr-react/issues/732#issuecomment-1029714462) and
+this [proposal](https://github.com/chintan9/plyr-react/issues/678#issue-1043113412).
+
+```jsx
+const Plyr = React.forwardRef((props, ref) => {
+  const {source, options = null, ...rest} = props
+  const raptorRef = usePlyr(ref, {
+    source,
+    options,
+  })
+  return <video ref={raptorRef} className="plyr-react plyr" {...rest} />
+})
+```
+
+### Accessing the plyr instance using refs
 
 ```tsx
-// Functional component
+// Function base component
 const MyComponent = () => {
   const ref = useRef()
 
   useEffect(() => {
-    // Access the internal plyr instance
-    console.log(ref.current.plyr)
+    console.log("internal plyr instance:", ref.current.plyr)
   })
 
-  return <Plyr ref={ref} />
+  return <Plyr ref={ref}/>
 }
 
-// Component class
+// Class base component
 class MyComponent extends Component {
   constructor(props) {
     super(props)
@@ -88,16 +113,11 @@ class MyComponent extends Component {
   }
 
   componentDidMount() {
-    // Access the internal plyr instance
-    console.log(this.player.current.plyr)
+    console.log("internal plyr instance", this.player.current.plyr)
   }
 
   render() {
-    return (
-      <>
-        <Plyr ref={(player) => (this.player.current = player)} />
-      </>
-    )
+    return <Plyr ref={(player) => (this.player.current = player)}/>
   }
 }
 ```
@@ -108,10 +128,10 @@ Currently the exported APIs contains a latest instance of plyr.
 In other words, the passing ref will have access to the player in the structure shown below.
 
 ```jsx
-return <Plyr ref={ref} />
+return <Plyr ref={ref}/>
 
 // ref can get access to latest plyr instance with `ref.current.plyr`
-ref = { current: { plyr } }
+ref = {current: {plyr}}
 
 // so you can make your player fullscreen 🎉
 ref.current.plyr.fullscreen.enter()
@@ -121,17 +141,32 @@ ref.current.plyr.fullscreen.enter()
 
 > You can fork these examples
 
-**Javascript example:** <a href="https://stackblitz.com/edit/react-fpmwns?file=src/App.js" title="stackblitz example (js)">
+**Javascript
+example:** <a href="https://stackblitz.com/edit/react-fpmwns?file=src/App.js" title="stackblitz example (js)">
 <img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="stackblitz example (js)" width="185">
 </a>
 
-**Typescript example:** <a href="https://codesandbox.io/s/plyr-react-new-api-forked-cg08k?file=/src/App.tsx" title="codesandbox example (ts)">
+**Typescript
+example:** <a href="https://codesandbox.io/s/plyr-react-new-api-forked-cg08k?file=/src/App.tsx" title="codesandbox example (ts)">
 <img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="codesandbox example (ts)" width="185">
 </a>
 
-**Basic HLS integration** <a href="https://codesandbox.io/s/hidden-frost-mpdjj?file=/src/HLS.tsx" title="codesandbox example (ts)">
+**Basic HLS
+integration** <a href="https://codesandbox.io/s/hidden-frost-mpdjj?file=/src/HLS.tsx" title="codesandbox example (ts)">
 Codesandbox
 </a>
+
+> Check out the examples directory for the useHls integration guide.
+
+```jsx
+<video
+  ref={usePlyr(ref, {
+    ...useHls(hlsSource, options),
+    source,
+  })}
+  className="plyr-react plyr"
+/>
+```
 
 **Demo:** https://react-fpmwns.stackblitz.io
 
@@ -143,8 +178,12 @@ Codesandbox
 
 ## Contribute
 
-We are open to all new contribution, feel free to read [CONTRIBUTING](https://github.com/chintan9/plyr-react/blob/master/CONTRIBUTING.md) and [CODE OF CONDUCT](https://github.com/chintan9/plyr-react/blob/master/CODE_OF_CONDUCT.md) section, make new issue to discuss about the problem, and improve/fix/enhance the source code with your PRs.
-There is a ready to code Gitpod, you can jump into it from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="Gitpod plyr-react"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"><a/>
+We are open to all new contribution, feel free to
+read [CONTRIBUTING](https://github.com/chintan9/plyr-react/blob/master/CONTRIBUTING.md)
+and [CODE OF CONDUCT](https://github.com/chintan9/plyr-react/blob/master/CODE_OF_CONDUCT.md) section, make new issue to
+discuss about the problem, and improve/fix/enhance the source code with your PRs. There is a ready to code Gitpod, you
+can jump into it
+from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="Gitpod plyr-react"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"><a/>
 
 ## Support
 
