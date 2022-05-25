@@ -28,7 +28,6 @@
 - Optimize the core buld process and reduced the build time up to 10 seconds
 - Remove redundant stuff from the released plyr-react's package.json so there will be no underised side efffect
 
-
 ## [v4.0.0](https://github.com/chintan9/plyr-react/tree/v4.0.0) (2022-05-02)
 
 - Implement `usePlyr` Hook and make the customization more easier
