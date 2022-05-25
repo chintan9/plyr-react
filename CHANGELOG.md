@@ -1,5 +1,39 @@
 # Changelog
 
+## [v.5.0.0](https://github.com/chintan9/plyr-react/tree/v5.0.0) (2022-05-25)
+
+- Add UMD and SystemJS builds for CDN.
+  > So you can use it in single spa for example.
+
+```html
+<script type="systemjs-importmap">
+  {
+    "imports": {
+      "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+      "react": "https://unpkg.com/browse/react@17.0.2/umd/react.production.min.js",
+      "react-dom": "https://unpkg.com/browse/react-dom@17.0.2/umd/react-dom.production.min.js",
+      "plyr-react": "https://unpkg.com/plyr-react@5.0.0/umd/index.production.js"
+    }
+  }
+</script>
+```
+
+- The path for an import of css styles has been changed.
+
+```diff
+- import "plyr-react/dist/plyr.css"
++ import "plyr-react/plyr.css"
+```
+
+- Optimize the core buld process and reduced the build time up to 10 seconds
+- Remove redundant stuff from the released plyr-react's package.json so there will be no underised side efffect
+
+
+## [v4.0.0](https://github.com/chintan9/plyr-react/tree/v4.0.0) (2022-05-02)
+
+- Implement `usePlyr` Hook and make the customization more easier
+- Integrate custom `useHLS` Hook make the seamless HLS integration possible.
+
 ## [v3.0.5](https://github.com/chintan9/plyr-react/tree/v3.0.5) (2020-10-07)
 
 [Full Changelog](https://github.com/chintan9/plyr-react/compare/v3.0.4...v3.0.5)
