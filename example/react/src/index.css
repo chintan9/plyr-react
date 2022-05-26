@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  width: 500px;
+}
+
+/* Video list global styles */
+.video-list {
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.video-item {
+  list-style: none;
+  margin: 1em;
+  border-radius: 16px;
+  overflow: hidden;
+}
