@@ -82,7 +82,7 @@ this [proposal](https://github.com/chintan9/plyr-react/issues/678#issue-10431134
 
 ```jsx
 const Plyr = React.forwardRef((props, ref) => {
-  const {source, options = null, ...rest} = props
+  const { source, options = null, ...rest } = props
   const raptorRef = usePlyr(ref, {
     source,
     options,
@@ -102,7 +102,7 @@ const MyComponent = () => {
     console.log("internal plyr instance:", ref.current.plyr)
   })
 
-  return <Plyr ref={ref}/>
+  return <Plyr ref={ref} />
 }
 
 // Class base component
@@ -117,7 +117,7 @@ class MyComponent extends Component {
   }
 
   render() {
-    return <Plyr ref={(player) => (this.player.current = player)}/>
+    return <Plyr ref={(player) => (this.player.current = player)} />
   }
 }
 ```
@@ -128,10 +128,10 @@ Currently the exported APIs contains a latest instance of plyr.
 In other words, the passing ref will have access to the player in the structure shown below.
 
 ```jsx
-return <Plyr ref={ref}/>
+return <Plyr ref={ref} />
 
 // ref can get access to latest plyr instance with `ref.current.plyr`
-ref = {current: {plyr}}
+ref = { current: { plyr } }
 
 // so you can make your player fullscreen 🎉
 ref.current.plyr.fullscreen.enter()
