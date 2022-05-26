@@ -26,7 +26,7 @@ A responsive media player that is simple, easy to use, and customizable for vide
   </a>
 </p>
 
-You can see a live demo [here](https://githubbox.com/chintan9/plyr-react/tree/master/example).
+You can see a live demo [here](https://githubbox.com/chintan9/plyr-react/tree/master/example/react).
 
 > Make sure to select the version for the plyr-react in the dependencies.
 
