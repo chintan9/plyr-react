@@ -307,7 +307,7 @@ a.plyr__control:before {
   font-size: 13px;
   font-size: var(--plyr-font-size-menu, var(--plyr-font-size-small, 13px));
   padding: 4.66667px 10.5px;
-  padding: calc(var(--plyr-control-spacing, 10px) * 0.7/1.5)
+  padding: calc(var(--plyr-control-spacing, 10px) * 0.7 / 1.5)
     calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5);
   -webkit-user-select: none;
   user-select: none;
@@ -349,7 +349,7 @@ a.plyr__control:before {
   margin: 7px;
   margin: calc(var(--plyr-control-spacing, 10px) * 0.7);
   margin-bottom: 3.5px;
-  margin-bottom: calc(var(--plyr-control-spacing, 10px) * 0.7/2);
+  margin-bottom: calc(var(--plyr-control-spacing, 10px) * 0.7 / 2);
   padding-left: 28px;
   padding-left: calc(var(--plyr-control-spacing, 10px) * 0.7 * 4);
   position: relative;
@@ -374,7 +374,7 @@ a.plyr__control:before {
   height: 1px;
   left: 0;
   margin-top: 3.5px;
-  margin-top: calc(var(--plyr-control-spacing, 10px) * 0.7/2);
+  margin-top: calc(var(--plyr-control-spacing, 10px) * 0.7 / 2);
   overflow: hidden;
   position: absolute;
   right: 0;
