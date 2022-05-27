@@ -63,9 +63,8 @@ function MyPlyrVideo() {
   return <Plyr {...plyrProps} />
 }
 ```
-
-<details>
-<summary>Old version 4 plyr-react</summary>
+______________
+#### Old version 4 plyr-react
 - The path for an import of css styles has been changed in version 5, if you are using the version 4, apply following change in the above code
 
 ```diff
@@ -73,4 +72,3 @@ function MyPlyrVideo() {
 + import "plyr-react/dist/plyr.css"
 ```
 
-</details>
