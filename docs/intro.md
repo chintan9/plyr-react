@@ -31,41 +31,46 @@ grade: JavaScript][]][4] [![contributors badge][]][5]
   [5]: #contributors
 
 
+
 ## Installation
 
-```sh
+```bash
 # NPM
-npm install plyr-react@next
+npm install plyr-react
 
 # Yarn
-yarn add plyr-react@next
+yarn add plyr-react
 ```
 
 ## Usage
 
-```tsx
-import Plyr from 'plyr-react'
-import 'plyr-react/dist/plyr.css'
+### Ready to use `<Plyr />` component
 
-export default function App() {
-  return (
-    <Plyr
-      source={
-        {
-          /* https://github.com/sampotts/plyr#the-source-setter */
-        }
-      }
-      options={
-        {
-          /* https://github.com/sampotts/plyr#options */
-        }
-      }
-      {
-        ...{
-          /* Direct props for inner video tag (mdn.io/video) */
-        }
-      }
-    />
-  )
+The simplest form of react integration with the plyr is to use the `<Plyr />` component, it is best for the static
+videos.
+
+```tsx
+import Plyr from "plyr-react"
+import "plyr-react/plyr.css"
+
+const plyrProps = {
+  source: undefined, // https://github.com/sampotts/plyr#the-source-setter
+  options: undefined, // https://github.com/sampotts/plyr#options
+  // Direct props for inner video tag (mdn.io/video)
+}
+
+function MyPlyrVideo() {
+  return <Plyr {...plyrProps} />
 }
 ```
+
+<details>
+<summary>Old version 4 plyr-react</summary>
+- The path for an import of css styles has been changed in version 5, if you are using the version 4, apply following change in the above code
+
+```diff
+- import "plyr-react/plyr.css"
++ import "plyr-react/dist/plyr.css"
+```
+
+</details>
