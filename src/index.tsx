@@ -1,10 +1,10 @@
-import {
+import * as React from "react";
+import type {
   DependencyList,
   DetailedHTMLProps,
   MutableRefObject,
   Ref,
   VideoHTMLAttributes,
-  forwardRef,
 } from "react";
 import PlyrJS, { Options, SourceInfo } from "plyr";
 import useAptor, { Destroy, GetAPI, Instantiate } from "react-aptor";
@@ -88,7 +88,7 @@ export function usePlyr(
   );
 }
 
-const Plyr = forwardRef<APITypes, PlyrProps>((props, ref) => {
+const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
   const { source, options = null, ...rest } = props;
   const raptorRef = usePlyr(ref, {
     source,

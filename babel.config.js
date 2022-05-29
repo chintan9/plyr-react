@@ -5,7 +5,7 @@ module.exports = (api, targets) => {
     babelrc: false,
     ignore: ["./node_modules"],
     presets: [
-      "@babel/preset-react",
+      ["@babel/preset-react", { runtime: "automatic" }],
       "@babel/preset-typescript",
       [
         "@babel/preset-env",
@@ -18,7 +18,7 @@ module.exports = (api, targets) => {
     ],
     plugins: [
       ["@babel/plugin-transform-react-jsx", { runtime: "automatic" }],
-      ["@babel/plugin-transform-typescript"],
+      ["@babel/plugin-transform-typescript", { isTSX: true }],
     ],
   };
 };
