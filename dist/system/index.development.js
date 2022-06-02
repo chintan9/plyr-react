@@ -1,40 +1,31 @@
-System.register(["react", "plyr", "react-aptor"], function (exports) {
-  "use strict";
+System.register(['react', 'plyr', 'react-aptor'], (function (exports) {
+  'use strict';
   var React, PlyrJS, useAptor;
   return {
-    setters: [
-      function (module) {
-        React = module;
-      },
-      function (module) {
-        PlyrJS = module["default"];
-      },
-      function (module) {
-        useAptor = module["default"];
-      },
-    ],
-    execute: function () {
-      exports("usePlyr", usePlyr);
+    setters: [function (module) {
+      React = module;
+    }, function (module) {
+      PlyrJS = module["default"];
+    }, function (module) {
+      useAptor = module["default"];
+    }],
+    execute: (function () {
+
+      exports('usePlyr', usePlyr);
 
       var __defProp = Object.defineProperty;
       var __getOwnPropSymbols = Object.getOwnPropertySymbols;
       var __hasOwnProp = Object.prototype.hasOwnProperty;
       var __propIsEnum = Object.prototype.propertyIsEnumerable;
-      var __defNormalProp = (obj, key, value) =>
-        key in obj
-          ? __defProp(obj, key, {
-              enumerable: true,
-              configurable: true,
-              writable: true,
-              value,
-            })
-          : (obj[key] = value);
+      var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
       var __spreadValues = (a, b) => {
         for (var prop in b || (b = {}))
-          if (__hasOwnProp.call(b, prop)) __defNormalProp(a, prop, b[prop]);
+          if (__hasOwnProp.call(b, prop))
+            __defNormalProp(a, prop, b[prop]);
         if (__getOwnPropSymbols)
           for (var prop of __getOwnPropSymbols(b)) {
-            if (__propIsEnum.call(b, prop)) __defNormalProp(a, prop, b[prop]);
+            if (__propIsEnum.call(b, prop))
+              __defNormalProp(a, prop, b[prop]);
           }
         return a;
       };
@@ -52,66 +43,50 @@ System.register(["react", "plyr", "react-aptor"], function (exports) {
       };
       const instantiate = (_, params) => {
         const plyr = new PlyrJS(".plyr-react", params.options || {});
-        if (params.source) plyr.source = params.source;
+        if (params.source)
+          plyr.source = params.source;
         return plyr;
       };
       const destroy = (plyr) => {
-        if (plyr) plyr.destroy();
+        if (plyr)
+          plyr.destroy();
       };
-      const noop = () => {};
+      const noop = () => {
+      };
       const getAPI = (plyr) => {
         if (!plyr) {
-          return () =>
-            new Proxy(
-              { plyr: { source: null } },
-              {
-                get: (target, prop) => {
-                  if (prop === "plyr") {
-                    return target[prop];
-                  }
-                  return noop;
-                },
+          return () => new Proxy({ plyr: { source: null } }, {
+            get: (target, prop) => {
+              if (prop === "plyr") {
+                return target[prop];
               }
-            );
+              return noop;
+            }
+          });
         }
         return () => ({
-          plyr,
+          plyr
         });
       };
       function usePlyr(ref, params, deps = null) {
-        return useAptor(
-          ref,
-          {
-            instantiate,
-            getAPI,
-            destroy,
-            params,
-          },
-          deps || [params.options, params.source]
-        );
+        return useAptor(ref, {
+          instantiate,
+          getAPI,
+          destroy,
+          params
+        }, deps || [params.options, params.source]);
       }
-      const Plyr = exports(
-        "default",
-        React.forwardRef((props, ref) => {
-          const _a = props,
-            { source, options = null } = _a,
-            rest = __objRest(_a, ["source", "options"]);
-          const raptorRef = usePlyr(ref, {
-            source,
-            options,
-          });
-          return /* @__PURE__ */ React.createElement(
-            "video",
-            __spreadValues(
-              {
-                ref: raptorRef,
-                className: "plyr-react plyr",
-              },
-              rest
-            )
-          );
-        })
-      );
+      const Plyr = exports('default', React.forwardRef((props, ref) => {
+        const _a = props, { source, options = null } = _a, rest = __objRest(_a, ["source", "options"]);
+        const raptorRef = usePlyr(ref, {
+          source,
+          options
+        });
+        return /* @__PURE__ */ React.createElement("video", __spreadValues({
+          ref: raptorRef,
+          className: "plyr-react plyr"
+        }, rest));
+      }));
       {
         const PropTypes = require("prop-types");
         Plyr.displayName = "Plyr";
@@ -127,7 +102,7 @@ System.register(["react", "plyr", "react-aptor"], function (exports) {
               "mute",
               "volume",
               "settings",
-              "fullscreen",
+              "fullscreen"
             ],
             i18n: {
               restart: "Restart",
@@ -156,8 +131,8 @@ System.register(["react", "plyr", "react-aptor"], function (exports) {
               speed: "Speed",
               normal: "Normal",
               quality: "Quality",
-              loop: "Loop",
-            },
+              loop: "Loop"
+            }
           },
           source: {
             type: "video",
@@ -165,21 +140,22 @@ System.register(["react", "plyr", "react-aptor"], function (exports) {
               {
                 src: "https://cdn.plyr.io/static/blank.mp4",
                 type: "video/mp4",
-                size: 720,
+                size: 720
               },
               {
                 src: "https://cdn.plyr.io/static/blank.mp4",
                 type: "video/mp4",
-                size: 1080,
-              },
-            ],
-          },
+                size: 1080
+              }
+            ]
+          }
         };
         Plyr.propTypes = {
           options: PropTypes.object,
-          source: PropTypes.any,
+          source: PropTypes.any
         };
       }
-    },
+
+    })
   };
-});
+}));
