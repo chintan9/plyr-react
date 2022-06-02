@@ -1,6 +1,7 @@
 {
   "name": "plyr-react",
-  "version": "5.0.0",
+  "version": "5.0.1",
+  "private": false,
   "description": "A simple HTML5, YouTube and Vimeo player for react using plyr",
   "keywords": [
     "react",
@@ -54,6 +55,5 @@
   },
   "engines": {
     "node": ">=12.7.0"
-  },
-  "private": false
+  }
 }
