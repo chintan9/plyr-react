@@ -24,6 +24,7 @@
   "sideEffects": false,
   "exports": {
     "./package.json": "./package.json",
+    "./plyr.css": "./plyr.css",
     ".": {
       "types": "./index.d.ts",
       "module": "./esm/index.js",

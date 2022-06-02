@@ -3,25 +3,25 @@ System.register(["react", "plyr", "react-aptor"], function (c) {
   var l, u, s;
   return {
     setters: [
-      function (n) {
-        l = n.forwardRef;
+      function (o) {
+        l = o;
       },
-      function (n) {
-        u = n.default;
+      function (o) {
+        u = o.default;
       },
-      function (n) {
-        s = n.default;
+      function (o) {
+        s = o.default;
       },
     ],
     execute: function () {
       c("usePlyr", y);
-      var n = Object.defineProperty,
+      var o = Object.defineProperty,
         a = Object.getOwnPropertySymbols,
-        f = Object.prototype.hasOwnProperty,
-        i = Object.prototype.propertyIsEnumerable,
+        i = Object.prototype.hasOwnProperty,
+        f = Object.prototype.propertyIsEnumerable,
         p = (r, e, t) =>
           e in r
-            ? n(r, e, {
+            ? o(r, e, {
                 enumerable: !0,
                 configurable: !0,
                 writable: !0,
@@ -29,16 +29,16 @@ System.register(["react", "plyr", "react-aptor"], function (c) {
               })
             : (r[e] = t),
         v = (r, e) => {
-          for (var t in e || (e = {})) f.call(e, t) && p(r, t, e[t]);
-          if (a) for (var t of a(e)) i.call(e, t) && p(r, t, e[t]);
+          for (var t in e || (e = {})) i.call(e, t) && p(r, t, e[t]);
+          if (a) for (var t of a(e)) f.call(e, t) && p(r, t, e[t]);
           return r;
         },
         d = (r, e) => {
           var t = {};
-          for (var o in r) f.call(r, o) && e.indexOf(o) < 0 && (t[o] = r[o]);
+          for (var n in r) i.call(r, n) && e.indexOf(n) < 0 && (t[n] = r[n]);
           if (r != null && a)
-            for (var o of a(r))
-              e.indexOf(o) < 0 && i.call(r, o) && (t[o] = r[o]);
+            for (var n of a(r))
+              e.indexOf(n) < 0 && f.call(r, n) && (t[n] = r[n]);
           return t;
         };
       const b = (r, e) => {
@@ -66,14 +66,14 @@ System.register(["react", "plyr", "react-aptor"], function (c) {
       }
       const x = c(
         "default",
-        l((r, e) => {
+        l.forwardRef((r, e) => {
           const t = r,
-            { source: o, options: w = null } = t,
-            g = d(t, ["source", "options"]),
-            j = y(e, { source: o, options: w });
-          return React.createElement(
+            { source: n, options: g = null } = t,
+            w = d(t, ["source", "options"]),
+            j = y(e, { source: n, options: g });
+          return l.createElement(
             "video",
-            v({ ref: j, className: "plyr-react plyr" }, g)
+            v({ ref: j, className: "plyr-react plyr" }, w)
           );
         })
       );

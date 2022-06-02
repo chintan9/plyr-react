@@ -26,11 +26,38 @@
   function u(e) {
     return e && "object" == typeof e && "default" in e ? e : { default: e };
   }
-  var i = u(t),
-    c = u(n);
-  function a() {
+  function i(e) {
+    if (e && e.__esModule) return e;
+    var r = Object.create(null);
     return (
-      (a =
+      e &&
+        Object.keys(e).forEach(function (t) {
+          if ("default" !== t) {
+            var n = Object.getOwnPropertyDescriptor(e, t);
+            Object.defineProperty(
+              r,
+              t,
+              n.get
+                ? n
+                : {
+                    enumerable: !0,
+                    get: function () {
+                      return e[t];
+                    },
+                  }
+            );
+          }
+        }),
+      (r.default = e),
+      Object.freeze(r)
+    );
+  }
+  var c = i(r),
+    f = u(t),
+    a = u(n);
+  function l() {
+    return (
+      (l =
         Object.assign ||
         function (e) {
           for (var r = 1; r < arguments.length; r++) {
@@ -40,19 +67,19 @@
           }
           return e;
         }),
-      a.apply(this, arguments)
+      l.apply(this, arguments)
     );
   }
-  var f = ["source", "options"],
-    s = function (e, r) {
-      var t = new i.default(".plyr-react", r.options || {});
+  var s = ["source", "options"],
+    p = function (e, r) {
+      var t = new f.default(".plyr-react", r.options || {});
       return r.source && (t.source = r.source), t;
     },
-    l = function (e) {
+    d = function (e) {
       e && e.destroy();
     },
-    p = function () {},
-    y = function (e) {
+    y = function () {},
+    j = function (e) {
       return e
         ? function () {
             return { plyr: e };
@@ -62,23 +89,23 @@
               { plyr: { source: null } },
               {
                 get: function (e, r) {
-                  return "plyr" === r ? e[r] : p;
+                  return "plyr" === r ? e[r] : y;
                 },
               }
             );
           };
     };
-  function d(e, r, t) {
+  function v(e, r, t) {
     return (
       void 0 === t && (t = null),
-      c.default(
+      a.default(
         e,
-        { instantiate: s, getAPI: y, destroy: l, params: r },
+        { instantiate: p, getAPI: j, destroy: d, params: r },
         t || [r.options, r.source]
       )
     );
   }
-  var v = r.forwardRef(function (e, r) {
+  var b = c.forwardRef(function (e, r) {
     var t = e.source,
       n = e.options,
       u = void 0 === n ? null : n,
@@ -91,11 +118,11 @@
         for (n = 0; n < u.length; n++)
           (t = u[n]), r.indexOf(t) >= 0 || (o[t] = e[t]);
         return o;
-      })(e, f),
-      c = d(r, { source: t, options: u });
-    return o.jsx("video", a({ ref: c, className: "plyr-react plyr" }, i));
+      })(e, s),
+      c = v(r, { source: t, options: u });
+    return o.jsx("video", l({ ref: c, className: "plyr-react plyr" }, i));
   });
-  (e.default = v),
-    (e.usePlyr = d),
+  (e.default = b),
+    (e.usePlyr = v),
     Object.defineProperty(e, "__esModule", { value: !0 });
 });

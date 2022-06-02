@@ -1,10 +1,10 @@
 System.register(["react", "plyr", "react-aptor"], function (exports) {
   "use strict";
-  var forwardRef, PlyrJS, useAptor;
+  var React, PlyrJS, useAptor;
   return {
     setters: [
       function (module) {
-        forwardRef = module.forwardRef;
+        React = module;
       },
       function (module) {
         PlyrJS = module["default"];
@@ -92,7 +92,7 @@ System.register(["react", "plyr", "react-aptor"], function (exports) {
       }
       const Plyr = exports(
         "default",
-        forwardRef((props, ref) => {
+        React.forwardRef((props, ref) => {
           const _a = props,
             { source, options = null } = _a,
             rest = __objRest(_a, ["source", "options"]);

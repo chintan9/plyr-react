@@ -1,4 +1,5 @@
-import {
+import * as React from "react";
+import type {
   DependencyList,
   DetailedHTMLProps,
   Ref,
@@ -25,10 +26,10 @@ export declare function usePlyr(
   ref: Ref<APITypes>,
   params: PlyrConfigurationProps,
   deps?: DependencyList | null
-): import("react").RefObject<HTMLVideoElement>;
-declare const Plyr: import("react").ForwardRefExoticComponent<
+): React.RefObject<HTMLVideoElement>;
+declare const Plyr: React.ForwardRefExoticComponent<
   Omit<ReactVideoProps, "ref"> &
     PlyrConfigurationProps &
-    import("react").RefAttributes<APITypes>
+    React.RefAttributes<APITypes>
 >;
 export default Plyr;

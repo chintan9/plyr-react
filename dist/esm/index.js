@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import * as React from "react";
 import PlyrJS from "plyr";
 import useAptor from "react-aptor";
 
@@ -76,7 +76,7 @@ function usePlyr(ref, params, deps = null) {
     deps || [params.options, params.source]
   );
 }
-const Plyr = forwardRef((props, ref) => {
+const Plyr = React.forwardRef((props, ref) => {
   const _a = props,
     { source, options = null } = _a,
     rest = __objRest(_a, ["source", "options"]);

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var react = require("react");
+var React = require("react");
 var PlyrJS = require("plyr");
 var useAptor = require("react-aptor");
 var jsxRuntime = require("react/jsx-runtime");
@@ -11,6 +11,33 @@ function _interopDefaultLegacy(e) {
   return e && typeof e === "object" && "default" in e ? e : { default: e };
 }
 
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== "default") {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(
+          n,
+          k,
+          d.get
+            ? d
+            : {
+                enumerable: true,
+                get: function () {
+                  return e[k];
+                },
+              }
+        );
+      }
+    });
+  }
+  n["default"] = e;
+  return Object.freeze(n);
+}
+
+var React__namespace = /*#__PURE__*/ _interopNamespace(React);
 var PlyrJS__default = /*#__PURE__*/ _interopDefaultLegacy(PlyrJS);
 var useAptor__default = /*#__PURE__*/ _interopDefaultLegacy(useAptor);
 
@@ -111,7 +138,7 @@ function usePlyr(ref, params, deps) {
     deps || [params.options, params.source]
   );
 }
-var Plyr = react.forwardRef(function (props, ref) {
+var Plyr = React__namespace.forwardRef(function (props, ref) {
   var source = props.source,
     _props$options = props.options,
     options = _props$options === void 0 ? null : _props$options,
