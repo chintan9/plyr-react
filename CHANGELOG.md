@@ -1,5 +1,9 @@
 # Changelog
 
+## [v.5.0.2](https://github.com/chintan9/plyr-react/tree/v5.0.2) (2022-05-25)
+
+- Fix build issues
+
 ## [v.5.0.0](https://github.com/chintan9/plyr-react/tree/v5.0.0) (2022-05-25)
 
 - Add UMD and SystemJS builds for CDN.
