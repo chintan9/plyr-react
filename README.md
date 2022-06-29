@@ -5,7 +5,6 @@
 A responsive media player that is simple, easy to use, and customizable for video, audio, YouTube, and Vimeo.
   <br>
   <img src="https://img.shields.io/badge/Tree%20Shakeable-d4e157" alt="tree-shakeable" />
-  <img src="https://img.shields.io/badge/Side%20Effect%20Free-ffeb3b" alt="side-effect free" />
 </p>
 
 <p align="center">
