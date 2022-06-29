@@ -20,7 +20,9 @@
   },
   "license": "MIT",
   "author": "Chintan Prajapati",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "exports": {
     "./package.json": "./package.json",
     "./plyr.css": "./plyr.css",
