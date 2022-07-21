@@ -1,11 +1,13 @@
-System.register(['react', 'plyr', 'react-aptor'], (function (exports) {
+System.register(['react', 'plyr', 'prop-types', 'react-aptor'], (function (exports) {
   'use strict';
-  var React, PlyrJS, useAptor;
+  var React, PlyrJS, PropTypes, useAptor;
   return {
     setters: [function (module) {
       React = module;
     }, function (module) {
       PlyrJS = module["default"];
+    }, function (module) {
+      PropTypes = module["default"];
     }, function (module) {
       useAptor = module["default"];
     }],
@@ -88,7 +90,6 @@ System.register(['react', 'plyr', 'react-aptor'], (function (exports) {
         }, rest));
       }));
       {
-        const PropTypes = require("prop-types");
         Plyr.displayName = "Plyr";
         Plyr.defaultProps = {
           options: {

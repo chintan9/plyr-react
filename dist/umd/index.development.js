@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('plyr'), require('react-aptor'), require('react/jsx-runtime')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'react', 'plyr', 'react-aptor', 'react/jsx-runtime'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["plyr-react"] = {}, global.React, global.PlyrJS, global.useAptor, global.jsxRuntime));
-})(this, (function (exports, React, PlyrJS, useAptor, jsxRuntime) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('plyr'), require('prop-types'), require('react-aptor'), require('react/jsx-runtime')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'react', 'plyr', 'prop-types', 'react-aptor', 'react/jsx-runtime'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["plyr-react"] = {}, global.React, global.PlyrJS, global.PropTypes, global.useAptor, global.jsxRuntime));
+})(this, (function (exports, React, PlyrJS, PropTypes, useAptor, jsxRuntime) { 'use strict';
 
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -26,6 +26,7 @@
 
   var React__namespace = /*#__PURE__*/_interopNamespace(React);
   var PlyrJS__default = /*#__PURE__*/_interopDefaultLegacy(PlyrJS);
+  var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
   var useAptor__default = /*#__PURE__*/_interopDefaultLegacy(useAptor);
 
   function _extends() {
@@ -130,8 +131,6 @@
   });
 
   {
-    var PropTypes = require("prop-types");
-
     Plyr.displayName = "Plyr";
     Plyr.defaultProps = {
       options: {
@@ -180,8 +179,8 @@
       }
     };
     Plyr.propTypes = {
-      options: PropTypes.object,
-      source: PropTypes.any
+      options: PropTypes__default["default"].object,
+      source: PropTypes__default["default"].any
     };
   }
 

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PlyrJS from 'plyr';
+import PropTypes from 'prop-types';
 import useAptor from 'react-aptor';
 
 var __defProp = Object.defineProperty;
@@ -77,7 +78,6 @@ const Plyr = React.forwardRef((props, ref) => {
   }, rest));
 });
 if ((import.meta.env && import.meta.env.MODE) !== "production") {
-  const PropTypes = require("prop-types");
   Plyr.displayName = "Plyr";
   Plyr.defaultProps = {
     options: {

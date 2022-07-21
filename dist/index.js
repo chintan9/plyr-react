@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 var PlyrJS = require('plyr');
+var PropTypes = require('prop-types');
 var useAptor = require('react-aptor');
 var jsxRuntime = require('react/jsx-runtime');
 
@@ -29,6 +30,7 @@ function _interopNamespace(e) {
 
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
 var PlyrJS__default = /*#__PURE__*/_interopDefaultLegacy(PlyrJS);
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var useAptor__default = /*#__PURE__*/_interopDefaultLegacy(useAptor);
 
 function _extends() {
@@ -133,8 +135,6 @@ var Plyr = React__namespace.forwardRef(function (props, ref) {
 });
 
 if (process.env.NODE_ENV !== "production") {
-  var PropTypes = require("prop-types");
-
   Plyr.displayName = "Plyr";
   Plyr.defaultProps = {
     options: {
@@ -183,8 +183,8 @@ if (process.env.NODE_ENV !== "production") {
     }
   };
   Plyr.propTypes = {
-    options: PropTypes.object,
-    source: PropTypes.any
+    options: PropTypes__default["default"].object,
+    source: PropTypes__default["default"].any
   };
 }
 
