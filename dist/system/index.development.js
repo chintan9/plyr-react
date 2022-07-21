@@ -1,18 +1,18 @@
 System.register(
-  ["react", "prop-types", "plyr", "react-aptor"],
+  ["react", "plyr", "prop-types", "react-aptor"],
   function (exports) {
     "use strict";
-    var React, PropTypes, PlyrJS, useAptor;
+    var React, PlyrJS, PropTypes, useAptor;
     return {
       setters: [
         function (module) {
           React = module;
         },
         function (module) {
-          PropTypes = module["default"];
+          PlyrJS = module["default"];
         },
         function (module) {
-          PlyrJS = module["default"];
+          PropTypes = module["default"];
         },
         function (module) {
           useAptor = module["default"];

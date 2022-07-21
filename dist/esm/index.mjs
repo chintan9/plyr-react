@@ -1,6 +1,6 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import PlyrJS from "plyr";
+import PropTypes from "prop-types";
 import useAptor from "react-aptor";
 
 var __defProp = Object.defineProperty;

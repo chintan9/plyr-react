@@ -3,8 +3,8 @@
     ? factory(
         exports,
         require("react"),
-        require("prop-types"),
         require("plyr"),
+        require("prop-types"),
         require("react-aptor"),
         require("react/jsx-runtime")
       )
@@ -13,8 +13,8 @@
         [
           "exports",
           "react",
-          "prop-types",
           "plyr",
+          "prop-types",
           "react-aptor",
           "react/jsx-runtime",
         ],
@@ -25,12 +25,12 @@
       factory(
         (global["plyr-react"] = {}),
         global.React,
-        global.PropTypes,
         global.PlyrJS,
+        global.PropTypes,
         global.useAptor,
         global.jsxRuntime
       ));
-})(this, function (exports, React, PropTypes, PlyrJS, useAptor, jsxRuntime) {
+})(this, function (exports, React, PlyrJS, PropTypes, useAptor, jsxRuntime) {
   "use strict";
 
   function _interopDefaultLegacy(e) {
@@ -64,8 +64,8 @@
   }
 
   var React__namespace = /*#__PURE__*/ _interopNamespace(React);
-  var PropTypes__default = /*#__PURE__*/ _interopDefaultLegacy(PropTypes);
   var PlyrJS__default = /*#__PURE__*/ _interopDefaultLegacy(PlyrJS);
+  var PropTypes__default = /*#__PURE__*/ _interopDefaultLegacy(PropTypes);
   var useAptor__default = /*#__PURE__*/ _interopDefaultLegacy(useAptor);
 
   function _extends() {

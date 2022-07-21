@@ -1,4 +1,4 @@
-System.register(["react", "prop-types", "plyr", "react-aptor"], function (l) {
+System.register(["react", "plyr", "prop-types", "react-aptor"], function (l) {
   "use strict";
   var c, u, s;
   return {
@@ -6,10 +6,10 @@ System.register(["react", "prop-types", "plyr", "react-aptor"], function (l) {
       function (o) {
         c = o;
       },
-      function () {},
       function (o) {
         u = o.default;
       },
+      function () {},
       function (o) {
         s = o.default;
       },

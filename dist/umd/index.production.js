@@ -3,8 +3,8 @@
     ? r(
         exports,
         require("react"),
-        require("prop-types"),
         require("plyr"),
+        require("prop-types"),
         require("react-aptor"),
         require("react/jsx-runtime")
       )
@@ -13,8 +13,8 @@
         [
           "exports",
           "react",
-          "prop-types",
           "plyr",
+          "prop-types",
           "react-aptor",
           "react/jsx-runtime",
         ],
@@ -25,8 +25,8 @@
           "plyr-react"
         ] = {}),
         e.React,
-        e.PropTypes,
         e.PlyrJS,
+        e.PropTypes,
         e.useAptor,
         e.jsxRuntime
       );
@@ -62,7 +62,7 @@
     );
   }
   var f = c(r),
-    a = i(n),
+    a = i(t),
     s = i(o);
   function l() {
     return (
