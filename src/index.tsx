@@ -7,6 +7,7 @@ import type {
   VideoHTMLAttributes,
 } from "react";
 import PlyrJS, { Options, SourceInfo } from "plyr";
+import PropTypes from "prop-types";
 import useAptor, { Destroy, GetAPI, Instantiate } from "react-aptor";
 
 export type PlyrInstance = PlyrJS;
@@ -99,7 +100,6 @@ const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
 
 if (__DEV__) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const PropTypes = require("prop-types");
   Plyr.displayName = "Plyr";
 
   Plyr.defaultProps = {

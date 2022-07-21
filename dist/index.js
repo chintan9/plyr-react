@@ -1,25 +1,36 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', { value: true });
+Object.defineProperty(exports, "__esModule", { value: true });
 
-var React = require('react');
-var PlyrJS = require('plyr');
-var useAptor = require('react-aptor');
-var jsxRuntime = require('react/jsx-runtime');
+var React = require("react");
+var PropTypes = require("prop-types");
+var PlyrJS = require("plyr");
+var useAptor = require("react-aptor");
+var jsxRuntime = require("react/jsx-runtime");
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy(e) {
+  return e && typeof e === "object" && "default" in e ? e : { default: e };
+}
 
 function _interopNamespace(e) {
   if (e && e.__esModule) return e;
   var n = Object.create(null);
   if (e) {
     Object.keys(e).forEach(function (k) {
-      if (k !== 'default') {
+      if (k !== "default") {
         var d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: function () { return e[k]; }
-        });
+        Object.defineProperty(
+          n,
+          k,
+          d.get
+            ? d
+            : {
+                enumerable: true,
+                get: function () {
+                  return e[k];
+                },
+              }
+        );
       }
     });
   }
@@ -27,24 +38,27 @@ function _interopNamespace(e) {
   return Object.freeze(n);
 }
 
-var React__namespace = /*#__PURE__*/_interopNamespace(React);
-var PlyrJS__default = /*#__PURE__*/_interopDefaultLegacy(PlyrJS);
-var useAptor__default = /*#__PURE__*/_interopDefaultLegacy(useAptor);
+var React__namespace = /*#__PURE__*/ _interopNamespace(React);
+var PropTypes__default = /*#__PURE__*/ _interopDefaultLegacy(PropTypes);
+var PlyrJS__default = /*#__PURE__*/ _interopDefaultLegacy(PlyrJS);
+var useAptor__default = /*#__PURE__*/ _interopDefaultLegacy(useAptor);
 
 function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
+  _extends =
+    Object.assign ||
+    function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
 
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
         }
       }
-    }
 
-    return target;
-  };
+      return target;
+    };
 
   return _extends.apply(this, arguments);
 }
@@ -67,7 +81,10 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 var _excluded = ["source", "options"];
 
 var instantiate = function instantiate(_, params) {
-  var plyr = new PlyrJS__default["default"](".plyr-react", params.options || {});
+  var plyr = new PlyrJS__default["default"](
+    ".plyr-react",
+    params.options || {}
+  );
   if (params.source) plyr.source = params.source;
   return plyr;
 };
@@ -81,25 +98,28 @@ var noop = function noop() {};
 var getAPI = function getAPI(plyr) {
   if (!plyr) {
     return function () {
-      return new Proxy({
-        plyr: {
-          source: null
-        }
-      }, {
-        get: function get(target, prop) {
-          if (prop === "plyr") {
-            return target[prop];
-          }
+      return new Proxy(
+        {
+          plyr: {
+            source: null,
+          },
+        },
+        {
+          get: function get(target, prop) {
+            if (prop === "plyr") {
+              return target[prop];
+            }
 
-          return noop;
+            return noop;
+          },
         }
-      });
+      );
     };
   }
 
   return function () {
     return {
-      plyr: plyr
+      plyr: plyr,
     };
   };
 };
@@ -109,36 +129,55 @@ function usePlyr(ref, params, deps) {
     deps = null;
   }
 
-  return useAptor__default["default"](ref, {
-    instantiate: instantiate,
-    getAPI: getAPI,
-    destroy: destroy,
-    params: params
-  }, deps || [params.options, params.source]);
+  return useAptor__default["default"](
+    ref,
+    {
+      instantiate: instantiate,
+      getAPI: getAPI,
+      destroy: destroy,
+      params: params,
+    },
+    deps || [params.options, params.source]
+  );
 }
 var Plyr = React__namespace.forwardRef(function (props, ref) {
   var source = props.source,
-      _props$options = props.options,
-      options = _props$options === void 0 ? null : _props$options,
-      rest = _objectWithoutPropertiesLoose(props, _excluded);
+    _props$options = props.options,
+    options = _props$options === void 0 ? null : _props$options,
+    rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var raptorRef = usePlyr(ref, {
     source: source,
-    options: options
+    options: options,
   });
-  return jsxRuntime.jsx("video", _extends({
-    ref: raptorRef,
-    className: "plyr-react plyr"
-  }, rest));
+  return jsxRuntime.jsx(
+    "video",
+    _extends(
+      {
+        ref: raptorRef,
+        className: "plyr-react plyr",
+      },
+      rest
+    )
+  );
 });
 
 if (process.env.NODE_ENV !== "production") {
-  var PropTypes = require("prop-types");
-
   Plyr.displayName = "Plyr";
   Plyr.defaultProps = {
     options: {
-      controls: ["rewind", "play", "fast-forward", "progress", "current-time", "duration", "mute", "volume", "settings", "fullscreen"],
+      controls: [
+        "rewind",
+        "play",
+        "fast-forward",
+        "progress",
+        "current-time",
+        "duration",
+        "mute",
+        "volume",
+        "settings",
+        "fullscreen",
+      ],
       i18n: {
         restart: "Restart",
         rewind: "Rewind {seektime}s",
@@ -166,25 +205,28 @@ if (process.env.NODE_ENV !== "production") {
         speed: "Speed",
         normal: "Normal",
         quality: "Quality",
-        loop: "Loop"
-      }
+        loop: "Loop",
+      },
     },
     source: {
       type: "video",
-      sources: [{
-        src: "https://cdn.plyr.io/static/blank.mp4",
-        type: "video/mp4",
-        size: 720
-      }, {
-        src: "https://cdn.plyr.io/static/blank.mp4",
-        type: "video/mp4",
-        size: 1080
-      }]
-    }
+      sources: [
+        {
+          src: "https://cdn.plyr.io/static/blank.mp4",
+          type: "video/mp4",
+          size: 720,
+        },
+        {
+          src: "https://cdn.plyr.io/static/blank.mp4",
+          type: "video/mp4",
+          size: 1080,
+        },
+      ],
+    },
   };
   Plyr.propTypes = {
-    options: PropTypes.object,
-    source: PropTypes.any
+    options: PropTypes__default["default"].object,
+    source: PropTypes__default["default"].any,
   };
 }
 
