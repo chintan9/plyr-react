@@ -188,7 +188,7 @@ from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="
 ## Support
 
 If you like the project and want to support my work, give star ⭐ or fork it.
-[![Featured on Openbase](https://badges.openbase.com/js/featured/plyr-react.svg?token=taplQ9iU8GI6oqsRiTD6H6Dl4A4o787VVK0gS6m3RKo=)](https://openbase.com/js/plyr-react?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
+[![Featured on Openbase](https://badges.openbase.com/js/featured/plyr-react.svg?token=taplQ9iU8GI6oqsRiTD6H6Dl4A4o787VVK0gS6m3RKo=)](https://openbase.com/js/plyr-react?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge) [![Join the chat at https://gitter.im/plyr-react/community](https://badges.gitter.im/plyr-react/community.svg)](https://gitter.im/plyr-react/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Thanks
 
