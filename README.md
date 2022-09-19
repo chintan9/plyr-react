@@ -190,6 +190,7 @@ from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="
 
 If you like the project and want to support my work, give star ⭐ or fork it.
 [![Featured on Openbase](https://badges.openbase.com/js/featured/plyr-react.svg?token=taplQ9iU8GI6oqsRiTD6H6Dl4A4o787VVK0gS6m3RKo=)](https://openbase.com/js/plyr-react?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
+[![kandi X-Ray](https://kandi.openweaver.com/badges/xray.svg)](https://kandi.openweaver.com/typescript/chintan9/plyr-react)
 
 ## Thanks
 
