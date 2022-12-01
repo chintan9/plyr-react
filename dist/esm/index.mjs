@@ -2,7 +2,6 @@ import * as React from 'react';
 import PlyrJS from 'plyr';
 import PropTypes from 'prop-types';
 import useAptor from 'react-aptor';
-import PropTypes from 'prop-types';
 
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;

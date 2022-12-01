@@ -181,7 +181,8 @@ Codesandbox
 We are open to all new contribution, feel free to
 read [CONTRIBUTING](https://github.com/chintan9/plyr-react/blob/master/CONTRIBUTING.md)
 and [CODE OF CONDUCT](https://github.com/chintan9/plyr-react/blob/master/CODE_OF_CONDUCT.md) section, make new issue to
-discuss about the problem, and improve/fix/enhance the source code with your PRs. There is a ready to code Gitpod, you
+discuss about the problem
+[![Gitter](https://badges.gitter.im/plyr-react/community.svg)](https://gitter.im/plyr-react/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge), and improve/fix/enhance the source code with your PRs. There is a ready to code Gitpod, you
 can jump into it
 from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="Gitpod plyr-react"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"><a/>
 
