@@ -61,7 +61,7 @@
     "deploy": "gh-pages -d"
   },
   "dependencies": {
-    "plyr": "^3.7.2",
+    "plyr": "^3.7.3",
     "react-aptor": "^2.0.0-alpha.1"
   },
   "devDependencies": {
