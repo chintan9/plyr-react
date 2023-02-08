@@ -32,7 +32,7 @@ export interface APITypes {
  * It creates a new PlyrJS instance, and if a source is provided, it sets the source of the PlyrJS
  * instance to the source provided
  * @param node - The latest element of the DOM node which has plyr in it.
- * @param params - The props passed to the component
+ * @param params - The plyr params that are passed to the component
  * @returns An instance of PlyrJS.
  */
 /* REACT-APTOR */
