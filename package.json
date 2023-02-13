@@ -98,7 +98,7 @@
     "all-contributors-cli": "^6.20.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^28.1.0",
+    "babel-jest": "^29.4.2",
     "babel-loader": "^8.2.5",
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
