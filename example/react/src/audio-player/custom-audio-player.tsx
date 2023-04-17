@@ -4,6 +4,7 @@ import "plyr-react/dist/plyr.css";
 
 const videoOptions = undefined;
 
+/* This object is used as the source for the `CustomPlyrInstance` component. */
 const videoSource = {
   type: "audio" as const,
   sources: [
@@ -14,6 +15,9 @@ const videoSource = {
   ],
 };
 
+/* This code defines a custom React component called `CustomPlyrInstance` that uses the
+`React.forwardRef` function to forward a ref to a child component. The component takes in two props:
+`source` and `options`, which are used to configure the Plyr instance. */
 const CustomPlyrInstance = React.forwardRef<APITypes, PlyrProps>(
   (props, ref) => {
     const { source, options = null } = props;
@@ -29,6 +33,7 @@ const CustomPlyrInstance = React.forwardRef<APITypes, PlyrProps>(
       const { current } = ref as React.MutableRefObject<APITypes>;
       if (current.plyr.source === null) return;
 
+      /* This code is accessing the Plyr instance API and adding event listeners to it. */
       const api = current as { plyr: PlyrInstance };
       api.plyr.on("ready", () => console.log("I'm ready"));
       api.plyr.on("canplay", () => {
@@ -48,6 +53,9 @@ const CustomPlyrInstance = React.forwardRef<APITypes, PlyrProps>(
   }
 );
 
+/* This code defines a functional component called `PlyrComponent` that renders a `CustomPlyrInstance`
+component with a `ref` and `source` and `options` props. The`source` and `options` props are used to 
+configure the Plyr instance. The component is wrapped in a `div` with a class name of "wrapper". */
 const PlyrComponent = () => {
   const ref = React.useRef<APITypes>(null);
 
