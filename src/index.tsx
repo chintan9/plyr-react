@@ -28,6 +28,13 @@ export interface APITypes {
   plyr: PlyrInstance;
 }
 
+/**
+ * It creates a new PlyrJS instance, and if a source is provided, it sets the source of the PlyrJS
+ * instance to the source provided
+ * @param node - The latest element of the DOM node which has plyr in it.
+ * @param params - The plyr params that are passed to the component
+ * @returns An instance of PlyrJS.
+ */
 /* REACT-APTOR */
 const instantiate: Instantiate<
   PlyrJS,
@@ -40,6 +47,10 @@ const instantiate: Instantiate<
   return plyr;
 };
 
+/**
+ * It destroys the PlyrJS instance.
+ * @param {PlyrJS | null} plyr - PlyrJS | null
+ */
 const destroy: Destroy<PlyrJS, PlyrConfigurationProps> = (
   plyr: PlyrJS | null
 ) => {
@@ -49,6 +60,11 @@ const destroy: Destroy<PlyrJS, PlyrConfigurationProps> = (
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = () => {};
 
+/**
+ * It returns an object with a `plyr` property that contains the Plyr instance
+ * @param {PlyrJS | null} plyr - PlyrJS | null
+ * @returns A function that returns an object with a single property, plyr.
+ */
 const getAPI: GetAPI<PlyrJS, PlyrConfigurationProps> = (
   plyr: PlyrJS | null
 ) => {
@@ -72,6 +88,13 @@ const getAPI: GetAPI<PlyrJS, PlyrConfigurationProps> = (
   });
 };
 
+/**
+ * It creates a React hook that returns a ref to a video element that is initialized with Plyr
+ * @param ref - Ref<APITypes>
+ * @param {PlyrConfigurationProps} params - PlyrConfigurationProps,
+ * @param {DependencyList | null} [deps=null] - DependencyList | null = null
+ * @returns A function that returns a React component.
+ */
 export function usePlyr(
   ref: Ref<APITypes>,
   params: PlyrConfigurationProps,
@@ -89,6 +112,7 @@ export function usePlyr(
   );
 }
 
+/* Creating a React component that is initialized with Plyr. */
 const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
   const { source, options = null, ...rest } = props;
   const raptorRef = usePlyr(ref, {
@@ -98,6 +122,7 @@ const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
   return <video ref={raptorRef} className="plyr-react plyr" {...rest} />;
 });
 
+/* Setting the default props and prop types for the component. */
 if (__DEV__) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   Plyr.displayName = "Plyr";
