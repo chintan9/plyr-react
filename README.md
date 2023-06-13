@@ -12,12 +12,6 @@ A responsive media player that is simple, easy to use, and customizable for vide
   <a href="https://github.com/chintan9/plyr-react/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat&colorA=000000&colorB=000000" alt="License">
   </a>
-  <a href="https://lgtm.com/projects/g/chintan9/plyr-react/context:javascript">
-  <img src="https://img.shields.io/lgtm/grade/javascript/g/chintan9/plyr-react.svg?logo=lgtm&style=flat&colorA=000000&colorB=000000" alt="Code quality">
-  </a>
-  <a href="https://bundlephobia.com/result?p=plyr-react">
-  <img src="https://img.shields.io/bundlephobia/minzip/plyr-react?label=bundle%20size&style=flat&colorA=000000&colorB=000000" alt="Build Size">
-  </a>
   <a href="https://www.npmjs.com/package/plyr-react">
   <img src="https://img.shields.io/npm/v/plyr-react?style=flat&colorA=000000&colorB=000000" alt="Version">
   </a>
