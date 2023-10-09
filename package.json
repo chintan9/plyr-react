@@ -103,7 +103,7 @@
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react-app": "^10.0.1",
-    "concurrently": "^7.6.0",
+    "concurrently": "^8.2.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "dts-bundle-generator": "^7.2.0",
