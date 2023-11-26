@@ -42,8 +42,8 @@ const instantiate: Instantiate<
   PlyrConfigurationProps
 > = (_, params) => {
   // The node update of ref in react life cycle seems to have issue, used class selector instead
-  const plyr = new PlyrJS(".plyr-react", params!.options || {});
-  if (params!.source) plyr.source = params!.source;
+  const plyr = new PlyrJS(".plyr-react", params?.options ?? {});
+  if (params?.source) plyr.source = params?.source;
   return plyr;
 };
 
@@ -108,7 +108,7 @@ export function usePlyr(
       destroy,
       params,
     },
-    deps || [params.options, params.source]
+    deps ?? [params.options, params.source]
   );
 }
 
