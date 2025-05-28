@@ -99,7 +99,7 @@ export function usePlyr(
   ref: Ref<APITypes>,
   params: PlyrConfigurationProps,
   deps: DependencyList | null = null
-) {
+): React.RefObject<HTMLVideoElement> {
   return useAptor<PlyrInstance, HTMLVideoElement, PlyrConfigurationProps>(
     ref,
     {
@@ -113,7 +113,11 @@ export function usePlyr(
 }
 
 /* Creating a React component that is initialized with Plyr. */
-const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
+const Plyr: React.ForwardRefExoticComponent<
+  Omit<ReactVideoProps, "ref"> &
+    PlyrConfigurationProps &
+    React.RefAttributes<APITypes>
+> = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
   const { source, options = null, ...rest } = props;
   const raptorRef = usePlyr(ref, {
     source,
