@@ -194,4 +194,4 @@ if (__DEV__) {
   };
 }
 
-export default Plyr;
+export { Plyr };

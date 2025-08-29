@@ -6,14 +6,10 @@
     "react",
     "plyr",
     "video",
-    "vimeo",
-    "youtube",
-    "accessibility",
-    "javascript",
     "player",
     "media"
   ],
-  "homepage": "https://chintan9.github.io/plyr-react/",
+  "homepage": "https://github.com/chintan9/plyr-react",
   "repository": {
     "type": "git",
     "url": "git@github.com:chintan9/plyr-react.git"
@@ -21,154 +17,97 @@
   "license": "MIT",
   "author": "Chintan Prajapati",
   "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
-    "./plyr.css": "./plyr.css",
+    "./plyr.css": "./node_modules/plyr/dist/plyr.css",
     ".": {
-      "types": "./index.d.ts",
-      "module": "./esm/index.js",
-      "import": "./esm/index.mjs",
-      "default": "./index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
-  "main": "./index.js",
-  "types": "./index.d.ts",
   "files": [
-    "**"
+    "dist"
   ],
   "scripts": {
-    "pretest": "tsc --noEmit",
+    "build": "tsc --emitDeclarationOnly --outDir dist && tsdown src/index.tsx --format esm --sourcemap && tsdown src/index.tsx --format cjs --sourcemap",
+    "dev": "concurrently \"tsc --emitDeclarationOnly --outDir dist --watch\" \"tsdown src/index.tsx --format esm --watch --sourcemap\"",
+    "lint": "eslint --fix '{src,tests}/**/*.{ts,tsx}'",
     "test": "jest",
-    "test:ci": "jest",
-    "test:coverage": "jest --coverage --forceExit --colors",
-    "test:coverage:watch": "jest --watch",
-    "test:dev": "jest --watch --no-coverage",
-    "lint": "esw --ext .tsx --ext .ts --color",
-    "lint:fix": "npm run lint --fix",
-    "eslint": "eslint --fix '*.{js,json}' '{src,tests}/**/*.{ts,tsx}'",
-    "eslint:ci": "eslint '*.{js,json}' '{src,tests}/**/*.{ts,tsx}'",
-    "prebuild": "shx rm -rf dist",
-    "build": "rollup -c",
-    "postbuild": "npm run copy",
-    "precopy": "shx cp -r dist/src/* dist/esm && shx cp -r dist/src/* dist && shx rm -rf dist/src && shx rm -rf dist/{src,tests}",
-    "copy": "concurrently -m 8 'npm:copy:*'",
-    "copy:package-json": "shx cp package.json dist && json -I -f dist/package.json -e 'this.private=false; this.devDependencies=undefined; this.scripts=undefined; this.publishConfig=undefined'",
-    "copy:static-content": "shx cp README.md LICENSE dist",
-    "prepare": "npm run build && husky install",
-    "prerelease": "npm run build",
-    "release": "npm publish",
-    "predeploy": "npm run prepare",
-    "deploy": "gh-pages -d"
+    "prepare": "husky install",
+    "release": "npm publish"
   },
   "dependencies": {
     "plyr": "^3.7.7",
     "react-aptor": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
-    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
-    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.21.0",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-replace": "^4.0.0",
-    "@rollup/plugin-typescript": "^8.5.0",
-    "@rollup/plugin-url": "^7.0.0",
-    "@svgr/rollup": "^6.5.1",
     "@swc/core": "^1.3.42",
     "@swc/jest": "^0.2.24",
-    "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/enzyme": "^3.10.12",
     "@types/jest": "^27.5.2",
-    "@types/mocha": "^9.1.1",
-    "@types/prop-types": "^15.7.5",
     "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
-    "all-contributors-cli": "^6.24.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^29.7.0",
-    "babel-loader": "^8.3.0",
-    "babel-plugin-named-asset-import": "^0.3.8",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babel-preset-react-app": "^10.0.1",
-    "concurrently": "^8.2.1",
-    "cross-env": "^7.0.3",
-    "css-loader": "^6.7.3",
-    "dts-bundle-generator": "^7.2.0",
-    "esbuild": "^0.17.12",
+    "concurrently": "^8.2.2",
     "eslint": "^8.36.0",
-    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^26.9.0",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-watch": "^8.0.0",
-    "gh-pages": "^4.0.0",
-    "glob": "^8.1.0",
     "husky": "^8.0.3",
-    "jasmine-expect": "^5.0.0",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
-    "jest-pnp-resolver": "^1.2.3",
-    "jest-resolve": "^28.1.3",
-    "jest-watch-typeahead": "^2.2.2",
-    "json": "^11.0.0",
     "lint-staged": "^12.5.0",
-    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.6",
-    "prop-types": "^15.8.1",
     "react": "^17.0.2",
-    "react-app-polyfill": "^3.0.0",
-    "react-docgen-typescript": "^2.2.2",
     "react-dom": "^17.0.2",
-    "react-error-overlay": "^6.0.11",
-    "react-test-renderer": "^17.0.2",
-    "rollup": "^2.79.1",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-esbuild": "^4.10.3",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.59.3",
-    "sass-loader": "^12.6.0",
-    "shx": "^0.3.4",
-    "sort-package-json": "^1.57.0",
-    "style-loader": "^3.3.2",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4",
-    "webpack": "^5.76.2"
+    "tsdown": "^0.2.0",
+    "typescript": "^5.0.4"
   },
   "peerDependencies": {
     "plyr": "^3.7.7",
     "react": ">=16.8"
-  },
-  "peerDependenciesMeta": {
-    "plyr": {
-      "optional": false
-    },
-    "react": {
-      "optional": true
-    }
   },
   "engines": {
     "node": ">=16"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "jest": {
+    "rootDir": ".",
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(t|j)sx?$": [
+        "@swc/jest"
+      ]
+    },
+    "modulePathIgnorePatterns": [
+      "dist"
+    ],
+    "testRegex": "test.(ts|tsx)$",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html",
+      "text",
+      "text-summary"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "tests/**/*.{ts,tsx}"
+    ],
+    "globals": {
+      "__DEV__": true
+    }
   }
 }

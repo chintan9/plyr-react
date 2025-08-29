@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
-import Plyr, { PlyrInstance } from "../src/index";
+import { Plyr, PlyrInstance } from "../src/index";
 
 // https://github.com/jsdom/jsdom/issues/2541#issuecomment-788761237
 jest.mock("plyr");
