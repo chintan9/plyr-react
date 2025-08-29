@@ -64,6 +64,7 @@ const PlyrComponent = react.forwardRef((props, ref) => {
 		...rest
 	});
 });
+PlyrComponent.displayName = "Plyr";
 
 //#endregion
 exports.Plyr = PlyrComponent;
