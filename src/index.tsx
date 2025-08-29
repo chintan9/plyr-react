@@ -6,13 +6,17 @@ import type {
   Ref,
   VideoHTMLAttributes,
 } from "react";
-import PlyrJS, { Options, SourceInfo } from "plyr";
-import PropTypes from "prop-types";
+// This is the critical change for the import
+import * as Plyr from "plyr";
 import useAptor, { Destroy, GetAPI, Instantiate } from "react-aptor";
 
-export type PlyrInstance = PlyrJS;
-export type PlyrOptions = Options;
-export type PlyrSource = SourceInfo;
+// And this is the critical change for usage
+const PlyrJS = Plyr.default;
+
+export type PlyrInstance = Plyr.default;
+export type PlyrOptions = Plyr.Options;
+export type PlyrSource = Plyr.SourceInfo;
+
 type PlyrConfigurationProps = {
   source: PlyrSource | null;
   options?: PlyrOptions | null;
@@ -28,45 +32,26 @@ export interface APITypes {
   plyr: PlyrInstance;
 }
 
-/**
- * It creates a new PlyrJS instance, and if a source is provided, it sets the source of the PlyrJS
- * instance to the source provided
- * @param node - The latest element of the DOM node which has plyr in it.
- * @param params - The plyr params that are passed to the component
- * @returns An instance of PlyrJS.
- */
-/* REACT-APTOR */
 const instantiate: Instantiate<
-  PlyrJS,
+  PlyrInstance,
   HTMLVideoElement,
   PlyrConfigurationProps
 > = (_, params) => {
-  // The node update of ref in react life cycle seems to have issue, used class selector instead
   const plyr = new PlyrJS(".plyr-react", params?.options ?? {});
   if (params?.source) plyr.source = params?.source;
   return plyr;
 };
 
-/**
- * It destroys the PlyrJS instance.
- * @param {PlyrJS | null} plyr - PlyrJS | null
- */
-const destroy: Destroy<PlyrJS, PlyrConfigurationProps> = (
-  plyr: PlyrJS | null
+const destroy: Destroy<PlyrInstance, PlyrConfigurationProps> = (
+  plyr: PlyrInstance | null
 ) => {
   if (plyr) plyr.destroy();
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = () => {};
 
-/**
- * It returns an object with a `plyr` property that contains the Plyr instance
- * @param {PlyrJS | null} plyr - PlyrJS | null
- * @returns A function that returns an object with a single property, plyr.
- */
-const getAPI: GetAPI<PlyrJS, PlyrConfigurationProps> = (
-  plyr: PlyrJS | null
+const getAPI: GetAPI<PlyrInstance, PlyrConfigurationProps> = (
+  plyr: PlyrInstance | null
 ) => {
   if (!plyr) {
     return () =>
@@ -81,20 +66,10 @@ const getAPI: GetAPI<PlyrJS, PlyrConfigurationProps> = (
   }
 
   return () => ({
-    /**
-     * Plyr instance with all of its functionality
-     */
     plyr,
   });
 };
 
-/**
- * It creates a React hook that returns a ref to a video element that is initialized with Plyr
- * @param ref - Ref<APITypes>
- * @param {PlyrConfigurationProps} params - PlyrConfigurationProps,
- * @param {DependencyList | null} [deps=null] - DependencyList | null = null
- * @returns A function that returns a React component.
- */
 export function usePlyr(
   ref: Ref<APITypes>,
   params: PlyrConfigurationProps,
@@ -112,8 +87,7 @@ export function usePlyr(
   );
 }
 
-/* Creating a React component that is initialized with Plyr. */
-const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
+const PlyrComponent = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
   const { source, options = null, ...rest } = props;
   const raptorRef = usePlyr(ref, {
     source,
@@ -122,76 +96,6 @@ const Plyr = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
   return <video ref={raptorRef} className="plyr-react plyr" {...rest} />;
 });
 
-/* Setting the default props and prop types for the component. */
-if (__DEV__) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  Plyr.displayName = "Plyr";
+PlyrComponent.displayName = "Plyr";
 
-  Plyr.defaultProps = {
-    options: {
-      controls: [
-        "rewind",
-        "play",
-        "fast-forward",
-        "progress",
-        "current-time",
-        "duration",
-        "mute",
-        "volume",
-        "settings",
-        "fullscreen",
-      ],
-      i18n: {
-        restart: "Restart",
-        rewind: "Rewind {seektime}s",
-        play: "Play",
-        pause: "Pause",
-        fastForward: "Forward {seektime}s",
-        seek: "Seek",
-        seekLabel: "{currentTime} of {duration}",
-        played: "Played",
-        buffered: "Buffered",
-        currentTime: "Current time",
-        duration: "Duration",
-        volume: "Volume",
-        mute: "Mute",
-        unmute: "Unmute",
-        enableCaptions: "Enable captions",
-        disableCaptions: "Disable captions",
-        download: "Download",
-        enterFullscreen: "Enter fullscreen",
-        exitFullscreen: "Exit fullscreen",
-        frameTitle: "Player for {title}",
-        captions: "Captions",
-        settings: "Settings",
-        menuBack: "Go back to previous menu",
-        speed: "Speed",
-        normal: "Normal",
-        quality: "Quality",
-        loop: "Loop",
-      },
-    },
-    source: {
-      type: "video",
-      sources: [
-        {
-          src: "https://cdn.plyr.io/static/blank.mp4",
-          type: "video/mp4",
-          size: 720,
-        },
-        {
-          src: "https://cdn.plyr.io/static/blank.mp4",
-          type: "video/mp4",
-          size: 1080,
-        },
-      ],
-    },
-  };
-
-  Plyr.propTypes = {
-    options: PropTypes.object,
-    source: PropTypes.any,
-  };
-}
-
-export { Plyr };
+export { PlyrComponent as Plyr };

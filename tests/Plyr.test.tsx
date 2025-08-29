@@ -39,8 +39,7 @@ describe("<Plyr />", () => {
     const { container } = render(
       <Plyr
         ref={(player) => {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore [Note: Current type is readonly]
+          // @ts-expect-error [Note: Current type is readonly]
           ref.current = player;
         }}
         source={SOURCE}
