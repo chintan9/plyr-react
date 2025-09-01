@@ -24,8 +24,6 @@ You can see a live demo [here](https://githubbox.com/chintan9/plyr-react/tree/ma
 
 > Make sure to select the version for the plyr-react in the dependencies.
 
-Of course. Here is a more detailed and comprehensive guide to **Plyr-React**, including the information you requested about peer dependencies and PNPM installation, along with other key details gathered from the project files.
-
 ### Plyr-React: The Complete Guide to a Customizable React Media Player
 
 **Plyr-React** is a responsive, accessible, and highly customizable media player component for React. It wraps the popular [Plyr](https://github.com/sampotts/plyr) media player, providing a simple and powerful way to integrate video, audio, YouTube, and Vimeo content into your React applications.
