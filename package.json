@@ -34,15 +34,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown src/index.tsx",
-    "dev": "concurrently \"tsc --emitDeclarationOnly --outDir dist --watch\" \"tsdown src/index.tsx --format esm --watch --sourcemap\"",
+    "build": "tsdown --config rolldown.config.ts --minify",
+    "dev": "tsdown --config rolldown.config.ts --watch",
     "lint": "eslint --fix '{src,tests}/**/*.{ts,tsx}'",
     "test": "jest",
     "prepare": "husky install",
     "release": "npm publish"
   },
   "dependencies": {
-    "plyr": "^3.7.7",
     "react-aptor": "^2.0.0"
   },
   "devDependencies": {
@@ -54,7 +53,6 @@
     "@types/react": "^18.0.28",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
-    "concurrently": "^8.2.2",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -67,10 +65,10 @@
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
     "lint-staged": "^12.5.0",
+    "plyr": "^3.7.7",
     "prettier": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rollup-plugin-copy": "^3.4.0",
     "tsdown": "^0.2.0",
     "typescript": "^5.0.4",
     "typescript-eslint": "^8.41.0"

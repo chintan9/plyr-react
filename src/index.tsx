@@ -4,6 +4,7 @@ import type {
   DetailedHTMLProps,
   MutableRefObject,
   Ref,
+  RefAttributes, // Import RefAttributes
   VideoHTMLAttributes,
 } from "react";
 // This is the critical change for the import
@@ -74,7 +75,7 @@ export function usePlyr(
   ref: Ref<APITypes>,
   params: PlyrConfigurationProps,
   deps: DependencyList | null = null
-) {
+): React.Ref<HTMLVideoElement> {
   return useAptor<PlyrInstance, HTMLVideoElement, PlyrConfigurationProps>(
     ref,
     {
@@ -87,7 +88,9 @@ export function usePlyr(
   );
 }
 
-const PlyrComponent = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
+const PlyrComponent: React.ForwardRefExoticComponent<
+  PlyrProps & RefAttributes<APITypes>
+> = React.forwardRef<APITypes, PlyrProps>((props, ref) => {
   const { source, options = null, ...rest } = props;
   const raptorRef = usePlyr(ref, {
     source,
