@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "plyr": "^3.8.3",
-    "plyr-react": "github:chintan9/plyr-react#nextjs-fix",
+    "plyr-react": "next",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
