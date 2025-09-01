@@ -3,16 +3,26 @@
 import { useRef } from "react";
 import { Plyr } from "plyr-react";
 
-// The source config for a YouTube video
-const youtubeVideoSrc = {
-  type: "video",
-  sources: [
-    {
-      src: "aqz-KE-bpKQ", // YouTube video ID or URL
-      provider: "youtube",
-    },
-  ],
-};
+function VideoGallery() {
+  const video1 = {
+    type: "video",
+    sources: [{ src: "aqz-KE-bpKQ", provider: "youtube" }],
+  };
+  const video2 = {
+    type: "video",
+    sources: [{ src: "bTqVqk7FSmY", provider: "youtube" }],
+  };
+
+  return (
+    <div>
+      <h2>Video 1</h2>
+      <Plyr source={video1} />
+
+      <h2>Video 2</h2>
+      <Plyr source={video2} />
+    </div>
+  );
+}
 
 function App() {
   const ref = useRef(null);
@@ -20,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <h1>Plyr React in GitHub Codespaces</h1>
-      <Plyr ref={ref} source={youtubeVideoSrc} />
+      <VideoGallery />
     </div>
   );
 }
