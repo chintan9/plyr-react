@@ -14,6 +14,11 @@ const youtubeVideoSrc = {
   ],
 };
 
+/**
+ * Root React component that renders a heading and a Plyr video player configured with `youtubeVideoSrc`.
+ *
+ * @returns {JSX.Element} The app UI containing a header and the Plyr player.
+ */
 function App() {
   const ref = useRef(null);
 
