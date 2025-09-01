@@ -45,4 +45,3 @@ PlyrComponent.displayName = "Plyr";
 
 //#endregion
 export { PlyrComponent as Plyr, usePlyr };
-//# sourceMappingURL=index.js.map

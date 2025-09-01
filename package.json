@@ -23,7 +23,7 @@
   "types": "./dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
-    "./plyr.css": "./node_modules/plyr/dist/plyr.css",
+    "./plyr.css": "./dist/plyr.css",
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.cjs",
@@ -34,7 +34,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc --emitDeclarationOnly --outDir dist && tsdown src/index.tsx --format esm --sourcemap && tsdown src/index.tsx --format cjs --sourcemap",
+    "build": "tsdown src/index.tsx",
     "dev": "concurrently \"tsc --emitDeclarationOnly --outDir dist --watch\" \"tsdown src/index.tsx --format esm --watch --sourcemap\"",
     "lint": "eslint --fix '{src,tests}/**/*.{ts,tsx}'",
     "test": "jest",
@@ -70,6 +70,7 @@
     "prettier": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rollup-plugin-copy": "^3.4.0",
     "tsdown": "^0.2.0",
     "typescript": "^5.0.4",
     "typescript-eslint": "^8.41.0"
