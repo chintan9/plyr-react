@@ -34,13 +34,13 @@ The library is designed for modern development, featuring a tree-shakeable and s
 
 #### Key Features
 
-*   **Broad Media Support:** Natively supports HTML5 `<video>` and `<audio>`, as well as embedded players from YouTube and Vimeo.
-*   **Deep Customization:** A rich set of options allows you to control every aspect of the player's UI and behavior, including controls, settings menus, and event listeners.
-*   **Accessibility Focused:** Built on the accessible foundation of the underlying Plyr player.
-*   **Modern React API:** Offers a simple `<Plyr />` component for easy use and a powerful `usePlyr` hook for full control and custom logic.
-*   **Full Programmatic Access:** Provides direct access to the Plyr instance via React refs, allowing you to control playback, volume, fullscreen, and more from your application code.
-*   **TypeScript Support:** Fully typed for a superior developer experience, with exported types for props, options, and the player instance.
-*   **Streaming Support:** Can be integrated with streaming libraries like HLS.js for adaptive bitrate streaming.
+- **Broad Media Support:** Natively supports HTML5 `<video>` and `<audio>`, as well as embedded players from YouTube and Vimeo.
+- **Deep Customization:** A rich set of options allows you to control every aspect of the player's UI and behavior, including controls, settings menus, and event listeners.
+- **Accessibility Focused:** Built on the accessible foundation of the underlying Plyr player.
+- **Modern React API:** Offers a simple `<Plyr />` component for easy use and a powerful `usePlyr` hook for full control and custom logic.
+- **Full Programmatic Access:** Provides direct access to the Plyr instance via React refs, allowing you to control playback, volume, fullscreen, and more from your application code.
+- **TypeScript Support:** Fully typed for a superior developer experience, with exported types for props, options, and the player instance.
+- **Streaming Support:** Can be integrated with streaming libraries like HLS.js for adaptive bitrate streaming.
 
 ---
 
@@ -58,7 +58,8 @@ yarn add plyr-react
 # PNPM
 pnpm add plyr-react
 ```
-*(Note: PNPM instructions have been added for completeness as they were not present in the original documentation.)*
+
+_(Note: PNPM instructions have been added for completeness as they were not present in the original documentation.)_
 
 ---
 
@@ -66,12 +67,13 @@ pnpm add plyr-react
 
 For `plyr-react` to function correctly, it requires you to install some packages in your project yourself. These are known as peer dependencies. The `package.json` file specifies the following:
 
-*   **`react`**: Version `16.8` or newer.
-*   **`plyr`**: Version `3.7.7` or a compatible version.
+- **`react`**: Version `16.8` or newer.
+- **`plyr`**: Version `3.7.7` or a compatible version.
 
 You must ensure these are listed in your project's `package.json`. Most package managers will warn you if these are missing.
 
 **To install peer dependencies:**
+
 ```bash
 # NPM
 npm install react react-dom plyr
@@ -87,8 +89,8 @@ pnpm add react react-dom plyr
 
 ### System Requirements
 
-*   **Node.js:** Version `16` or higher.
-*   **React:** Version `16.8` or higher.
+- **Node.js:** Version `16` or higher.
+- **React:** Version `16.8` or higher.
 
 ---
 
@@ -105,29 +107,40 @@ import "plyr-react/plyr.css"
 // Player source configuration
 const plyrProps = {
   source: {
-    type: 'video',
+    type: "video",
     sources: [
       {
-        src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
-        type: 'video/mp4',
+        src: "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4",
+        type: "video/mp4",
         size: 720,
       },
     ],
-    poster: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+    poster:
+      "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg",
   },
   options: {
     // Full list of options: https://github.com/sampotts/plyr#options
     controls: [
-        'play-large', 'play', 'progress', 'current-time', 
-        'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'
+      "play-large",
+      "play",
+      "progress",
+      "current-time",
+      "mute",
+      "volume",
+      "captions",
+      "settings",
+      "pip",
+      "airplay",
+      "fullscreen",
     ],
   },
-};
+}
 
 function MyPlayer() {
   return <Plyr {...plyrProps} />
 }
 ```
+
 > **Important CSS Path Change:**
 > As of **v5.0.0**, the CSS import path is `plyr-react/plyr.css`. For older versions (v4), you must use `plyr-react/dist/plyr.css`.
 
@@ -136,22 +149,22 @@ function MyPlayer() {
 For full control over the player's lifecycle and integration, the `usePlyr` hook is the recommended approach. It allows you to build a completely custom component wrapper.
 
 ```jsx
-import React from 'react';
-import { usePlyr } from "plyr-react";
-import "plyr-react/plyr.css";
+import React from "react"
+import { usePlyr } from "plyr-react"
+import "plyr-react/plyr.css"
 
 // This example re-creates the <Plyr /> component using the hook
 const CustomPlyr = React.forwardRef((props, ref) => {
-  const { source, options = null, ...rest } = props;
+  const { source, options = null, ...rest } = props
 
   // usePlyr returns a ref that you can attach to a <video> or <div> element.
   const raptorRef = usePlyr(ref, {
     source,
     options,
-  });
+  })
 
-  return <video ref={raptorRef} className="plyr-react plyr" {...rest} />;
-});
+  return <video ref={raptorRef} className="plyr-react plyr" {...rest} />
+})
 ```
 
 #### 3. Accessing the Player API via Refs
@@ -159,40 +172,40 @@ const CustomPlyr = React.forwardRef((props, ref) => {
 You can control the player instance programmatically by using a ref. The ref gives you access to the full Plyr API. The ref's `current` object will contain a `plyr` property, which is the player instance.
 
 ```tsx
-import React, { useRef, useEffect } from 'react';
-import Plyr from 'plyr-react';
-import 'plyr-react/plyr.css';
+import React, { useRef, useEffect } from "react"
+import Plyr from "plyr-react"
+import "plyr-react/plyr.css"
 
 const PlayerController = () => {
-  const ref = useRef(null);
+  const ref = useRef(null)
 
   const playVideo = () => {
     // ref.current.plyr is the Plyr instance
     if (ref.current && ref.current.plyr) {
-      ref.current.plyr.play();
+      ref.current.plyr.play()
     }
-  };
+  }
 
   const enterFullscreen = () => {
     if (ref.current && ref.current.plyr) {
-      ref.current.plyr.fullscreen.enter();
+      ref.current.plyr.fullscreen.enter()
     }
-  };
+  }
 
   return (
     <div>
       <Plyr
         ref={ref}
         source={{
-          type: 'video',
-          sources: [{ src: '/path/to/video.mp4', type: 'video/mp4' }],
+          type: "video",
+          sources: [{ src: "/path/to/video.mp4", type: "video/mp4" }],
         }}
       />
       <button onClick={playVideo}>Play</button>
       <button onClick={enterFullscreen}>Go Fullscreen</button>
     </div>
-  );
-};
+  )
+}
 ```
 
 ## Example
@@ -252,6 +265,6 @@ If you like the project and want to support my work, give star ⭐ or fork it.
 
 The development and maintenance of this project have been supported by several key contributors:
 
-*   **@realamirhe (Amir.H Ebrahimi):** Assisted with infrastructure, documentation, tooling, maintenance, and testing, including the integration with `react-aptor`.
-*   **@iwatakeshi (Takeshi):** Led the conversion of the project to TypeScript and contributed ideas, translations, user testing, and examples.
-*   **@mnervik:** Provided valuable support through testing and user feedback.
+- **@realamirhe (Amir.H Ebrahimi):** Assisted with infrastructure, documentation, tooling, maintenance, and testing, including the integration with `react-aptor`.
+- **@iwatakeshi (Takeshi):** Led the conversion of the project to TypeScript and contributed ideas, translations, user testing, and examples.
+- **@mnervik:** Provided valuable support through testing and user feedback.
