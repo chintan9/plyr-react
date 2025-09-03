@@ -267,6 +267,6 @@ The development and maintenance of this project have been supported by several k
 - **@iwatakeshi (Takeshi):** Led the conversion of the project to TypeScript and contributed ideas, translations, user testing, and examples.
 - **@mnervik:** Provided valuable support through testing and user feedback.
 
-#### Structure 
+#### Structure
 
 ![d2](https://github.com/user-attachments/assets/21812834-874f-4797-98cb-42b57ae29486)
