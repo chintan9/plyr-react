@@ -28,6 +28,6 @@ jobs:
         uses: palmerhq/changecast@5b4ddcc141104f8d8382cb63cdbedda46b09b88c # v1.0.0
 
       - name: Changelog Generator
-        uses: heinrichreimer/github-changelog-generator-action@04f64206d10b4f9c882da8157ffc3dfa6ce66b3e # v2.1.1
+        uses: heinrichreimer/github-changelog-generator-action@e60b5a2bd9fcd88dadf6345ff8327863fb8b490f # v2.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
