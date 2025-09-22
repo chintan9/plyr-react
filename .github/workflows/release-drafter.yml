@@ -19,7 +19,7 @@ jobs:
           egress-policy: audit
 
       - name: Release Drafter
-        uses: release-drafter/release-drafter@742103fb215cffdf7e75a201365b1d0e3e16a959 # v5.6.1
+        uses: release-drafter/release-drafter@b1476f6e6eb133afa41ed8589daba6dc69b4d3f5 # v6.1.0
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
