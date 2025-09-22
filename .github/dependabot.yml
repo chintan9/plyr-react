@@ -6,3 +6,23 @@ updates:
       interval: weekly
       time: "09:00"
     open-pull-requests-limit: 10
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /dist
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /example/nextjs
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /example/react
+    schedule:
+      interval: daily
