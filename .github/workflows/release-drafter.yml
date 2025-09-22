@@ -13,16 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "master"
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          egress-policy: audit
+
       - name: Release Drafter
-        uses: release-drafter/release-drafter@v5.6.1
+        uses: release-drafter/release-drafter@742103fb215cffdf7e75a201365b1d0e3e16a959 # v5.6.1
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: ChangeCast
-        uses: palmerhq/changecast@v1.0.0
+        uses: palmerhq/changecast@5b4ddcc141104f8d8382cb63cdbedda46b09b88c # v1.0.0
 
       - name: Changelog Generator
-        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        uses: heinrichreimer/github-changelog-generator-action@04f64206d10b4f9c882da8157ffc3dfa6ce66b3e # v2.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
