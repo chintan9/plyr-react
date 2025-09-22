@@ -7,7 +7,7 @@
     "importHelpers": true,
     "jsx": "react-jsx",
     "lib": ["es2018", "dom", "scripthost", "es2015.proxy"],
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
     "noImplicitReturns": true,

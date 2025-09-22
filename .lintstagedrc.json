@@ -1,5 +1,4 @@
 {
-  "package.json": "sort-package-json",
-  "*": "prettier --write --ignore-unknown",
-  "*.{ts,tsx}": ["eslint --fix", "prettier --write"]
+  "*.{ts,tsx,js,jsx}": ["eslint --fix", "prettier --write"],
+  "*.{json,md,css}": "prettier --write"
 }
