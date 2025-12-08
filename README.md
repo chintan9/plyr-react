@@ -187,5 +187,11 @@ If you like the project and want to support my work, give star ⭐ or fork it.
 
 ## Thanks
 
+<a href="https://github.com/chintan9/plyr-react/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=chintan9/plyr-react" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
 - [@realamirhe](https://github.com/realamirhe) For provide help for integrate to react-aptor.
 - [@iwatakeshi](https://github.com/iwatakeshi) For provide help for convert to typescript.
