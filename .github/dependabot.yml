@@ -26,3 +26,8 @@ updates:
     directory: /example/react
     schedule:
       interval: daily
+
+  - package-ecosystem: npm
+    directory: /example/plyr-example
+    schedule:
+      interval: daily
