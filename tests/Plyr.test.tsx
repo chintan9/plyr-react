@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
-import Plyr, { PlyrInstance } from "../src/index";
+import { Plyr, PlyrInstance } from "../src/index";
 
 // https://github.com/jsdom/jsdom/issues/2541#issuecomment-788761237
 jest.mock("plyr");
@@ -39,8 +39,7 @@ describe("<Plyr />", () => {
     const { container } = render(
       <Plyr
         ref={(player) => {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore [Note: Current type is readonly]
+          // @ts-expect-error [Note: Current type is readonly]
           ref.current = player;
         }}
         source={SOURCE}
