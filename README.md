@@ -57,8 +57,6 @@ yarn add plyr-react
 pnpm add plyr-react
 ```
 
-_(Note: PNPM instructions have been added for completeness as they were not present in the original documentation.)_
-
 ---
 
 ### Peer Dependencies
@@ -258,6 +256,10 @@ from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="
 ## Support
 
 If you like the project and want to support my work, give star ⭐ or fork it.
+
+## 📽️ Showcase
+Is your company using plyr-react in production? We'd love to feature you!
+Click here to submit your site or logo via PR.
 
 #### Acknowledgments and Key Contributors
 
