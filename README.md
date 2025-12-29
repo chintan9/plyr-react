@@ -259,7 +259,7 @@ If you like the project and want to support my work, give star ⭐ or fork it.
 
 ## Showcase
 Is your company using plyr-react in production? We'd love to feature you!
-Create PRa nd to submit your site or logo here.
+Create PR and to submit your site or logo here.
 
 ## Acknowledgments and Key Contributors
 
