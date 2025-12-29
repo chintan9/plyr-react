@@ -257,11 +257,11 @@ from <a href="https://gitpod.io/#https://github.com/chintan9/plyr-react" title="
 
 If you like the project and want to support my work, give star ⭐ or fork it.
 
-## 📽️ Showcase
+## Showcase
 Is your company using plyr-react in production? We'd love to feature you!
-Click here to submit your site or logo via PR.
+Create PRa nd to submit your site or logo here.
 
-#### Acknowledgments and Key Contributors
+## Acknowledgments and Key Contributors
 
 The development and maintenance of this project have been supported by several key contributors:
 
