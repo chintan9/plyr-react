@@ -69,9 +69,9 @@
     "prettier": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "tsdown": "^0.2.0",
+    "tsdown": "^0.23.0",
     "typescript": "^5.0.4",
-    "typescript-eslint": "^8.69.0"
+    "typescript-eslint": "^8.41.0"
   },
   "peerDependencies": {
     "plyr": "^3.7.7",
