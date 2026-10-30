@@ -33,20 +33,51 @@ export interface APITypes {
   plyr: PlyrInstance;
 }
 
+type MountedPlyr = {
+  plyr: PlyrInstance;
+  params: PlyrConfigurationProps | undefined;
+};
+
+const mountedByNode = new WeakMap<HTMLVideoElement, MountedPlyr>();
+const pendingDestroy = new WeakMap<
+  PlyrInstance,
+  ReturnType<typeof setTimeout>
+>();
+
 const instantiate: Instantiate<
   PlyrInstance,
   HTMLVideoElement,
   PlyrConfigurationProps
-> = (_, params) => {
+> = (node, params) => {
+  const previous = node ? mountedByNode.get(node) : undefined;
+  const timer = previous && pendingDestroy.get(previous.plyr);
+  if (previous && timer !== undefined) {
+    clearTimeout(timer);
+    pendingDestroy.delete(previous.plyr);
+    // Same params object means React re-ran the effect without a re-render (Strict Mode replay).
+    if (previous.params === params) return previous.plyr;
+    previous.plyr.destroy();
+  }
+
   const plyr = new PlyrJS(".plyr-react", params?.options ?? {});
   if (params?.source) plyr.source = params?.source;
+
+  if (node) mountedByNode.set(node, { plyr, params });
   return plyr;
 };
 
 const destroy: Destroy<PlyrInstance, PlyrConfigurationProps> = (
   plyr: PlyrInstance | null
 ) => {
-  if (plyr) plyr.destroy();
+  if (!plyr) return;
+  // Deferred so an immediate re-instantiate on the same node can reclaim this instance.
+  pendingDestroy.set(
+    plyr,
+    setTimeout(() => {
+      pendingDestroy.delete(plyr);
+      plyr.destroy();
+    }, 0)
+  );
 };
 
 const noop = () => {};
@@ -95,7 +126,8 @@ export function usePlyr(
       instantiate,
       getAPI,
       destroy,
-      params,
+      // Fresh object per render so instantiate can tell a Strict Mode replay from a deps change.
+      params: { ...params },
     },
     deps ?? [params.options, params.source]
   );
